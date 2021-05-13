@@ -89,19 +89,11 @@ window.addEventListener('scroll', () => {
 });
 
 
-// スムーススクロール（jQuery）
+/*
+スムーススクロール（jQuery）
+*/
 $(function(){
 
-  $('a[href^="#"]').click(function() {
-    let href = $(this).attr("href");
-    let target = $(href == "#" || href == "" ? 'html' : href);
-    let headerHeight = $('#header').innerHeight();
-    let position = target.offset().top - headerHeight;
-
-    $('body, html').animate({
-      scrollTop: position
-    }, 500, 'swing');
-    return false;
-  });
+  alert('hello');
 
 });
