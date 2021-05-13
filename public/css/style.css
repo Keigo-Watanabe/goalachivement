@@ -1,14 +1,735 @@
 html {
-  font-size: 100%;
+  font-size: 16px;
 }
 
 body {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
+body, * {
+  padding: 0;
+  margin: 0;
+  color: #333;
+  box-sizing: border-box;
+}
+
 /*
 共通
 */
+img {
+  vertical-align: bottom;
+}
+
 ul {
   list-style: none;
+}
+
+a {
+  transition: all 0.3s ease;
+}
+
+.start-btn {
+  position: relative;
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  color: #fff;
+  letter-spacing: 0.1em;
+  padding: 0.75rem 2.81rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-radius: 6px;
+  z-index: 0;
+}
+
+.start-btn::before,
+.start-btn::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 6px;
+}
+
+.start-btn::before {
+  background: linear-gradient(-135deg, #6C00FF, #00B1FF);
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.start-btn::after {
+  background: linear-gradient(-135deg, #ff3d16, #ffcf7c);
+  z-index: -2;
+}
+
+.start-btn:hover::before {
+  opacity: 0;
+}
+
+
+/* LPヘッダー */
+.lp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.9rem;
+  height: 5rem;
+  background-color: rgba(51, 51, 51, 30%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.lp-header-bg-white {
+  background-color: rgba(255, 255, 255, 100%);
+  box-shadow: 0 5px 5px rgba(51, 51, 51, 30%);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-family: 'Alata', sans-serif;
+  color: #fff;
+}
+
+.header-black {
+  color: #333;
+}
+
+.logo-achivement {
+  color: #00E6F0;
+}
+
+.header-nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-nav ul li {
+  margin: 0 1.56rem;
+  position: relative;
+}
+
+.header-nav ul li::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+}
+
+.header-nav ul li:hover::after {
+  width: 100%;
+}
+
+.header-nav ul li a {
+  color: #fff;
+}
+
+.header-nav-black ul li a {
+  color: #333;
+}
+
+.header-nav ul li a,
+.header-login a {
+  letter-spacing: 0.1em;
+}
+
+.header-login {
+  display: flex;
+}
+
+.header-login a {
+  padding: 0.62rem 1.56rem;
+}
+
+.register-btn,
+.login-btn {
+  position: relative;
+  z-index: 0;
+}
+
+.register-btn::after,
+.login-btn::after {
+  content: '';
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.register-btn {
+  color: #333;
+  margin-right: 0.62rem;
+  background-color: #fff;
+  border: solid 1px #333;
+}
+
+.register-btn::after {
+  background-color: #333;
+}
+
+.register-btn:hover {
+  color: #fff;
+}
+
+.login-btn {
+  color: #fff;
+  background-color: #1A3F5F;
+  border: solid 1px #1A3F5F;
+}
+
+.login-btn::after {
+  background: linear-gradient(-135deg, #6C00FF, #00B1FF);
+}
+
+.register-btn:hover::after,
+.login-btn:hover::after {
+  width: 100%;
+}
+
+.menu-bar {
+  cursor: pointer;
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 2.8125rem;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.bar-black .bar {
+  background-color: #333;
+}
+
+.bar2 {
+  margin: 0.62rem 0;
+}
+
+
+
+/*
+ファーストビュー
+*/
+.firstview {
+  height: 40.625rem;
+  background-image: url(/image/firstview.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.firstview-bg {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-135deg, rgba(255, 255, 255, 0%), rgba(0, 0, 0, 60%));
+  position: relative;
+}
+
+.firstview-title {
+  position: absolute;
+  top: 50%;
+  left: 9.5rem;
+  transform: translateY(-50%);
+}
+
+.firstview-bg h1 {
+  letter-spacing: 0.1em;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 3.12rem;
+}
+
+.firstview-bg h1 span {
+  display: block;
+}
+
+.app-title,
+.app-goalachivement,
+.app-feature {
+  color: #fff;
+}
+
+.app-title {
+  font-size: 3.75rem;
+  letter-spacing: 0.15em;
+}
+
+.app-goalachivement {
+  font-size: 1.875rem;
+  font-family: 'ヒラギノ角ゴシック W3', sans-serif;
+  font-weight: normal;
+  margin: 0.93rem 0;
+}
+
+.app-feature {
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+.catchphrase {
+  color: #fff;
+  letter-spacing: 0.1em;
+  font-size: 1.1rem;
+  position: absolute;
+  top: 16.68rem;
+  right: 8.56rem;
+}
+
+
+/*
+アプリ説明
+*/
+.about-app {
+  padding: 5rem 1.25rem 6.25rem 1.25rem;
+}
+
+.about-app-title {
+  display: block;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.about-app-sentence {
+  margin-top: 3.125rem;
+}
+
+.about-app p {
+  text-align: center;
+  margin-top: 1.25rem;
+}
+
+
+/*
+できること
+*/
+.feature {
+  padding-bottom: 7.5rem;
+}
+
+.feature-title {
+  height: 7.5rem;
+  display: flex;
+  align-items: center;
+  background-color: #1A3F5F;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 6.25rem;
+}
+
+.feature-title::after {
+  content: '';
+  width: 60px;
+  border-top: solid 30px #1A3F5F;
+  border-left: solid 30px transparent;
+  border-right: solid 30px transparent;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.feature-title h2 {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.feature-box {
+  display: flex;
+  align-items: center;
+  max-width: 1500px;
+  padding: 3.75rem 1.25rem;
+  margin-bottom: 7.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feature-image,
+.feature-content {
+  width: 50%;
+}
+
+.feature-image img {
+  display: block;
+  width: 90%;
+  height: auto;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 30%);
+}
+
+.feature-image-1 img,
+.feature-image-3 img {
+  margin: 0 0 0 auto;
+}
+
+.feature-content h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.875rem;
+}
+
+.feature-number {
+  font-size: 1.75rem;
+  color: #0089FF;
+}
+
+.feature-content p {
+  max-width: 450px;
+  margin: 0 auto 0.93rem auto;
+}
+
+.feature-content a {
+  padding: 0.625rem 2.18rem;
+  display: block;
+  width: fit-content;
+  margin: 3.125rem auto 0 auto;
+  border-radius: 1.625rem;
+  position: relative;
+  color: #fff;
+  font-size: 1.25rem;
+  z-index: 0;
+}
+
+.feature-content a::before,
+.feature-content a::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 1.625rem;
+}
+
+.feature-content a::before {
+  background: linear-gradient(-135deg, #6C00FF, #00B1FF);
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.feature-content a::after {
+  background: linear-gradient(-135deg, #ff3d16, #ffcf7c);
+  z-index: -2;
+}
+
+.feature-content a:hover::before {
+  opacity: 0;
+}
+
+
+/*
+はじめよう
+*/
+.start-app {
+  height: 18.75rem;
+  background-image: url(/image/banner.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.start-bg {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(rgba(90, 90, 90, 20%), rgba(0, 0, 0, 85%));
+  padding: 3.125rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.start-word {
+  color: #fff;
+  font-size: 1.875rem;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+
+/*
+フッター
+*/
+.lp-footer {
+  border-top: solid 1px #333;
+  padding: 2.81rem;
+}
+
+.footer-nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-nav ul li {
+  margin: 0 1.25rem;
+  position: relative;
+}
+
+.footer-nav ul li::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #333;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+}
+
+.footer-nav ul li:hover::after {
+  width: 100%;
+}
+
+.footer-logo {
+  margin: 2.5rem 0;
+}
+
+.footer-logo a {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.footer-logo .logo {
+  color: #333;
+}
+
+.copyright {
+  text-align: center;
+}
+
+.copyright span {
+  font-size: 0.875rem;
+}
+
+
+
+/*
+レスポンシブ
+*/
+
+/*
+1600px〜
+*/
+@media screen and (min-width: 1600px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+
+/*
+〜1100px
+*/
+@media screen and (max-width: 1100px) {
+  /* ヘッダー */
+  .menu-bar {
+    display: block;
+    z-index: 1000;
+  }
+
+  .header-nav,
+  .header-login {
+    position: fixed;
+    padding: 1.875rem 2.5rem;
+    width: 100%;
+    height: 100vh;
+    max-width: 500px;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+  }
+
+  .close-menu {
+    transform: translateX(0);
+  }
+
+  .bar-close {
+    position: relative;
+  }
+
+  .bar-close .bar1,
+  .bar-close .bar3 {
+    position: absolute;
+    top: 50%;
+  }
+
+  .bar-close .bar1,
+  .bar-close .bar2,
+  .bar-close .bar3 {
+    background-color: #333;
+  }
+
+  .bar-close .bar1 {
+    transform: rotate(45deg);
+  }
+
+  .bar-close .bar2 {
+    opacity: 0;
+  }
+
+  .bar-close .bar3 {
+    transform: rotate(135deg);
+  }
+
+  .header-nav {
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 100%);
+  }
+
+  .header-nav ul,
+  .header-login {
+    flex-direction: column;
+  }
+
+  .header-nav ul li {
+    margin: 0 0 1.875rem 0;
+    width: fit-content;
+  }
+
+  .header-nav ul li::after {
+    background-color: #333;
+  }
+
+  .header-nav ul li a {
+    color: #333;
+  }
+
+  .header-login {
+    top: 17.5rem;
+    right: 0;
+  }
+
+  .header-login a {
+    width: fit-content;
+  }
+
+  .register-btn {
+    margin-bottom: 1.875rem;
+  }
+}
+
+
+/*
+〜1024px
+*/
+@media screen and (max-width: 1024px) {
+  /* ファーストビュー */
+  .firstview-title {
+    left: 6.25rem;
+  }
+
+  .catchphrase{
+    right: 5rem;
+  }
+
+  /* できること */
+  .feature-box {
+    flex-direction: column;
+  }
+
+  .feature-box-second {
+    flex-direction: column-reverse;
+  }
+
+  .feature-image,
+  .feature-content,
+  .feature-content p {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .feature-image {
+    margin-bottom: 2.5rem;
+  }
+
+  .feature-image img {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+
+/*
+〜768px
+*/
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  /* ファーストビュー */
+  .firstview-title {
+    width: fit-content;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .app-title {
+    font-size: 2.14rem;
+  }
+
+  .app-goalachivement {
+    font-size: 1.57rem;
+  }
+
+  .app-feature {
+    font-size: 1rem;
+  }
+
+  .start-btn {
+    font-size: 1.14rem;
+  }
+
+  .catchphrase {
+    display: none;
+  }
+
+  /* アプリ説明 */
+  .about-app-title {
+    font-size: 1.42rem;
+  }
+
+  /* できること */
+  .feature {
+    padding-bottom: 0;
+  }
+  
+  .feature-title h2,
+  .feature-number {
+    font-size: 1.42rem;
+  }
+
+  .feature-content h3 {
+    font-size: 1.28rem;
+  }
+
+  .feature-content a {
+    font-size: 1.14rem;
+  }
+
+  /* フッター */
+  .footer-nav ul {
+    flex-direction: column;
+  }
+
+  .footer-nav ul li {
+    margin: 0 0 0.93rem 0;
+  }
 }

@@ -10,6 +10,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -20,23 +22,29 @@
     <body>
 
       <!-- ヘッダー -->
-      <header class="lp-header">
+      <header id="lp-header" class="lp-header lp-header-bg">
         <div class="header-logo">
-          <a href=""><span class="logo">Goal<span class="logo-chivement">Achivement.</span></span></a>
+          <a href="/"><span id="logo" class="logo">Goal<span class="logo-achivement">Achivement.</span></span></a>
         </div>
 
-        <nav class="header-nav">
+        <nav id="header-nav" class="header-nav">
           <ul>
-            <li><a href="">ホーム</a></li>
-            <li><a href="">できること</a></li>
-            <li><a href="">はじめよう</a></li>
+            <li><a href="/">ホーム</a></li>
+            <li><a id="menu-link" href="/#feature">できること</a></li>
+            <li><a href="{{ route('login') }}">はじめよう</a></li>
             <li><a href="">お問い合わせ</a></li>
           </ul>
         </nav>
 
-        <div class="header-login">
-          <a href="{{ route('register') }}">会員登録</a>
-          <a href="{{ route('login') }}">ログイン</a>
+        <div id="header-login" class="header-login">
+          <a class="register-btn" href="{{ route('register') }}">会員登録</a>
+          <a class="login-btn" href="{{ route('login') }}">ログイン</a>
+        </div>
+
+        <div id="menu-bar" class="menu-bar">
+          <span class="bar bar1"></span>
+          <span class="bar bar2"></span>
+          <span class="bar bar3"></span>
         </div>
       </header>
 
@@ -44,12 +52,54 @@
 
         <!-- ファーストビュー -->
         <div class="firstview">
+          <div class="firstview-bg">
+            <div class="firstview-title">
+              <h1>
+                <span class="app-title">目標達成</span>
+                <span class="app-goalachivement">Goal Achivement</span>
+                <span class="app-feature">タスク管理 × カレンダー</span>
+              </h1>
 
+              <a class="start-btn" href="{{ route('login') }}">はじめよう</a>
+            </div>
+
+            <span class="catchphrase">夢は、必ず叶う。</span>
+          </div>
         </div>
 
         <!-- コンポーネント -->
+        @yield('content')
+
+        <!-- はじめよう -->
+        <div class="start-app">
+          <div class="start-bg">
+            <span class="start-word">目標を、達成しよう。</span>
+            <a class="start-btn" href="{{ route('login') }}">はじめる</a>
+          </div>
+        </div>
 
       </main>
 
+      <!-- フッター -->
+      <footer class="lp-footer">
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="">ホーム</a></li>
+            <li><a href="">できること</a></li>
+            <li><a href="{{ route('login') }}">はじめよう</a></li>
+            <li><a href="">お問い合わせ</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-logo">
+          <a href=""><span class="logo">Goal<span class="logo-achivement">Achivement.</span></span></a>
+        </div>
+
+        <div class="copyright">
+          <span>©️Goal Achievement 2021</span>
+        </div>
+      </footer>
+
+      <script src="{{ asset('js/script.js') }}" defer></script>
     </body>
 </html>
