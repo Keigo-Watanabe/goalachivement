@@ -49,3 +49,59 @@ menuLink.addEventListener('click', () => {
   // メニューバーを閉める
   menuBar.classList.remove('bar-close');
 });
+
+
+/*
+背景色フェードイン
+*/
+const firstviewBg = document.getElementById('firstview-bg');
+const title = document.getElementById('title');
+const startBtn = document.getElementById('start-btn');
+
+const fadeIn = function() {
+  firstviewBg.classList.add('fade-in');
+  title.classList.add('fade-in-title');
+  startBtn.classList.add('fade-in-btn');
+}
+
+setTimeout(fadeIn, 300);
+
+
+/*
+スクロールアニメーション（フェードイン）
+*/
+const fadeInTarget = document.querySelectorAll('.fade-in-target');
+
+window.addEventListener('scroll', () => {
+  for (let i = 0; i < fadeInTarget.length; i++) {
+    const rect = fadeInTarget[i].getBoundingClientRect().top;
+
+    const scroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    const offset = rect + scroll;
+
+    const windowHeight = window.innerHeight;
+
+    if (scroll > offset - windowHeight) {
+      fadeInTarget[i].classList.add('scroll-in');
+    }
+  }
+});
+
+
+// スムーススクロール（jQuery）
+$(function(){
+
+  $('a[href^="#"]').click(function() {
+    let href = $(this).attr("href");
+    let target = $(href == "#" || href == "" ? 'html' : href);
+    let headerHeight = $('#header').innerHeight();
+    let position = target.offset().top - headerHeight;
+
+    $('body, html').animate({
+      scrollTop: position
+    }, 500, 'swing');
+    return false;
+  });
+
+});

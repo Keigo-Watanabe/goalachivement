@@ -4,11 +4,11 @@
 
   <!-- アプリ説明 -->
   <div class="about-app">
-    <span class="about-app-title">目標達成までのタスクを管理。</span>
-    <span class="about-app-title">×</span>
-    <span class="about-app-title">カレンダーで予定を把握。</span>
+    <span class="about-app-title fade-in-target">目標達成までのタスクを管理。</span>
+    <span class="about-app-title fade-in-target">×</span>
+    <span class="about-app-title fade-in-target">カレンダーで予定を把握。</span>
 
-    <div class="about-app-sentence">
+    <div class="about-app-sentence fade-in-target">
       <p>目標を設定し、それを達成するためのタスクを追加することで、目標達成までの道のりを把握することができます。</p>
       <p>それぞれのタスクに、重要度・緊急度をつけてタスクの優先度を設定しましょう。</p>
       <p>また、日常の予定も把握することで、毎日のタスクを管理することができます。</p>
@@ -24,7 +24,7 @@
 
     <div class="feature-box">
       <div class="feature-image feature-image-1">
-        <img src="/image/lp-sample-1.jpg" alt="lp-sample-1">
+        <img class="fade-in-target" src="/image/lp-sample-1.jpg" alt="lp-sample-1">
       </div>
 
       <div class="feature-content">
@@ -46,13 +46,13 @@
       </div>
 
       <div class="feature-image feature-image-2">
-        <img src="/image/lp-sample-2.jpg" alt="lp-sample-2">
+        <img class="fade-in-target" src="/image/lp-sample-2.jpg" alt="lp-sample-2">
       </div>
     </div>
 
     <div class="feature-box">
       <div class="feature-image feature-image-3">
-        <img src="/image/lp-sample-3.jpg" alt="lp-sample-3">
+        <img class="fade-in-target" src="/image/lp-sample-3.jpg" alt="lp-sample-3">
       </div>
 
       <div class="feature-content">
