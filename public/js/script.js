@@ -94,6 +94,16 @@ window.addEventListener('scroll', () => {
 */
 $(function(){
 
-  alert('hello');
+  $('#menu-link').click(function() {
+    let href = $('#feature');
+    let target = $(href == "#" || href == "" ? 'html' : href);
+    let headerHeight = $('#lp-header').innerHeight();
+    let position = target.offset().top - headerHeight;
+
+    $('body, html').animate({
+      scrollTop: position
+    }, 500, 'swing');
+    return false;
+  });
 
 });
