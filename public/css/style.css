@@ -138,6 +138,10 @@ a {
   color: #333;
 }
 
+.header-nav-black ul li::after {
+  background-color: #333;
+}
+
 .header-nav ul li a,
 .header-login a {
   letter-spacing: 0.1em;
@@ -569,6 +573,37 @@ a {
 
 
 /*
+会員登録・ログイン
+*/
+.lp-header-register {
+  background-color: rgba(255, 255, 255, 0%);
+}
+
+.register-container {
+  background-image: url(/image/firstview.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.register-container-bg {
+  padding-top: 3.125rem;
+  background: linear-gradient(-135deg, rgba(255, 255, 255, 0%), rgba(0, 0, 0, 40%));
+}
+
+.bg-gray-100 {
+  background-color: rgba(255, 255, 255, 0%);
+}
+
+.register-title {
+  font-size: 2.375rem;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 16%);
+}
+
+
+/*
 レスポンシブ
 */
 
@@ -771,5 +806,6 @@ a {
 
   .footer-nav ul li {
     margin: 0 0 0.93rem 0;
+    width: fit-content;
   }
 }

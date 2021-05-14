@@ -30,7 +30,7 @@
         <nav id="header-nav" class="header-nav">
           <ul>
             <li><a href="/">ホーム</a></li>
-            <li><a id="menu-link" href="/#feature">できること</a></li>
+            <li><a id="menu-link" class="menu-link" href="/#feature">できること</a></li>
             <li><a href="{{ route('login') }}">はじめよう</a></li>
             <li><a href="">お問い合わせ</a></li>
           </ul>
@@ -82,8 +82,8 @@
       <footer class="lp-footer">
         <nav class="footer-nav">
           <ul>
-            <li><a href="">ホーム</a></li>
-            <li><a href="">できること</a></li>
+            <li><a href="/">ホーム</a></li>
+            <li><a class="menu-link" href="/#feature">できること</a></li>
             <li><a href="{{ route('login') }}">はじめよう</a></li>
             <li><a href="">お問い合わせ</a></li>
           </ul>

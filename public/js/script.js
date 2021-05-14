@@ -94,7 +94,7 @@ window.addEventListener('scroll', () => {
 */
 $(function(){
 
-  $('#menu-link').click(function() {
+  $('.menu-link').click(function() {
     let href = $('#feature');
     let target = $(href == "#" || href == "" ? 'html' : href);
     let headerHeight = $('#lp-header').innerHeight();
