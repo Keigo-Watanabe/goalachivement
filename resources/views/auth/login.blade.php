@@ -42,6 +42,10 @@
                 <x-jet-button class="form-register">
                     {{ __('Login') }}
                 </x-jet-button>
+
+                <a class="register-yet" href="{{ route('register') }}">
+                    新規会員登録はこちら
+                </a>
             </div>
         </form>
     </x-jet-authentication-card>

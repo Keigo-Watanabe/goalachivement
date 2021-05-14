@@ -677,7 +677,15 @@ select:focus {
   margin-bottom: 2.18rem;
 }
 
-.already-registered:hover {
+.register-yet {
+  color: #2176FF;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.already-registered:hover,
+.register-yet:hover {
   text-decoration: none;
 }
 
@@ -942,5 +950,18 @@ select:focus {
   .footer-nav ul li {
     margin: 0 0 0.93rem 0;
     width: fit-content;
+  }
+
+  /* 会員登録・ログイン */
+  .form-input {
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 17.18rem;
+    margin: 1rem auto 0 auto;
+  }
+
+  .form-input label {
+    text-align: left;
+    margin: 0;
   }
 }
