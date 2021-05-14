@@ -602,6 +602,141 @@ a {
   text-shadow: 0 3px 6px rgba(0, 0, 0, 16%);
 }
 
+.sm\:rounded-lg {
+  max-width: 37.5rem;
+  border-radius: 0;
+}
+
+.bg-white {
+  padding: 3.75rem 2.5rem;
+  background-color: rgba(255, 255, 255, 80%);
+}
+
+.form-input {
+  display: flex;
+  align-items: flex-end;
+}
+
+.form-input label {
+  display: block;
+  font-size: 1.125rem;
+  color: #333;
+  font-weight: bold;
+  width: 10rem;
+  margin-right: 1.25rem;
+  margin-bottom: 0.3125rem;
+  text-align: right;
+}
+
+.form-input input {
+  width: 17.18rem;
+  background-color: transparent;
+  border-bottom: solid 1px #333;
+  border-radius: 0;
+  padding: 0.125rem 0.3125rem;
+  color: #333;
+  font-size: 1.125rem;
+}
+
+.border-gray-300 {
+  border-color: rgba(255, 255, 255, 0%);
+}
+
+[type='text']:focus,
+[type='email']:focus,
+[type='url']:focus,
+[type='password']:focus,
+[type='number']:focus,
+[type='date']:focus,
+[type='datetime-local']:focus,
+[type='month']:focus,
+[type='search']:focus,
+[type='tel']:focus,
+[type='time']:focus,
+[type='week']:focus,
+[multiple]:focus,
+textarea:focus,
+select:focus {
+  --tw-ring-shadow: 0 0 0;
+  box-shadow: 0 0 0;
+  border-color: transparent;
+  border-bottom: solid 1px #333;
+}
+
+.form-register-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2.18rem;
+}
+
+.already-registered {
+  color: #2176FF;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+  margin-bottom: 2.18rem;
+}
+
+.already-registered:hover {
+  text-decoration: none;
+}
+
+.form-register {
+  color: #fff;
+  font-size: 1.125rem;
+  padding: 0.625rem 1.56rem;
+  border: none;
+  border-radius: 0;
+  position: relative;
+  z-index: 0;
+}
+
+.form-register::before,
+.form-register::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.form-register::before {
+  background: linear-gradient(-135deg, #6C00FF, #00B1FF);
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.form-register::after {
+  background: linear-gradient(-135deg, #ff3d16, #ffcf7c);
+  z-index: -2;
+}
+
+.form-register:hover::before {
+  opacity: 0;
+}
+
+.remember-me {
+  margin-top: 2.18rem;
+}
+
+.remember-me-checkbox {
+  display: flex;
+  justify-content: center;
+}
+
+.remember-me-checkbox input {
+  cursor: pointer;
+}
+
+.remember-me-checkbox span {
+  color: #333;
+}
+
+.forgot-password-sentence {
+  color: #333;
+  margin-bottom: 2.18rem;
+}
 
 /*
 レスポンシブ
