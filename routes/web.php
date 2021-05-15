@@ -29,6 +29,10 @@ Route::get('lp/schedule', function () {
     return view('lp.schedule');
 });
 
+Route::get('lp/contact', function () {
+    return view('lp.contact');
+});
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

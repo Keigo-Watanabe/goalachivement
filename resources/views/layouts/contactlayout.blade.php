@@ -50,31 +50,8 @@
 
       <main class="main">
 
-        <!-- ファーストビュー -->
-        <div class="firstview">
-          <div id="firstview-bg" class="firstview-bg">
-            <div class="firstview-title">
-              <h1 id="title" class="title">
-                <span class="app-title">目標達成</span>
-                <span class="app-goalachivement">Goal Achivement</span>
-                <span class="app-feature">タスク管理 × カレンダー</span>
-              </h1>
-
-              <a id="start-btn" class="start-btn firstview-btn" href="{{ route('login') }}">はじめよう</a>
-            </div>
-          </div>
-        </div>
-
         <!-- コンポーネント -->
         @yield('content')
-
-        <!-- はじめよう -->
-        <div class="start-app">
-          <div class="start-bg">
-            <span class="start-word">目標を、達成しよう。</span>
-            <a class="start-btn" href="{{ route('login') }}">はじめる</a>
-          </div>
-        </div>
 
       </main>
 

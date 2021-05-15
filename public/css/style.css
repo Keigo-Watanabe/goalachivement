@@ -746,6 +746,130 @@ select:focus {
   margin-bottom: 2.18rem;
 }
 
+.text-red-600 {
+  font-weight: bold;
+}
+
+.text-red-600 li {
+  color: #dc2626;
+}
+
+
+/*
+お問い合わせ
+*/
+.contact-firstview {
+  height: 40.625rem;
+  background-image: url(/image/firstview.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contact-firstview-bg {
+  height: 100%;
+  background: linear-gradient(-135deg, rgba(255, 255, 255, 0%), rgba(0, 0, 0, 40%));
+  position: relative;
+}
+
+.contact-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  padding: 0 1.25rem;
+}
+
+.contact-title h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 2.375rem;
+  font-weight: bold;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 16%);
+  margin-bottom: 4.375rem;
+}
+
+.contact-title-sentence p {
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.contact-title-sentence p:first-child {
+  margin-bottom: 1.56rem;
+}
+
+.contact-container {
+  padding: 7.5rem 1.25rem;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-input,
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 3.75rem;
+  -webkit-appearance: none;
+  padding: 0.3125rem;
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+}
+
+.contact-input {
+  border-bottom: solid 1px #333;
+}
+
+.contact-form textarea {
+  border: solid 1px #333;
+  font-weight: normal;
+  height: 15rem;
+}
+
+.submit-btn {
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+  padding: 0.625rem 0;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+}
+
+.submit-btn::before,
+.submit-btn::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.submit-btn::before {
+  background: linear-gradient(-135deg, #6C00FF, #00B1FF);
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.submit-btn::after {
+  background: linear-gradient(-135deg, #ff3d16, #ffcf7c);
+  z-index: -2;
+}
+
+.submit-btn:hover::before {
+  opacity: 0;
+}
+
+
+
 /*
 レスポンシブ
 */
