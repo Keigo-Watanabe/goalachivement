@@ -1,0 +1,18 @@
+/*
+マイページ
+*/
+
+
+/*
+ヘッダー
+*/
+.my-page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #1A3F5F;
+}
+
+.user-btn {
+  color: #fff;
+}
