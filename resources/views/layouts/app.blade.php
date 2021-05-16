@@ -12,10 +12,13 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 
         @livewireStyles
 
         <!-- Scripts -->
+        <script src="https://kit.fontawesome.com/d60d03627c.js" crossorigin="anonymous"></script>
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased">

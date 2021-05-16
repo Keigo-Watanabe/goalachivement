@@ -7,12 +7,37 @@
 ヘッダー
 */
 .my-page-header {
+  padding: 1.875rem;
+  background-color: #1A3F5F;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #1A3F5F;
+  height: 100vh;
 }
 
-.user-btn {
+.my-page-logo {
+  font-size: 1.125rem;
+  font-family: 'Alata', sans-serif;
   color: #fff;
+}
+
+
+/*
+ヘッダー共通
+*/
+.user-btn,
+.user-btn i,
+.my-page-home a,
+.my-page-home a i,
+.my-page-nav ul li a,
+.my-page-nav ul li a i {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.user-btn i,
+.my-page-home a i,
+.my-page-nav ul li a i {
+  margin-right: 0.625rem;
 }
