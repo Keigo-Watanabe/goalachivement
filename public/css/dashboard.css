@@ -21,6 +21,10 @@
   color: #fff;
 }
 
+.my-page-header-logo {
+  margin-bottom: 2.5rem;
+}
+
 
 /*
 ヘッダー共通
@@ -40,4 +44,28 @@
 .my-page-home a i,
 .my-page-nav ul li a i {
   margin-right: 0.625rem;
+}
+
+.my-page-user,
+.my-page-home,
+.my-page-nav {
+  padding: 2.5rem 0;
+}
+
+.my-page-user,
+.my-page-home {
+  border-bottom: solid 1px #fff;
+}
+
+.my-page-nav ul li {
+  margin-bottom: 1.56rem;
+}
+
+
+/*
+マイページ内容
+*/
+.my-page-main {
+  padding: 0;
+  margin-left: 12.5rem;
 }

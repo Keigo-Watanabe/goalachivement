@@ -2,7 +2,7 @@
     <!-- Primary Navigation Menu -->
     <div class="">
         <div class="">
-            <div class="">
+            <div class="my-page-header-logo">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
@@ -11,7 +11,7 @@
                 </div>
             </div>
 
-            <div class="hidden sm:flex">
+            <div class="hidden sm:flex my-page-user">
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ml-3 relative">
