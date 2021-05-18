@@ -1,7 +1,7 @@
 <nav x-data="{ open: false }" class="my-page-header">
     <!-- Primary Navigation Menu -->
     <div class="">
-        <div class="">
+        <div class="my-page-header-inner">
             <div class="my-page-header-logo">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
@@ -108,21 +108,18 @@
 
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition">
-                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
+                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 focus:outline-none focus:text-gray-500 transition">
+                    <i class="fas fa-bars hamburger-btn"></i>
                 </button>
             </div>
 
             <!-- ホーム -->
-            <div class="my-page-home">
+            <div class="my-page-home my-page-pc">
               <a href="/dashboard"><i class="fas fa-home"></i>ホーム</a>
             </div>
 
             <!-- ナビゲーション -->
-            <nav class="my-page-nav">
+            <nav class="my-page-nav my-page-pc">
               <ul>
                 <li>
                   <a href=""><i class="fas fa-flag"></i>目標</a>
@@ -139,12 +136,7 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-jet-responsive-nav-link>
-        </div>
+    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden responsive-nav-menu">
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
@@ -156,8 +148,7 @@
                 @endif
 
                 <div>
-                    <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                    <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+                    <div class="font-medium text-base profile-link-btn">{{ Auth::user()->name }}</div>
                 </div>
             </div>
 
@@ -180,7 +171,7 @@
                     <x-jet-responsive-nav-link href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                     this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        {{ __('Logout') }}
                     </x-jet-responsive-nav-link>
                 </form>
 
@@ -216,5 +207,26 @@
                 @endif
             </div>
         </div>
+
+        <!-- ホーム -->
+        <div class="my-page-home my-page-sp">
+          <a href="/dashboard"><i class="fas fa-home"></i>ホーム</a>
+        </div>
+
+        <!-- ナビゲーション -->
+        <nav class="my-page-nav my-page-sp">
+          <ul>
+            <li>
+              <a href=""><i class="fas fa-flag"></i>目標</a>
+            </li>
+            <li>
+              <a href=""><i class="fas fa-tasks"></i>タスク</a>
+            </li>
+            <li>
+              <a href=""><i class="fas fa-calendar-alt"></i>予定</a>
+            </li>
+          </ul>
+        </nav>
+
     </div>
 </nav>

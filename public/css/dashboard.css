@@ -64,7 +64,8 @@
 /*
 ヘッダードロップダウンメニュー
 */
-.profile-link-btn {
+.profile-link-btn,
+.hamburger-btn {
   color: #fff;
 }
 
@@ -72,7 +73,47 @@
 /*
 マイページ内容
 */
-.my-page-main {
+.my-page-main,
+.profile-header {
   padding: 0;
   margin-left: 12.5rem;
+}
+
+.profile-content {
+  margin-left: 12.5rem;
+}
+
+
+
+/*
+レスポンシブ
+*/
+
+/*
+〜640px
+*/
+@media screen and (max-width: 640px) {
+  .my-page-header {
+    width: 100%;
+    height: auto;
+  }
+
+  .my-page-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .my-page-header-logo {
+    margin-bottom: 0;
+  }
+
+  .my-page-pc {
+    display: none;
+  }
+
+  .responsive-nav-menu {
+    padding-top: 2.5rem;
+    transition: all 0.3s ease;
+  }
 }
