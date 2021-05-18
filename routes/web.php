@@ -33,6 +33,8 @@ Route::get('lp/contact', function () {
     return view('lp.contact');
 });
 
+Route::resource('goal', 'GoalController');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
