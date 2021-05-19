@@ -42,6 +42,12 @@
             </main>
         </div>
 
+        <footer class="dashboard-footer">
+          <div class="copyright">
+            <span>©️Goal Achievement 2021</span>
+          </div>
+        </footer>
+
         @stack('modals')
 
         @livewireScripts

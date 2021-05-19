@@ -35,7 +35,14 @@ class GoalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $goal = new Goal();
+
+        $goal->title = $request->input('title');
+        $goal->date = $request->input('date');
+
+        $goal->save();
+
+        return redirect()->to('/dashboard');
     }
 
     /**
