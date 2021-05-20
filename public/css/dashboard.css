@@ -89,6 +89,123 @@
   margin-left: 12.5rem;
 }
 
+.my-page-main {
+  padding: 1.875rem;
+}
+
+.goal-container {
+  background-color: #F4FFF8;
+  border: solid 1px #999999;
+  padding: 1.875rem;
+}
+
+.goal-title {
+  margin-bottom: 3.75rem;
+}
+
+.goal-proccess {
+  color: #1A3F5F;
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+.goal-content li {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 6.25rem;
+}
+
+.goal-graph-content {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.goal-name {
+  width: 15.625rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.goal-start {
+  margin-right: 0.625rem;
+}
+
+.goal-start i {
+  font-size: 1.25rem;
+  color: #db5727;
+}
+
+.goal-start,
+.goal-finish {
+  text-align: center;
+}
+
+.goal-start-date,
+.goal-end-date {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.goal-graph {
+  width: 100%;
+}
+
+.goal-bar {
+  border: solid 1px #707070;
+  background-color: #fff;
+  padding: 0.125rem;
+}
+
+.goal-bar-inner {
+  display: block;
+  background-color: #FF4E4E;
+  width: 50%;
+  height: 1.5rem;
+  position: relative;
+}
+
+.goal-icon {
+  position: absolute;
+  top: -1.625rem;
+  right: -0.7rem;
+}
+
+.goal-icon i {
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.goal-persent {
+  position: absolute;
+  bottom: -3.25rem;
+  right: -2.215rem;
+  color: #fff;
+  font-weight: bold;
+  background-color: #1A3F5F;
+  padding: 0.3125rem 0.9375rem;
+}
+
+.goal-persent-triangle {
+  border-bottom: solid 10px #1A3F5F;
+  border-left: solid 5px transparent;
+  border-right: solid 5px transparent;
+  position: absolute;
+  bottom: -20px;
+  right: -5px;
+}
+
+.goal-finish {
+  margin-left: 0.625rem;
+}
+
+.goal-finish i {
+  color: #02773D;
+  font-size: 1.25rem;
+}
+
 
 /* フッター */
 .dashboard-footer {
@@ -225,7 +342,7 @@
   }
 
   .my-page-main {
-    padding-top: 5rem;
+    padding: 7.14rem 0.93rem 0.93rem 0.93rem;
     margin-left: 0;
   }
 
@@ -236,5 +353,18 @@
 
   .dashboard-footer {
     margin-left: 0;
+  }
+
+
+  /* 目標 */
+  .goal-content li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .goal-name {
+    margin-bottom: 1.25rem;
+    width: 100%;
+    border-bottom: solid 1px #333;
   }
 }

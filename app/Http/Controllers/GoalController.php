@@ -42,7 +42,7 @@ class GoalController extends Controller
 
         $goal->save();
 
-        return redirect()->to('/dashboard');
+        return redirect()->route('goal.create');
     }
 
     /**

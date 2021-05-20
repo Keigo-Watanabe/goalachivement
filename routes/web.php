@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GoalController;
+use App\Models\Goal;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,5 +38,7 @@ Route::get('lp/contact', function () {
 Route::resource('goal', GoalController::class);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    $goals = Goal::all();
+
+    return view('dashboard', compact('goals'));
 })->name('dashboard');
