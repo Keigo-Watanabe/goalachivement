@@ -89,14 +89,15 @@
   margin-left: 12.5rem;
 }
 
-.my-page-main {
+/* .my-page-main {
   padding: 1.875rem;
-}
+} */
 
 .goal-container {
   background-color: #F4FFF8;
   border: solid 1px #999999;
   padding: 1.875rem;
+  margin: 1.875rem;
 }
 
 .goal-title {
@@ -162,7 +163,6 @@
 .goal-bar-inner {
   display: block;
   background-color: #FF4E4E;
-  width: 50%;
   height: 1.5rem;
   position: relative;
 }
@@ -342,7 +342,7 @@
   }
 
   .my-page-main {
-    padding: 7.14rem 0.93rem 0.93rem 0.93rem;
+    /* padding: 7.14rem 0.93rem 0.93rem 0.93rem; */
     margin-left: 0;
   }
 
@@ -357,6 +357,9 @@
 
 
   /* 目標 */
+  .goal-container {
+    margin: 7.14rem 0.93rem 0.93rem 0.93rem;
+  }
   .goal-content li {
     flex-direction: column;
     align-items: flex-start;
