@@ -51,5 +51,7 @@
         @stack('modals')
 
         @livewireScripts
+
+        <script src="{{ asset('js/mypage.js') }}"></script>
     </body>
 </html>

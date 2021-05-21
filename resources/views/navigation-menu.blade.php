@@ -125,7 +125,7 @@
                   <a href="/goal/create"><i class="fas fa-flag"></i>目標</a>
                 </li>
                 <li>
-                  <a href=""><i class="fas fa-tasks"></i>タスク</a>
+                  <a href="/task/create"><i class="fas fa-tasks"></i>タスク</a>
                 </li>
                 <li>
                   <a href=""><i class="fas fa-calendar-alt"></i>予定</a>
@@ -217,10 +217,10 @@
         <nav class="my-page-nav my-page-sp">
           <ul>
             <li>
-              <a href=""><i class="fas fa-flag"></i>目標</a>
+              <a href="/goal/create"><i class="fas fa-flag"></i>目標</a>
             </li>
             <li>
-              <a href=""><i class="fas fa-tasks"></i>タスク</a>
+              <a href="/task/create"><i class="fas fa-tasks"></i>タスク</a>
             </li>
             <li>
               <a href=""><i class="fas fa-calendar-alt"></i>予定</a>

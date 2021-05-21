@@ -89,10 +89,6 @@
   margin-left: 12.5rem;
 }
 
-/* .my-page-main {
-  padding: 1.875rem;
-} */
-
 .goal-container {
   background-color: #F4FFF8;
   border: solid 1px #999999;
@@ -264,10 +260,19 @@
   margin-right: 0.3125rem;
 }
 
-.create-form p {
+.create-form .form-p {
   margin-bottom: 4.375rem;
+}
+
+.create-form .form-p,
+.form-block,
+.category-color {
   font-size: 1.125rem;
   font-weight: bold;
+}
+
+.form-block {
+  margin-bottom: 1.5625rem;
 }
 
 .create-form i {
@@ -308,6 +313,67 @@
 }
 
 
+/*
+タスク
+*/
+.create-form .fa-tasks {
+  color: #08C76F;
+}
+
+.create-form .fa-calendar-check {
+  color: #1394D8;
+}
+
+.priority {
+  color: #F7503B;
+}
+
+.severity {
+  color: #EF9350;
+}
+
+.select-stars {
+  color: #FFD421;
+}
+
+.create-form .fa-pen {
+  color: #8D8D8D;
+}
+
+.category-color {
+  margin-left: 0.9375rem;
+}
+
+.new-category-btn {
+  margin-top: 1.25rem;
+}
+
+.new-category {
+  font-weight: normal;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.new-category:hover {
+  color: #1394D8;
+  text-decoration: none;
+}
+
+.hide-new-category .create-input:first-child {
+  margin-left: 0;
+}
+
+.hide-new-category {
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.show-new-category {
+  display: block;
+}
+
+
 
 /*
 レスポンシブ
@@ -343,6 +409,7 @@
 
   .my-page-main {
     margin-left: 0;
+    padding-top: 5.714rem;
   }
 
   .form-submit-btn {
@@ -352,6 +419,10 @@
 
   .dashboard-footer {
     margin-left: 0;
+  }
+
+  .create-content {
+    padding: 3.125rem 1.4285rem;
   }
 
 
