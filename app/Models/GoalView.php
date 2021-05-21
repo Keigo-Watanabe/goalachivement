@@ -14,7 +14,7 @@ class GoalView
       $html = [];
 
       $date = new Carbon();
-      $goals = Goal::all();
+      $goals = Goal::orderBy('created_at', 'desc')->get();
 
       // 目標一覧取得
       foreach ($goals as $goal) {
@@ -42,10 +42,21 @@ class GoalView
         $goal_percent = $goal_now / $goal_term;
         $goal_percent = round($goal_percent, 2) * 100;
 
-        $html[] = '<span class="goal-bar-inner" style="width: '.$goal_percent.'%">';
+        if ($date > $goal->date) {
+          $html[] = '<span class="goal-bar-inner" style="width: 100%;">';
+        } else {
+          $html[] = '<span class="goal-bar-inner" style="width: '.$goal_percent.'%;">';
+        }
+
         $html[] = '<span class="goal-icon"><i class="fas fa-hiking"></i></span>';
         $html[] = '<span class="goal-persent-triangle"></span>';
-        $html[] = '<span class="goal-persent">'.$goal_percent.'%</span>';
+
+        if ($date > $goal->date) {
+          $html[] = '<span class="goal-persent">100%</span>';
+        } else {
+          $html[] = '<span class="goal-persent">'.$goal_percent.'%</span>';
+        }
+
         $html[] = '</span>';
         $html[] = '</div>';
         $html[] = '</div>';

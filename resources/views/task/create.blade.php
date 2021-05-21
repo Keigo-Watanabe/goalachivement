@@ -31,6 +31,9 @@
             <i class="fas fa-calendar-check"></i>カテゴリー
             <select class="create-input" name="task_category_id">
               <option value="0">未選択</option>
+              @foreach ($taskCategories as $taskCategory)
+                <option value="{{ $taskCategory->task_category_id }}">{{ $taskCategory->task_category }}</option>
+              @endforeach
             </select>
             <div class="form-block new-category-btn">
               <span id="new-category" class="new-category">または新しいカテゴリー</span>
