@@ -7,6 +7,15 @@
       </div>
 
       <div class="create-content task-create">
+        @if ($errors->any())
+         <div class="alert alert-danger">
+           <ul>
+             @foreach ($errors->all() as $error)
+               <li>{{ $error }}</li>
+             @endforeach
+           </ul>
+         </div>
+        @endif
         <form class="create-form task-create-form" action="/task" method="post">
           {{ csrf_field() }}
           <label for=""><span class="create-step">Step1.</span>目標を選択しよう</label>

@@ -41,6 +41,15 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
+        // タスクカテゴリーの重複チェック
+        $request->validate([
+          'task_category' => 'unique:task_categories',
+        ],
+        [
+          'task_category.unique' => '指定のカテゴリー『'.$request->input('task_category').'』はすでに存在しています',
+        ]);
+
+
         $task = new Task();
 
         $task->content = $request->input('content');

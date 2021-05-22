@@ -300,6 +300,16 @@
   background: linear-gradient(-135deg, #ff3d16, #ffcf7c);
 }
 
+.alert {
+  background-color: #ffbfbf;
+  padding: 0.9375rem 0.625rem;
+  margin-bottom: 1.875rem;
+}
+
+.alert ul li {
+  color: #ff2b2b;
+}
+
 
 /*
 目標
