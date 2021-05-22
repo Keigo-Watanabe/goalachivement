@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Goal;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class GoalController extends Controller
 {
@@ -53,7 +54,37 @@ class GoalController extends Controller
      */
     public function show(Goal $goal)
     {
-        //
+        $date = new Carbon();
+        $date = $date->copy()->timezone('Asia/Tokyo');
+
+        // 目標開始日〜終了日
+        $goal_term = $goal->created_at->diffInDays($goal->date);
+        // 目標開始日〜現在
+        $goal_now = $goal->created_at->diffInDays($date);
+
+        if ($goal_term == 0) {
+          $goal_term = 1;
+        } else if ($goal_now == 0) {
+          $goal_now = 1;
+        }
+
+        $goal_percent = $goal_now / $goal_term;
+
+        // 円グラフの角度
+        if ($goal_percent == 1) {
+          $goal_circle_percent = 360;
+        } else {
+          $goal_circle_percent = 360 * round($goal_percent, 2);
+        }
+        $goal_circle_percent = round($goal_circle_percent, 0);
+
+        // 目標の進行率
+        $goal_percent = round($goal_percent, 2) * 100;
+
+        // 残りの日数
+        $goal_remaining_days = $goal_term - $goal_now;
+
+        return view('goal.show', compact('goal', 'date', 'goal_circle_percent', 'goal_percent', 'goal_remaining_days'));
     }
 
     /**

@@ -9,17 +9,19 @@ use Carbon\Carbon;
 
 class GoalView
 {
+  // 目標一覧
   public function getGoal()
   {
       $html = [];
 
       $date = new Carbon();
+      $date = $date->copy()->timezone('Asia/Tokyo');
       $goals = Goal::orderBy('created_at', 'desc')->get();
 
       // 目標一覧取得
       foreach ($goals as $goal) {
         $html[] = '<li>';
-        $html[] = '<div class="goal-name">'.$goal->title.'</div>';
+        $html[] = '<div class="goal-name"><a href="/goal/'.$goal->goal_id.'">'.$goal->title.'</a></div>';
         $html[] = '<div class="goal-graph-content">';
         $html[] = '<div class="goal-start">';
         $html[] = '<span class="goal-start-date">'.date('n/j', strtotime($goal->created_at)).'</span>';

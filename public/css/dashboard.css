@@ -322,6 +322,80 @@
   color: #08C76F;
 }
 
+.goal-show-detail {
+  display: flex;
+}
+
+.goal-circle-graph,
+.goal-show-description {
+  width: 50%;
+}
+
+.goal-circle {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 16%);
+  border-radius: 50%;
+  width: 15.625rem;
+  height: 15.625rem;
+  background-color: #fff;
+  position: relative;
+}
+
+.goal-circle-inner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #FF5353 50%, transparent 0);
+  border-radius: 50%;
+  position: relative;
+  z-index: 0
+}
+
+.goal-circle-inner-white,
+.goal-circle-inner-red {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+.goal-circle-inner-white {
+  background: linear-gradient(to right, #fff 50%, transparent 0);
+}
+
+.goal-circle-inner-red {
+  background: linear-gradient(to right, #FF5353 50%, transparent 0);
+}
+
+.goal-circle-percent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 9.375rem;
+  height: 9.375rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 16%);
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goal-circle-big-percent,
+.small-percent {
+  color: #FF5353;
+  font-weight: bold;
+}
+
+.goal-circle-big-percent {
+  font-size: 2.625rem;
+}
+
+.small-percent {
+  font-size: 1.5rem;
+}
+
 
 /*
 タスク
