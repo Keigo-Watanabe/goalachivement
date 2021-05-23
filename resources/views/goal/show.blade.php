@@ -81,11 +81,50 @@
               @endif
               <p class="now-task">現在のタスク：</p>
               @if ($goal_remaining_days < 0)
-              <p class="remaining-days">目標達成まであと<span>0日</span></p>
+              <p class="remaining-days">目標達成！</p>
               @else
               <p class="remaining-days">目標達成まであと<span>{{ $goal_remaining_days }}日</span></p>
               @endif
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="task-chart-container">
+        <div class="task-list">
+          <div class="task-list-title">タスク</div>
+          <ul>
+            @if ($tasks)
+              @foreach ($tasks as $task)
+                <li>{{ $task->content }}</li>
+              @endforeach
+            @endif
+          </ul>
+        </div>
+
+        <div class="task-chart">
+          <div class="task-chart-inner">
+            <table>
+              <thead>
+                <tr>
+                  {!! $goal_chart !!}
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

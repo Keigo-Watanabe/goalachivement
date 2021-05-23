@@ -36,8 +36,8 @@ Route::get('lp/contact', function () {
     return view('lp.contact');
 });
 
-Route::resource('goal', GoalController::class);
+Route::resource('goal', GoalController::class)->middleware('auth');
 
-Route::resource('task', TaskController::class);
+Route::resource('task', TaskController::class)->middleware('auth');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [UserController::class, 'index'])->name('dashboard');

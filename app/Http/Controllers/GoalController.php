@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Goal;
+use App\Models\GoalChart;
+use App\Models\Task;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -36,6 +38,16 @@ class GoalController extends Controller
      */
     public function store(Request $request)
     {
+        // 目標のバリデーション
+        $request->validate([
+          'title' => 'required',
+          'date' => 'required',
+        ],
+        [
+          'title.required' => '目標を設定してください',
+          'date.required' => '達成日を設定してください',
+        ]);
+
         $goal = new Goal();
 
         $goal->title = $request->input('title');
@@ -84,7 +96,14 @@ class GoalController extends Controller
         // 残りの日数
         $goal_remaining_days = $goal_term - $goal_now;
 
-        return view('goal.show', compact('goal', 'date', 'goal_circle_percent', 'goal_percent', 'goal_remaining_days'));
+
+        // タスクを取得
+        $tasks = Task::where('goal_id', $goal->goal_id)->get();
+
+        $goal_view = new GoalChart($goal);
+        $goal_chart = $goal_view->goalChart();
+
+        return view('goal.show', compact('goal', 'date', 'goal_circle_percent', 'goal_percent', 'goal_remaining_days', 'tasks', 'goal_chart'));
     }
 
     /**

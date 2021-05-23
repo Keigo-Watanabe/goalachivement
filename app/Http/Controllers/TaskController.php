@@ -41,12 +41,22 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        // タスクカテゴリーの重複チェック
+        // タスクカテゴリーのバリデーション
         $request->validate([
+          'content' => 'required',
           'task_category' => 'unique:task_categories',
+          'start_date' => 'required',
+          'end_date' => 'required',
+          'priority' => 'required',
+          'severity' => 'required',
         ],
         [
+          'content.required' => 'タスクを記入してください',
           'task_category.unique' => '指定のカテゴリー『'.$request->input('task_category').'』はすでに存在しています',
+          'start_date.required' => '開始日を設定してください',
+          'end_date.required' => '完了日を設定してください',
+          'priority.required' => 'タスクの重要度を設定してください',
+          'severity.required' => 'タスクの緊急度を設定してください',
         ]);
 
 

@@ -338,6 +338,7 @@
   height: 15.625rem;
   background-color: #fff;
   position: relative;
+  margin: 0 auto;
 }
 
 .goal-circle-inner {
@@ -394,6 +395,27 @@
 
 .small-percent {
   font-size: 1.5rem;
+}
+
+.goal-show-description p {
+  font-size: 1.25rem;
+}
+
+.goal-achivement-percent {
+  color: #FF3333;
+  margin-bottom: 1.5rem;
+}
+
+.now-task {
+  margin-bottom: 1.875rem;
+}
+
+.remaining-days {
+  font-weight: bold;
+}
+
+.remaining-days span {
+  font-size: 1.75rem;
 }
 
 
@@ -458,10 +480,72 @@
 }
 
 
+/*
+目標詳細・タスク一覧
+*/
+.task-chart-container {
+  margin: 1.875rem;
+  border: solid 1px #707070;
+  display: flex;
+}
+
+.task-list {
+  width: 100%;
+  max-width: 18.75rem;
+}
+
+.task-list-title {
+  color: #fff;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #1A3F5F;
+  text-align: center;
+}
+
+.task-list ul {
+  border-right: solid 1px #707070;
+  padding: 0.9375rem;
+}
+
+.task-list ul li {
+  line-height: 3.5;
+  font-weight: bold;
+}
+
+.task-chart {
+  overflow: auto;
+}
+
+.task-chart-inner th,
+.task-chart-inner td {
+  font-weight: normal;
+  text-align: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-right: dashed 1px #707070;
+}
+
 
 /*
 レスポンシブ
 */
+
+
+/*
+〜768px
+*/
+@media screen and (max-width: 768px) {
+  .goal-show-detail {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .goal-circle-graph {
+    margin-bottom: 1.875rem;
+  }
+}
+
 
 /*
 〜640px
@@ -512,7 +596,7 @@
 
   /* 目標 */
   .goal-container {
-    margin: 7.14rem 0.93rem 0.93rem 0.93rem;
+    margin: 0.93rem;
   }
   .goal-content li {
     flex-direction: column;
