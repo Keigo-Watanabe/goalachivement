@@ -96,35 +96,26 @@
           <ul>
             @if ($tasks)
               @foreach ($tasks as $task)
-                <li>{{ $task->content }}</li>
+                <li>
+                  {{ $task->content }}
+                </li>
               @endforeach
             @endif
           </ul>
         </div>
 
-        <div class="task-chart">
+        <div id="task-chart" class="task-chart">
           <div class="task-chart-inner">
-            <table>
-              <thead>
-                <tr>
+            <div class="table">
+              <div class="thead">
+                <div id="table-row" class="table-row">
                   {!! $goal_chart !!}
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
+                </div>
+              </div>
+              <div class="tbody">
+                {!! $task_chart !!}
+              </div>
+            </div>
           </div>
         </div>
       </div>

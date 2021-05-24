@@ -102,8 +102,9 @@ class GoalController extends Controller
 
         $goal_view = new GoalChart($goal);
         $goal_chart = $goal_view->goalChart();
+        $task_chart = $goal_view->taskChart();
 
-        return view('goal.show', compact('goal', 'date', 'goal_circle_percent', 'goal_percent', 'goal_remaining_days', 'tasks', 'goal_chart'));
+        return view('goal.show', compact('goal', 'date', 'goal_circle_percent', 'goal_percent', 'goal_remaining_days', 'tasks', 'goal_chart', 'task_chart'));
     }
 
     /**
