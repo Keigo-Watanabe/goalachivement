@@ -64,7 +64,6 @@
                 <option value="#4caf50"></option>
                 <option value="#8bc34a"></option>
                 <option value="#cddc39"></option>
-                <option value="#ffeb3b"></option>
                 <option value="#ffc108"></option>
                 <option value="#ff9801"></option>
                 <option value="#ff5722"></option>

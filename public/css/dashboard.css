@@ -577,6 +577,190 @@
 
 
 /*
+タスク一覧
+*/
+.task-sammary {
+  margin: 4.6875rem 4.375rem;
+}
+
+.task-sammary-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: solid 3px #1A3F5F;
+  padding-bottom: 0.625rem;
+  margin-bottom: 2.625rem;
+}
+
+.task-sammary-title h2 {
+  font-size: 2rem;
+  color: #1A3F5F;
+  font-weight: bold;
+}
+
+.task-sammary-title ul {
+  display: flex;
+}
+
+.task-sammary-title ul li {
+  font-weight: bold;
+  margin-left: 1.5625rem;
+}
+
+.priority-list {
+  position: relative;
+  cursor: pointer;
+}
+
+.priority-list-box {
+  position: absolute;
+  top: calc(100% + 1.25rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  width: 12rem;
+  padding: 0.625rem;
+  box-shadow: 0 3px 10px rgba(51, 51, 51, 16%);
+  display: none;
+}
+
+.priority-list-box-show {
+  display: block;
+}
+
+.priority-list-box ul {
+  flex-direction: column;
+}
+
+.priority-list-box li {
+  line-height: 2;
+  margin-left: 0 !important;
+}
+
+.task-sammary-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.task-sammary-item {
+  width: 49%;
+  border: solid 1px #707070;
+  padding: 0.875rem;
+  margin-bottom: 0.9375rem;
+}
+
+.task-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-content-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.task-dot i {
+  color: #989898;
+  font-size: 1.125rem;
+  cursor: pointer;
+}
+
+.memo span {
+  color: #606060;
+}
+
+.task-name,
+.memo {
+  margin-bottom: 0.3125rem;
+}
+
+.task-category {
+  margin-bottom: 0.75rem;
+}
+
+.task-category span {
+  font-size: 0.75rem;
+  padding: 0.3125rem 0.5rem;
+  border-radius: 0.625rem;
+  color: #fff;
+}
+
+.task-term-complete {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-term i {
+  font-size: 1.125rem;
+  color: #1A3F5F;
+  margin-right: 0.3125rem;
+}
+
+.task-date {
+  font-size: 0.9375rem;
+}
+
+.complete-form input {
+  color: #fff;
+  font-size: 0.9375rem;
+  font-weight: bold;
+  background-color: #85E6B6;
+  padding: 0.3125rem 0.625rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.complete-form input:hover {
+  background-color: #3E9F6F;
+}
+
+/*
+タスクカテゴリー別一覧
+*/
+.task-category-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.task-category-box {
+  width: 49%;
+  background-color: #FFFEF2;
+  border: solid 1px #707070;
+  margin-bottom: 3.125rem;
+}
+
+.task-category-title {
+  background-color: #fff;
+  border-bottom: solid 1px #707070;
+}
+
+.task-category-title-color {
+  width: 100%;
+  height: 0.625rem;
+}
+
+.task-category-title span {
+  display: block;
+  width: fit-content;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.3125rem auto;
+}
+
+.task-category-list {
+  padding: 1.25rem 0.625rem 0 0.625rem;
+}
+
+.task-category-item {
+  width: 100%;
+  background-color: #fff;
+}
+
+
+
+/*
 レスポンシブ
 */
 

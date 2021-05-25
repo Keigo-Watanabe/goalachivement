@@ -17,7 +17,26 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+        $tasks = Task::orderBy('start_date', 'asc')->get();
+        $task_categories = TaskCategory::all();
+
+        return view('task.index', compact('tasks', 'task_categories'));
+    }
+
+    public function category()
+    {
+        $tasks = Task::orderBy('start_date', 'asc')->get();
+        $task_categories = TaskCategory::all();
+
+        return view('task.category', compact('tasks', 'task_categories'));
+    }
+
+    public function priority()
+    {
+        $tasks = Task::orderBy('start_date', 'asc')->get();
+        $task_categories = TaskCategory::all();
+
+        return view('task.priority', compact('tasks', 'task_categories'));
     }
 
     /**

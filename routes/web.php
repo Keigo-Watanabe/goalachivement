@@ -40,4 +40,8 @@ Route::resource('goal', GoalController::class)->middleware('auth');
 
 Route::resource('task', TaskController::class)->middleware('auth');
 
+Route::get('taskcategory', [TaskController::class, 'category'])->middleware('auth');
+
+Route::get('taskpriority', [TaskController::class, 'priority'])->middleware('auth');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [UserController::class, 'index'])->name('dashboard');

@@ -8,7 +8,21 @@ if (newCategory) {
     const hideCategory = document.getElementById('hide-new-category');
 
     hideCategory.classList.add('show-new-category');
-  })
+  });
+}
+
+
+/*
+タスク優先後（開閉ボタン）
+*/
+const priorityList = document.getElementById('priority-list');
+
+if (priorityList) {
+  priorityList.addEventListener('click', () => {
+    const priorityListBox = document.getElementById('priority-list-box');
+
+    priorityListBox.classList.toggle('priority-list-box-show');
+  });
 }
 
 
