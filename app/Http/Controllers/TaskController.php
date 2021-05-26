@@ -33,11 +33,54 @@ class TaskController extends Controller
 
     public function priority()
     {
+        // カラム「priority」のデータのみ取得
+        $tasks_priority_array = Task::orderBy('priority', 'desc')->orderBy('start_date', 'asc')->get(['priority']);
+        $task_priority = [];
+
+        foreach ($tasks_priority_array as $task) {
+          // データを配列に格納
+          $task_priority[] = $task->priority;
+        }
+
+        // 配列の重複チェック（同じ数字は1つにまとめる）
+        $task_priority = array_unique($task_priority);
+
         $tasks = Task::orderBy('start_date', 'asc')->get();
+
         $task_categories = TaskCategory::all();
 
-        return view('task.priority', compact('tasks', 'task_categories'));
+        return view('task.priority', compact('tasks', 'task_priority', 'task_categories'));
     }
+
+    public function severity()
+    {
+        // カラム「severity」のデータのみ取得
+        $tasks_severity_array = Task::orderBy('severity', 'desc')->orderBy('start_date', 'asc')->get(['severity']);
+        $task_severity = [];
+
+        foreach ($tasks_severity_array as $task) {
+          // データを配列に格納
+          $task_severity[] = $task->severity;
+        }
+
+        // 配列の重複チェック（同じ数字は1つにまとめる）
+        $task_severity = array_unique($task_severity);
+
+        $tasks = Task::orderBy('start_date', 'asc')->get();
+
+        $task_categories = TaskCategory::all();
+
+        return view('task.severity', compact('tasks', 'task_severity', 'task_categories'));
+    }
+
+    public function totallpriority()
+    {
+        $tasks = Task::orderBy('severity', 'desc')->orderBy('priority', 'desc')->get();
+        $task_categories = TaskCategory::all();
+
+        return view('task.totallpriority', compact('tasks', 'task_categories'));
+    }
+
 
     /**
      * Show the form for creating a new resource.

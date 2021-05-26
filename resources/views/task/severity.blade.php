@@ -2,7 +2,7 @@
     <div class="my-page-main">
       <div class="task-sammary">
         <div class="task-sammary-title">
-          <h2>タスク一覧 重要順</h2>
+          <h2>タスク一覧 緊急順</h2>
 
           <ul>
             <li><a href="/taskcategory">カテゴリー別</a></li>
@@ -22,22 +22,22 @@
 
         <div class="task-sammary-content">
           <div class="task-category-content">
-            @foreach ($task_priority as $priority)
+            @foreach ($task_severity as $severity)
               <div class="task-category-box">
                 <div class="task-category-title">
                   <div class="task-category-title-color"
-                    style="@if ($priority == 5) background-color: #FF001D;
-                           @elseif ($priority == 4) background-color: #FF8115;
-                           @elseif ($priority == 3) background-color: #FFC543;
-                           @elseif ($priority == 2) background-color: #FFE943;
-                           @elseif ($priority == 1) background-color: #FFFB91;
+                    style="@if ($severity == 5) background-color: #FF001D;
+                           @elseif ($severity == 4) background-color: #FF8115;
+                           @elseif ($severity == 3) background-color: #FFC543;
+                           @elseif ($severity == 2) background-color: #FFE943;
+                           @elseif ($severity == 1) background-color: #FFFB91;
                            @endif"></div>
-                  <span>重要度{{ $priority }}</span>
+                  <span>緊急度{{ $severity }}</span>
                 </div>
 
                 <ul class="task-category-list">
                   @foreach ($tasks as $task)
-                    @if ($task->priority == $priority)
+                    @if ($task->severity == $severity)
                     <li class="task-sammary-item task-category-item">
                       <div class="task-name">
                         <span class="task-content-name">{{ $task->content }}</span>
