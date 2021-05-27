@@ -75,6 +75,24 @@
   color: #fff;
 }
 
+.task-btn {
+  cursor: pointer;
+}
+
+.task-nav-menu {
+  margin-top: 1.56rem;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.task-nav-menu-show {
+  display: block;
+}
+
+.task-nav-menu li a {
+  font-weight: normal !important;
+}
+
 
 /*
 マイページ内容
@@ -600,6 +618,9 @@
 
 .task-sammary-title ul {
   display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 17.8125rem;
 }
 
 .task-sammary-title ul li {
@@ -759,10 +780,47 @@
 }
 
 
+/*
+タスク総合順
+*/
+.task-totall-priority-item {
+  position: relative;
+  padding: 2.5rem 0.875rem 0.875rem 0.875rem;
+}
+
+.task-priority-number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.125rem 0.625rem;
+  background-color: #1A3F5F;
+}
+
+.task-priority-number span {
+  color: #fff;
+  font-weight: bold;
+}
+
+
 
 /*
 レスポンシブ
 */
+
+
+/*
+〜1024px
+*/
+@media screen and (max-width: 1024px) {
+  .task-sammary-title {
+    flex-direction: column;
+  }
+
+  .task-sammary-title h2 {
+    align-self: flex-start;
+    margin-bottom: 1.875rem;
+  }
+}
 
 
 /*
@@ -776,6 +834,12 @@
 
   .goal-circle-graph {
     margin-bottom: 1.875rem;
+  }
+
+  /* タスク一覧 */
+  .task-sammary-item,
+  .task-category-box {
+    width: 100%;
   }
 }
 
@@ -840,5 +904,10 @@
     margin-bottom: 1.25rem;
     width: 100%;
     border-bottom: solid 1px #333;
+  }
+
+  /* タスク一覧 */
+  .task-sammary {
+    margin: 1.875rem 1.25rem;
   }
 }

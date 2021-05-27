@@ -125,7 +125,11 @@
                   <a href="/goal/create"><i class="fas fa-flag"></i>目標</a>
                 </li>
                 <li>
-                  <a href="/task/create"><i class="fas fa-tasks"></i>タスク</a>
+                  <a id="task-btn" class="task-btn"><i class="fas fa-tasks"></i>タスク</a>
+                  <ul id="task-nav-menu" class="task-nav-menu">
+                    <li><a href="/task">タスク一覧</a></li>
+                    <li><a href="/task/create">タスク追加</a></li>
+                  </ul>
                 </li>
                 <li>
                   <a href=""><i class="fas fa-calendar-alt"></i>予定</a>

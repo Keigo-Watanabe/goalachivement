@@ -22,8 +22,11 @@
 
         <div class="task-sammary-content">
           <ul class="task-sammary-list">
-            @foreach ($tasks as $task)
-            <li class="task-sammary-item">
+            @foreach ($tasks as $number => $task)
+            <li class="task-sammary-item task-totall-priority-item">
+              <div class="task-priority-number">
+                <span>{{ $number + 1 }}</span>
+              </div>
               <div class="task-name">
                 <span class="task-content-name">{{ $task->content }}</span>
                 <span class="task-dot"><i class="fas fa-ellipsis-h"></i></span>

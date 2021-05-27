@@ -13,6 +13,20 @@ if (newCategory) {
 
 
 /*
+ヘッダーメニュー・タスク（開閉ボタン）
+*/
+const taskBtn = document.getElementById('task-btn');
+
+if (taskBtn) {
+  taskBtn.addEventListener('click', () => {
+    const taskNavMenu = document.getElementById('task-nav-menu');
+
+    taskNavMenu.classList.toggle('task-nav-menu-show');
+  });
+}
+
+
+/*
 タスク優先後（開閉ボタン）
 */
 const priorityList = document.getElementById('priority-list');
