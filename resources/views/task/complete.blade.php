@@ -2,7 +2,7 @@
     <div class="my-page-main">
       <div class="task-sammary">
         <div class="task-sammary-title">
-          <h2>タスク一覧 総合優先度（重要度 × 緊急度）</h2>
+          <h2>タスク一覧 完了済</h2>
 
           <ul>
             <li><a href="/taskcategory">カテゴリー別</a></li>
@@ -22,12 +22,9 @@
 
         <div class="task-sammary-content">
           <ul class="task-sammary-list">
-            @foreach ($tasks as $number => $task)
-              @if ($task->complete == 0)
-              <li class="task-sammary-item task-totall-priority-item">
-                <div class="task-priority-number">
-                  <span>{{ $number + 1 }}</span>
-                </div>
+            @foreach ($tasks as $task)
+              @if ($task->complete == 1)
+              <li class="task-sammary-item">
                 <div class="task-name">
                   <span class="task-content-name">{{ $task->content }}</span>
                   <span class="task-dot"><i class="fas fa-ellipsis-h"></i></span>
@@ -51,7 +48,7 @@
                     <span class="task-date">{{ date('n月j日', strtotime($task->start_date)) }}〜{{ date('n月j日', strtotime($task->end_date)) }}</span>
                   </div>
 
-                  <form class="complete-form" action="" method="post">
+                  <form class="complete-form" action="/task/{{ $task->task_id }}" method="post">
                     {{ csrf_field() }}
                     <input type="hidden" name="_method" value="PUT">
                     <input type="submit" name="complete" value="完了">

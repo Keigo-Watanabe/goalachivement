@@ -16,7 +16,7 @@
                 </ul>
               </div>
             </li>
-            <li><a href="">完了済</a></li>
+            <li><a href="/taskcomplete">完了済</a></li>
           </ul>
         </div>
 
@@ -31,6 +31,7 @@
 
                 <ul class="task-category-list">
                   @foreach ($tasks as $task)
+                    @if ($task->complete == 0)
                     @if ($task_category->task_category_id == $task->task_category_id)
                     <li class="task-sammary-item task-category-item">
                       <div class="task-name">
@@ -59,6 +60,7 @@
                         </form>
                       </div>
                     </li>
+                    @endif
                     @endif
                   @endforeach
                 </ul>

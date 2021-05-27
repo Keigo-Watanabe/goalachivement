@@ -16,44 +16,46 @@
                 </ul>
               </div>
             </li>
-            <li><a href="">完了済</a></li>
+            <li><a href="/taskcomplete">完了済</a></li>
           </ul>
         </div>
 
         <div class="task-sammary-content">
           <ul class="task-sammary-list">
             @foreach ($tasks as $task)
-            <li class="task-sammary-item">
-              <div class="task-name">
-                <span class="task-content-name">{{ $task->content }}</span>
-                <span class="task-dot"><i class="fas fa-ellipsis-h"></i></span>
-              </div>
-
-              <div class="memo">
-                <span>{{ $task->memo }}</span>
-              </div>
-
-              <div class="task-category">
-                @foreach ($task_categories as $task_category)
-                  @if ($task_category->task_category_id == $task->task_category_id)
-                    <span style="background-color: {{ $task_category->category_color }};">{{ $task_category->task_category }}</span>
-                  @endif
-                @endforeach
-              </div>
-
-              <div class="task-term-complete">
-                <div class="task-term">
-                  <i class="fas fa-calendar-alt"></i>
-                  <span class="task-date">{{ date('n月j日', strtotime($task->start_date)) }}〜{{ date('n月j日', strtotime($task->end_date)) }}</span>
+              @if ($task->complete == 0)
+              <li class="task-sammary-item">
+                <div class="task-name">
+                  <span class="task-content-name">{{ $task->content }}</span>
+                  <span class="task-dot"><i class="fas fa-ellipsis-h"></i></span>
                 </div>
 
-                <form class="complete-form" action="" method="post">
-                  {{ csrf_field() }}
-                  <input type="hidden" name="_method" value="PUT">
-                  <input type="submit" name="complete" value="完了">
-                </form>
-              </div>
-            </li>
+                <div class="memo">
+                  <span>{{ $task->memo }}</span>
+                </div>
+
+                <div class="task-category">
+                  @foreach ($task_categories as $task_category)
+                    @if ($task_category->task_category_id == $task->task_category_id)
+                      <span style="background-color: {{ $task_category->category_color }};">{{ $task_category->task_category }}</span>
+                    @endif
+                  @endforeach
+                </div>
+
+                <div class="task-term-complete">
+                  <div class="task-term">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="task-date">{{ date('n月j日', strtotime($task->start_date)) }}〜{{ date('n月j日', strtotime($task->end_date)) }}</span>
+                  </div>
+
+                  <form class="complete-form" action="/task/{{ $task->task_id }}" method="post">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="_method" value="PUT">
+                    <input type="submit" name="complete" value="完了">
+                  </form>
+                </div>
+              </li>
+              @endif
             @endforeach
           </ul>
         </div>

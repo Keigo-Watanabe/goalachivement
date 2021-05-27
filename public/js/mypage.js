@@ -13,6 +13,19 @@ if (newCategory) {
 
 
 /*
+ヘッダー（レスポンシブ）
+*/
+const header = document.getElementById('my-page-header');
+const hamburgerBtn = document.getElementById('hamburger-btn')
+
+if (hamburgerBtn) {
+  hamburgerBtn.addEventListener('click', () => {
+    header.classList.toggle('my-page-header-block');
+  });
+}
+
+
+/*
 ヘッダーメニュー・タスク（開閉ボタン）
 */
 const taskBtn = document.getElementById('task-btn');

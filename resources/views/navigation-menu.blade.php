@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="my-page-header">
+<nav x-data="{ open: false }" id="my-page-header" class="my-page-header">
     <!-- Primary Navigation Menu -->
     <div class="">
         <div class="my-page-header-inner">
@@ -108,7 +108,7 @@
 
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 focus:outline-none focus:text-gray-500 transition">
+                <button @click="open = ! open" id="hamburger-btn" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 focus:outline-none focus:text-gray-500 transition">
                     <i class="fas fa-bars hamburger-btn"></i>
                 </button>
             </div>
@@ -142,95 +142,99 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden responsive-nav-menu">
 
-        <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200">
-            <div class="flex items-center px-4">
-                @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                    <div class="flex-shrink-0 mr-3">
-                        <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
-                    </div>
-                @endif
+      <!-- Responsive Settings Options -->
+      <div class="pt-4 pb-1 border-t border-gray-200">
+          <div class="flex items-center px-4">
+              @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                  <div class="flex-shrink-0 mr-3">
+                      <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                  </div>
+              @endif
 
-                <div>
-                    <div class="font-medium text-base profile-link-btn">{{ Auth::user()->name }}</div>
-                </div>
-            </div>
+              <div>
+                  <div class="font-medium text-base profile-link-btn">{{ Auth::user()->name }}</div>
+              </div>
+          </div>
 
-            <div class="mt-3 space-y-1">
-                <!-- Account Management -->
-                <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
-                    {{ __('Profile') }}
-                </x-jet-responsive-nav-link>
+          <div class="mt-3 space-y-1">
+              <!-- Account Management -->
+              <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
+                  {{ __('Profile') }}
+              </x-jet-responsive-nav-link>
 
-                @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                    <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
-                        {{ __('API Tokens') }}
-                    </x-jet-responsive-nav-link>
-                @endif
+              @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                  <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
+                      {{ __('API Tokens') }}
+                  </x-jet-responsive-nav-link>
+              @endif
 
-                <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
+              <!-- Authentication -->
+              <form method="POST" action="{{ route('logout') }}">
+                  @csrf
 
-                    <x-jet-responsive-nav-link href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                    this.closest('form').submit();">
-                        {{ __('Logout') }}
-                    </x-jet-responsive-nav-link>
-                </form>
+                  <x-jet-responsive-nav-link href="{{ route('logout') }}"
+                                 onclick="event.preventDefault();
+                                  this.closest('form').submit();">
+                      {{ __('Logout') }}
+                  </x-jet-responsive-nav-link>
+              </form>
 
-                <!-- Team Management -->
-                @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
-                    <div class="border-t border-gray-200"></div>
+              <!-- Team Management -->
+              @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
+                  <div class="border-t border-gray-200"></div>
 
-                    <div class="block px-4 py-2 text-xs text-gray-400">
-                        {{ __('Manage Team') }}
-                    </div>
+                  <div class="block px-4 py-2 text-xs text-gray-400">
+                      {{ __('Manage Team') }}
+                  </div>
 
-                    <!-- Team Settings -->
-                    <x-jet-responsive-nav-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}" :active="request()->routeIs('teams.show')">
-                        {{ __('Team Settings') }}
-                    </x-jet-responsive-nav-link>
+                  <!-- Team Settings -->
+                  <x-jet-responsive-nav-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}" :active="request()->routeIs('teams.show')">
+                      {{ __('Team Settings') }}
+                  </x-jet-responsive-nav-link>
 
-                    @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
-                        <x-jet-responsive-nav-link href="{{ route('teams.create') }}" :active="request()->routeIs('teams.create')">
-                            {{ __('Create New Team') }}
-                        </x-jet-responsive-nav-link>
-                    @endcan
+                  @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
+                      <x-jet-responsive-nav-link href="{{ route('teams.create') }}" :active="request()->routeIs('teams.create')">
+                          {{ __('Create New Team') }}
+                      </x-jet-responsive-nav-link>
+                  @endcan
 
-                    <div class="border-t border-gray-200"></div>
+                  <div class="border-t border-gray-200"></div>
 
-                    <!-- Team Switcher -->
-                    <div class="block px-4 py-2 text-xs text-gray-400">
-                        {{ __('Switch Teams') }}
-                    </div>
+                  <!-- Team Switcher -->
+                  <div class="block px-4 py-2 text-xs text-gray-400">
+                      {{ __('Switch Teams') }}
+                  </div>
 
-                    @foreach (Auth::user()->allTeams() as $team)
-                        <x-jet-switchable-team :team="$team" component="jet-responsive-nav-link" />
-                    @endforeach
-                @endif
-            </div>
-        </div>
+                  @foreach (Auth::user()->allTeams() as $team)
+                      <x-jet-switchable-team :team="$team" component="jet-responsive-nav-link" />
+                  @endforeach
+              @endif
+          </div>
+      </div>
 
-        <!-- ホーム -->
-        <div class="my-page-home my-page-sp">
-          <a href="/dashboard"><i class="fas fa-home"></i>ホーム</a>
-        </div>
+      <!-- ホーム -->
+      <div class="my-page-home my-page-sp">
+        <a href="/dashboard"><i class="fas fa-home"></i>ホーム</a>
+      </div>
 
-        <!-- ナビゲーション -->
-        <nav class="my-page-nav my-page-sp">
-          <ul>
-            <li>
-              <a href="/goal/create"><i class="fas fa-flag"></i>目標</a>
-            </li>
-            <li>
-              <a href="/task/create"><i class="fas fa-tasks"></i>タスク</a>
-            </li>
-            <li>
-              <a href=""><i class="fas fa-calendar-alt"></i>予定</a>
-            </li>
-          </ul>
-        </nav>
+      <!-- ナビゲーション -->
+      <nav class="my-page-nav my-page-sp">
+        <ul>
+          <li>
+            <a href="/goal/create"><i class="fas fa-flag"></i>目標</a>
+          </li>
+          <li>
+            <a id="task-btn" class="task-btn"><i class="fas fa-tasks"></i>タスク</a>
+            <ul id="task-nav-menu" class="task-nav-menu task-nav-menu-show">
+              <li><a href="/task">タスク一覧</a></li>
+              <li><a href="/task/create">タスク追加</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href=""><i class="fas fa-calendar-alt"></i>予定</a>
+          </li>
+        </ul>
+      </nav>
 
     </div>
 </nav>

@@ -853,6 +853,12 @@
     height: auto;
   }
 
+  .my-page-header-block {
+    bottom: 0;
+    right: 0;
+    overflow-y: auto;
+  }
+
   .my-page-header-inner {
     display: flex;
     justify-content: space-between;

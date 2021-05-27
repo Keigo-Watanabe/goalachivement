@@ -48,4 +48,6 @@ Route::get('taskseverity', [TaskController::class, 'severity'])->middleware('aut
 
 Route::get('tasktotallpriority', [TaskController::class, 'totallpriority'])->middleware('auth');
 
+Route::get('taskcomplete', [TaskController::class, 'complete'])->middleware('auth');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [UserController::class, 'index'])->name('dashboard');

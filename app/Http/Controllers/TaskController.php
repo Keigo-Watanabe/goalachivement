@@ -75,10 +75,18 @@ class TaskController extends Controller
 
     public function totallpriority()
     {
-        $tasks = Task::orderBy('severity', 'desc')->orderBy('priority', 'desc')->get();
+        $tasks = Task::orderBy('severity', 'desc')->orderBy('priority', 'desc')->where('complete', 0)->get();
         $task_categories = TaskCategory::all();
 
         return view('task.totallpriority', compact('tasks', 'task_categories'));
+    }
+
+    public function complete()
+    {
+        $tasks = Task::orderBy('start_date', 'asc')->where('complete', 1)->get();
+        $task_categories = TaskCategory::all();
+
+        return view('task.complete', compact('tasks', 'task_categories'));
     }
 
 
@@ -203,7 +211,10 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        //
+        $task->complete = 1;
+        $task->save();
+
+        return redirect()->route('task.index');
     }
 
     /**
