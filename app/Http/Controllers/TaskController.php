@@ -199,7 +199,10 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
-        //
+        $goals = Goal::all();
+        $taskCategories = TaskCategory::all();
+
+        return view('task.edit', compact('task', 'goals', 'taskCategories'));
     }
 
     /**
@@ -211,7 +214,69 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        $task->complete = 1;
+        if ($request->input('complete')) {
+          $task->complete = 1;
+        }
+
+        // タスクカテゴリーのバリデーション
+        $request->validate([
+          'content' => 'required',
+          'task_category' => 'unique:task_categories',
+          'start_date' => 'required',
+          'end_date' => 'required',
+          'priority' => 'required',
+          'severity' => 'required',
+        ],
+        [
+          'content.required' => 'タスクを記入してください',
+          'task_category.unique' => '指定のカテゴリー『'.$request->input('task_category').'』はすでに存在しています',
+          'start_date.required' => '開始日を設定してください',
+          'end_date.required' => '完了日を設定してください',
+          'priority.required' => 'タスクの重要度を設定してください',
+          'severity.required' => 'タスクの緊急度を設定してください',
+        ]);
+
+        $task->content = $request->input('content');
+        $task->goal_id = $request->input('goal_id');
+        $task->user_id = Auth::id();
+
+        // もしカテゴリーが追加されたら
+        if ($request->input('task_category')) {
+          // タスクカテゴリーを追加
+          $task_category = new TaskCategory();
+
+          $task_category->task_category = $request->input('task_category');
+          $task_category->category_color = $request->input('category_color');
+          $task_category->save();
+
+          // タスクカテゴリーの最大値のidを取得
+          $task_categories = TaskCategory::max('task_category_id');
+
+          // もしタスクカテゴリーが存在したら最大値のidを設定
+          if ($task_categories) {
+            $task->task_category_id = $task_categories;
+          // タスクカテゴリーがなければidを1に設定
+          } else {
+            $task->task_category_id = 1;
+          }
+
+        } else {
+          $task->task_category_id = $request->input('task_category_id');
+        }
+
+        $task->start_date = $request->input('start_date');
+        $task->end_date = $request->input('end_date');
+        $task->priority = $request->input('priority');
+        $task->severity = $request->input('severity');
+
+        // メモが入力されたら追加
+        if ($request->input('memo')) {
+          $task->memo = $request->input('memo');
+        // メモが入力されなかったらnull
+        } else {
+          $task->memo = '';
+        }
+
         $task->save();
 
         return redirect()->route('task.index');
@@ -225,6 +290,8 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
-        //
+        $task->delete();
+
+        return redirect()->route('task.index');
     }
 }

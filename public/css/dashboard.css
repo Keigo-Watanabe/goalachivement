@@ -643,6 +643,7 @@
   padding: 0.625rem;
   box-shadow: 0 3px 10px rgba(51, 51, 51, 16%);
   display: none;
+  z-index: 100;
 }
 
 .priority-list-box-show {
@@ -674,6 +675,7 @@
 .task-name {
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 .task-content-name {
@@ -684,6 +686,33 @@
 .task-dot i {
   color: #989898;
   font-size: 1.125rem;
+  cursor: pointer;
+}
+
+.task-edit-menu {
+  background-color: #fff;
+  position: absolute;
+  bottom: -4.375rem;
+  right: 0;
+  padding: 0.625rem 0.9375rem;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 16%);
+  display: none;
+}
+
+.task-edit-menu a,
+.task-delete input[type="submit"]{
+  padding: 0 0.625rem;
+  font-size: 0.875rem;
+}
+
+.task-edit-menu-open {
+  display: block;
+}
+
+.task-delete input[type="submit"] {
+  color: #fff;
+  background-color: #ff4444;
+  margin-top: 0.625rem;
   cursor: pointer;
 }
 

@@ -43,6 +43,14 @@
                       <div class="task-name">
                         <span class="task-content-name">{{ $task->content }}</span>
                         <span class="task-dot"><i class="fas fa-ellipsis-h"></i></span>
+                        <div class="task-edit-menu">
+                          <a href="/task/{{ $task->task_id }}/edit">編集</a>
+                          <form class="task-delete" action="/task/{{ $task->task_id }}" method="post" onsubmit="if(confirm('削除します。よろしいですか？')) { return true } else { return false }">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="submit" name="delete" value="削除">
+                          </form>
+                        </div>
                       </div>
 
                       <div class="memo">
