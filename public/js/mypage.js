@@ -71,6 +71,27 @@ if (editMenu) {
 }
 
 
+/*
+タスクカテゴリー一覧
+*/
+let taskCategoryBox = document.querySelectorAll('.task-category-box');
+
+if (taskCategoryBox) {
+  for (let i = 0; i < taskCategoryBox.length; i++) {
+    let each_taskCategoryBox = taskCategoryBox[i];
+    let item = each_taskCategoryBox.lastElementChild;
+
+    let itemList = item.childElementCount;
+
+    // タスクリストの数が0の場合はカテゴリーを非表示
+    if (itemList == 0) {
+      let parentBox = item.parentNode;
+      parentBox.style.display = 'none';
+    }
+  }
+}
+
+
 
 /*
 タスクガントチャート（現在日までスクロール）
