@@ -21,6 +21,13 @@
         </div>
 
         <div class="task-sammary-content">
+          @if (session('message'))
+            <div class="success-message">
+              @if (session('task_content'))
+                『{{ session('task_content') }}』{{ session('message') }}
+              @endif
+            </div>
+          @endif
           <ul class="task-sammary-list">
             @foreach ($tasks as $task)
               @if ($task->complete == 0)
@@ -33,6 +40,7 @@
                     <form class="task-delete" action="/task/{{ $task->task_id }}" method="post" onsubmit="if(confirm('削除します。よろしいですか？')) { return true } else { return false }">
                       <input type="hidden" name="_method" value="DELETE">
                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                      <input type="hidden" name="content" value="{{ $task->content }}">
                       <input type="submit" name="delete" value="削除">
                     </form>
                   </div>
@@ -59,6 +67,7 @@
                   <form class="complete-form" action="/task/{{ $task->task_id }}" method="post">
                     {{ csrf_field() }}
                     <input type="hidden" name="_method" value="PUT">
+                    <input type="hidden" name="content" value="{{ $task->content }}">
                     <input type="submit" name="complete" value="完了">
                   </form>
                 </div>

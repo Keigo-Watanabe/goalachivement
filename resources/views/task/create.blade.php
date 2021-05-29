@@ -7,6 +7,11 @@
       </div>
 
       <div class="create-content task-create">
+        @if (session('message'))
+          <div class="success-message">
+            {{ session('message') }}
+          </div>
+        @endif
         @if ($errors->any())
          <div class="alert alert-danger">
            <ul>
@@ -122,6 +127,8 @@
             <input class="form-submit-btn" type="submit" value="追加">
           </div>
         </form>
+
+        <a class="task-list-page-btn" href="/task">タスク一覧ページへ</a>
       </div>
     </div>
 </x-app-layout>

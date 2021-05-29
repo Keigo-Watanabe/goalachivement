@@ -42,6 +42,7 @@
                           <form class="task-delete" action="/task/{{ $task->task_id }}" method="post" onsubmit="if(confirm('削除します。よろしいですか？')) { return true } else { return false }">
                             <input type="hidden" name="_method" value="DELETE">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="content" value="{{ $task->content }}">
                             <input type="submit" name="delete" value="削除">
                           </form>
                         </div>
@@ -61,9 +62,10 @@
                           <span class="task-date">{{ date('n月j日', strtotime($task->start_date)) }}〜{{ date('n月j日', strtotime($task->end_date)) }}</span>
                         </div>
 
-                        <form class="complete-form" action="" method="post">
+                        <form class="complete-form" action="/task/{{ $task->task_id }}" method="post">
                           {{ csrf_field() }}
                           <input type="hidden" name="_method" value="PUT">
+                          <input type="hidden" name="content" value="{{ $task->content }}">
                           <input type="submit" name="complete" value="完了">
                         </form>
                       </div>

@@ -98,9 +98,10 @@ class TaskController extends Controller
     public function create()
     {
         $goals = Goal::all();
+        $goals_latest = Goal::max('goal_id');
         $taskCategories = TaskCategory::all();
 
-        return view('task.create', compact('goals', 'taskCategories'));
+        return view('task.create', compact('goals', 'goals_latest', 'taskCategories'));
     }
 
     /**
@@ -177,7 +178,7 @@ class TaskController extends Controller
 
         $task->save();
 
-        return redirect()->route('task.create');
+        return redirect()->route('task.create')->with('message', 'タスクを追加しました');
     }
 
     /**
@@ -215,7 +216,25 @@ class TaskController extends Controller
     public function update(Request $request, Task $task)
     {
         if ($request->input('complete')) {
+          $task->content = $request->input('content');
           $task->complete = 1;
+          $task->save();
+
+          return redirect()->route('task.index')->with([
+            'task_content' => $task->content,
+            'message' => 'が完了しました',
+          ]);
+        }
+
+        if ($request->input('uncomplete')) {
+          $task->content = $request->input('content');
+          $task->complete = 0;
+          $task->save();
+
+          return redirect()->to('/taskcomplete')->with([
+            'task_content' => $task->content,
+            'message' => 'の完了を取り消しました',
+          ]);
         }
 
         // タスクカテゴリーのバリデーション
@@ -279,7 +298,10 @@ class TaskController extends Controller
 
         $task->save();
 
-        return redirect()->route('task.index');
+        return redirect()->route('task.index')->with([
+          'task_content' => $task->content,
+          'message' => 'の編集が完了しました',
+        ]);
     }
 
     /**
@@ -288,10 +310,14 @@ class TaskController extends Controller
      * @param  \App\Models\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Task $task)
+    public function destroy(Request $request, Task $task)
     {
+        $task->content = $request->input('content');
         $task->delete();
 
-        return redirect()->route('task.index');
+        return redirect()->route('task.index')->with([
+          'task_content' => $task->content,
+          'message' => 'を削除しました',
+        ]);
     }
 }

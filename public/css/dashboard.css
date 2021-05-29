@@ -328,6 +328,23 @@
   color: #ff2b2b;
 }
 
+.success-message {
+  background-color: #bff2e4;
+  padding: 0.9375rem 0.625rem;
+  margin-bottom: 1.875rem;
+  color: #4baf8c;
+}
+
+.task-list-page-btn {
+  color: #2176FF;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
+.task-list-page-btn:hover {
+  text-decoration: none;
+}
+
 
 /*
 目標
@@ -665,8 +682,14 @@
   justify-content: space-between;
 }
 
+.task-sammary-list::after {
+  display: block;
+  content: '';
+  width: 32%;
+}
+
 .task-sammary-item {
-  width: 49%;
+  width: 32%;
   border: solid 1px #707070;
   padding: 0.875rem;
   margin-bottom: 0.9375rem;
@@ -679,7 +702,7 @@
 }
 
 .task-content-name {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -742,18 +765,18 @@
 }
 
 .task-term i {
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: #1A3F5F;
   margin-right: 0.3125rem;
 }
 
 .task-date {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
 }
 
 .complete-form input {
   color: #fff;
-  font-size: 0.9375rem;
+  font-size: 0.75rem;
   font-weight: bold;
   background-color: #85E6B6;
   padding: 0.3125rem 0.625rem;
@@ -770,12 +793,18 @@
 */
 .task-category-content {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.task-category-content::after {
+  display: block;
+  content: '';
+  width: 32%;
 }
 
 .task-category-box {
-  width: 49%;
+  width: 32%;
   background-color: #FFFEF2;
   border: solid 1px #707070;
   margin-bottom: 3.125rem;
@@ -806,6 +835,7 @@
 .task-category-item {
   width: 100%;
   background-color: #fff;
+  margin: 0 0 0.9375rem 0;
 }
 
 
@@ -848,6 +878,16 @@
   .task-sammary-title h2 {
     align-self: flex-start;
     margin-bottom: 1.875rem;
+  }
+
+  /* タスク一覧 */
+  .task-sammary-item,
+  .task-category-box {
+    width: 49%;
+  }
+
+  .task-category-item {
+    width: 100%;
   }
 }
 

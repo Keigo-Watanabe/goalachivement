@@ -55,7 +55,7 @@ class GoalController extends Controller
 
         $goal->save();
 
-        return redirect()->route('goal.create');
+        return redirect()->route('task.create')->with('message', '目標が設定されました。次はタスクを追加しましょう。');
     }
 
     /**
