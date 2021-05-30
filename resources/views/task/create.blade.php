@@ -92,27 +92,42 @@
           </div>
 
           <label for=""><span class="create-step">Step5.</span>タスクの重要度と緊急度を設定しよう</label>
+          <span id="matrix-description" class="matrix-description"><i class="far fa-question-circle"></i>重要度・緊急度とは？</span>
+          <div id="matrix-description-content" class="matrix-description-content matrix-hide">
+            <div class="matrix-image">
+              <img src="/image/matrix.jpg">
+            </div>
+
+            <div class="matrix-sentence">
+              <p>重要度・緊急度とは、時間管理のマトリックスを利用したタスク管理法です。</p>
+              <p>マトリックスは、①重要度が高く、緊急度も高いタスク、②重要度は高いが、緊急度は低いタスク、③緊急度は高いが、重要度は低いタスク、④重要度が低く、緊急度も低いタスクの4つの領域に分けられます。</p>
+              <p>タスクをこの4つの領域に分けることで、優先度を把握し、より効率的にタスクを管理できるようになります。</p>
+            </div>
+          </div>
+
           <div class="form-p">
             <div class="form-block">
               <i class="fas fa-star priority"></i>重要度
               <select class="create-input select-stars" name="priority">
-                <option hidden>★ 〜 ★★★★★</option>
+                <option hidden>★ 〜 ★★★★★★</option>
                 <option value="1">★</option>
                 <option value="2">★★</option>
                 <option value="3">★★★</option>
                 <option value="4">★★★★</option>
                 <option value="5">★★★★★</option>
+                <option value="6">★★★★★★</option>
               </select>
             </div>
             <div class="form-block">
               <i class="fas fa-star severity"></i>緊急度
               <select class="create-input select-stars" name="severity">
-                <option hidden>★ 〜 ★★★★★</option>
+                <option hidden>★ 〜 ★★★★★★</option>
                 <option value="1">★</option>
                 <option value="2">★★</option>
                 <option value="3">★★★</option>
                 <option value="4">★★★★</option>
                 <option value="5">★★★★★</option>
+                <option value="6">★★★★★★</option>
               </select>
             </div>
           </div>

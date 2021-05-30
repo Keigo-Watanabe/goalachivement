@@ -2,7 +2,7 @@
     <div class="my-page-main">
       <div class="task-sammary">
         <div class="task-sammary-title">
-          <h2>タスク一覧 総合優先度（重要度 × 緊急度）</h2>
+          <h2>タスク一覧 総合優先度</h2>
 
           <ul>
             <li><a href="/taskcategory">カテゴリー別</a></li>
@@ -20,7 +20,76 @@
           </ul>
         </div>
 
+        <div class="task-matrix">
+          <table class="matrix-table">
+            <tr>
+              <td class="table-left priority-triangle">高</td>
+              <td class="table-no-2 matrix-td"></td>
+              <td class="table-no-2 matrix-td"></td>
+              <td class="table-no-2 matrix-td"></td>
+              <td class="table-no-1 matrix-td"></td>
+              <td class="table-no-1 matrix-td"></td>
+              <td class="table-no-1 matrix-td"></td>
+            </tr>
+            <tr>
+              <td class="table-left" rowspan="4"><span class="th-priority">重要度</span></td>
+              <td class="table-no-2 matrix-td"></td>
+              <td class="table-no-2 matrix-td"></td>
+              <td class="table-no-2 matrix-td"></td>
+              <td class="table-no-1 matrix-td"></td>
+              <td class="table-no-1 matrix-td"></td>
+              <td class="table-no-1 matrix-td"></td>
+            </tr>
+            <tr>
+              <td class="table-no-2 matrix-td"></td>
+              <td class="table-no-2 matrix-td"></td>
+              <td class="table-no-2 matrix-td"></td>
+              <td class="table-no-1 matrix-td"></td>
+              <td class="table-no-1 matrix-td"></td>
+              <td class="table-no-1 matrix-td"></td>
+            </tr>
+            <tr>
+              <td class="table-no-4 matrix-td"></td>
+              <td class="table-no-4 matrix-td"></td>
+              <td class="table-no-4 matrix-td"></td>
+              <td class="table-no-3 matrix-td"></td>
+              <td class="table-no-3 matrix-td"></td>
+              <td class="table-no-3 matrix-td"></td>
+            </tr>
+            <tr>
+              <td class="table-no-4 matrix-td"></td>
+              <td class="table-no-4 matrix-td"></td>
+              <td class="table-no-4 matrix-td"></td>
+              <td class="table-no-3 matrix-td"></td>
+              <td class="table-no-3 matrix-td"></td>
+              <td class="table-no-3 matrix-td"></td>
+            </tr>
+            <tr>
+              <td class="table-left">低</td>
+              <td class="table-no-4 matrix-td"></td>
+              <td class="table-no-4 matrix-td"></td>
+              <td class="table-no-4 matrix-td"></td>
+              <td class="table-no-3 matrix-td"></td>
+              <td class="table-no-3 matrix-td"></td>
+              <td class="table-no-3 matrix-td"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td class="table-bottom">低</td>
+              <td colspan="4" class="th-severity table-bottom">緊急度</td>
+              <td class="table-bottom severity-triangle">高</td>
+            </tr>
+          </table>
+        </div>
+
         <div class="task-sammary-content">
+          @if (session('message'))
+            <div class="success-message">
+              @if (session('task_content'))
+                『{{ session('task_content') }}』{{ session('message') }}
+              @endif
+            </div>
+          @endif
           <ul class="task-sammary-list">
             @foreach ($tasks as $number => $task)
               @if ($task->complete == 0)

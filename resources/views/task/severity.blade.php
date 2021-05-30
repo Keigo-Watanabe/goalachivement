@@ -21,12 +21,20 @@
         </div>
 
         <div class="task-sammary-content">
+          @if (session('message'))
+            <div class="success-message">
+              @if (session('task_content'))
+                『{{ session('task_content') }}』{{ session('message') }}
+              @endif
+            </div>
+          @endif
           <div class="task-category-content">
             @foreach ($task_severity as $severity)
               <div class="task-category-box">
                 <div class="task-category-title">
                   <div class="task-category-title-color"
-                    style="@if ($severity == 5) background-color: #FF001D;
+                    style="@if ($priority == 6) background-color: #ff0707;
+                           @elseif ($priority == 5) background-color: #ff5454;
                            @elseif ($severity == 4) background-color: #FF8115;
                            @elseif ($severity == 3) background-color: #FFC543;
                            @elseif ($severity == 2) background-color: #FFE943;

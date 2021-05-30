@@ -220,7 +220,7 @@ class TaskController extends Controller
           $task->complete = 1;
           $task->save();
 
-          return redirect()->route('task.index')->with([
+          return redirect()->back()->with([
             'task_content' => $task->content,
             'message' => 'が完了しました',
           ]);

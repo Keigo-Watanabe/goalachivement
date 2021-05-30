@@ -21,6 +21,13 @@
         </div>
 
         <div class="task-sammary-content">
+          @if (session('message'))
+            <div class="success-message">
+              @if (session('task_content'))
+                『{{ session('task_content') }}』{{ session('message') }}
+              @endif
+            </div>
+          @endif
           <div class="task-category-content">
             @foreach ($task_categories as $task_category)
               <div class="task-category-box">

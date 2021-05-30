@@ -345,6 +345,48 @@
   text-decoration: none;
 }
 
+.matrix-description {
+  display: block;
+  width: fit-content;
+  cursor: pointer;
+  margin-bottom: 1.875rem;
+}
+
+.matrix-description:hover {
+  text-decoration: underline;
+}
+
+.matrix-description-content {
+  display: flex;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 16%);
+  padding: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.matrix-hide {
+  display: none;
+}
+
+.matrix-image {
+  width: 60%;
+}
+
+.matrix-image img {
+  width: 100%;
+}
+
+.matrix-sentence {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.matrix-sentence p {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
 
 /*
 目標
@@ -858,6 +900,113 @@
 .task-priority-number span {
   color: #fff;
   font-weight: bold;
+}
+
+.task-matrix {
+  margin-bottom: 4.0625rem;
+}
+
+.matrix-table {
+  width: 100%;
+  max-width: 43.75rem;
+  height: 31.25rem;
+  margin: 0 auto;
+}
+
+.matrix-table td {
+  text-align: center;
+}
+
+.th-priority {
+  writing-mode: vertical-rl;
+  letter-spacing: 0.1rem;
+}
+
+.th-priority,
+.th-severity {
+  font-weight: bold;
+}
+
+.table-left {
+  width: 3rem;
+  border-right: solid 3px #707070;
+}
+
+.table-bottom {
+  height: 3rem;
+  border-top: solid 3px #707070;
+}
+
+.priority-triangle,
+.severity-triangle {
+  position: relative;
+}
+
+.priority-triangle::after {
+  content: '';
+  display: block;
+  width: 1rem;
+  height: 1.25rem;
+  border-bottom: solid 1.25rem #707070;
+  border-left: solid 0.5rem transparent;
+  border-right: solid 0.5rem transparent;
+  position: absolute;
+  top: -0.5rem;
+  right: -0.59375rem;
+}
+
+.severity-triangle::after {
+  content: '';
+  display: block;
+  width: 1.25rem;
+  height: 1rem;
+  border-left: solid 1.25rem #707070;
+  border-top: solid 0.5rem transparent;
+  border-bottom: solid 0.5rem transparent;
+  position: absolute;
+  top: -0.59375rem;
+  right: -0.5rem;
+}
+
+.table-sep-up {
+  background: linear-gradient(90deg, #ffc5b2 50%, #ffc4c4 50%);
+}
+
+.table-sep-bottom {
+  background: linear-gradient(90deg, #fff9d6 50%, #ffd7af 50%);
+}
+
+.table-sep-left {
+  background: linear-gradient(180deg, #ffc5b2 50%, #fff9d6 50%);
+}
+
+.table-sep-right {
+  background: linear-gradient(180deg, #ffc4c4 50%, #ffd7af 50%);
+}
+
+.table-sep-middle {
+  background: linear-gradient(#ffc4c4 25%, #ffc5b2 25%, #ffd7af 25%, #fff9d6 25%);
+}
+
+.table-no-1 {
+  background-color: #ffc4c4;
+}
+
+.table-no-2 {
+  background-color: #ffc5b2;
+}
+
+.table-no-3 {
+  background-color: #ffd7af;
+}
+
+.table-no-4 {
+  background-color: #fff9d6;
+}
+
+.matrix-td {
+  width: 15%;
+  height: 14%;
 }
 
 

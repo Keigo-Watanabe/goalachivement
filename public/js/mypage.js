@@ -92,6 +92,23 @@ if (taskCategoryBox) {
 }
 
 
+/*
+重要度・緊急度の説明
+*/
+const matrixDescription = document.getElementById('matrix-description');
+
+if (matrixDescription) {
+  const matrixDescriptionContent = document.getElementById('matrix-description-content');
+
+  matrixDescription.addEventListener('mouseover', () => {
+    matrixDescriptionContent.classList.remove('matrix-hide');
+  });
+
+  matrixDescriptionContent.addEventListener('mouseleave', () => {
+    matrixDescriptionContent.classList.add('matrix-hide');
+  });
+}
+
 
 /*
 タスクガントチャート（現在日までスクロール）
