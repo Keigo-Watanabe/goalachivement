@@ -20,127 +20,241 @@
           </ul>
         </div>
 
-        <div class="task-matrix">
-          <table class="matrix-table">
-            <tr>
-              <td class="table-left priority-triangle">高</td>
-              <td class="table-no-2 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 6 && $task->severity == 1) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-2 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 6 && $task->severity == 2) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-2 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 6 && $task->severity == 3) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-1 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 6 && $task->severity == 4) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-1 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 6 && $task->severity == 5) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-1 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 6 && $task->severity == 6) {{ $number + 1 }} @endif @endforeach</td>
-            </tr>
-            <tr>
-              <td class="table-left" rowspan="4"><span class="th-priority">重要度</span></td>
-              <td class="table-no-2 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 5 && $task->severity == 1) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-2 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 5 && $task->severity == 2) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-2 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 5 && $task->severity == 3) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-1 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 5 && $task->severity == 4) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-1 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 5 && $task->severity == 5) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-1 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 5 && $task->severity == 6) {{ $number + 1 }} @endif @endforeach</td>
-            </tr>
-            <tr>
-              <td class="table-no-2 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 4 && $task->severity == 1) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-2 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 4 && $task->severity == 2) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-2 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 4 && $task->severity == 3) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-1 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 4 && $task->severity == 4) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-1 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 4 && $task->severity == 5) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-1 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 4 && $task->severity == 6) {{ $number + 1 }} @endif @endforeach</td>
-            </tr>
-            <tr>
-              <td class="table-no-4 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 3 && $task->severity == 1) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-4 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 3 && $task->severity == 2) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-4 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 3 && $task->severity == 3) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-3 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 3 && $task->severity == 4) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-3 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 3 && $task->severity == 5) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-3 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 3 && $task->severity == 6) {{ $number + 1 }} @endif @endforeach</td>
-            </tr>
-            <tr>
-              <td class="table-no-4 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 2 && $task->severity == 1) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-4 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 2 && $task->severity == 2) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-4 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 2 && $task->severity == 3) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-3 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 2 && $task->severity == 4) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-3 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 2 && $task->severity == 5) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-3 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 2 && $task->severity == 6) {{ $number + 1 }} @endif @endforeach</td>
-            </tr>
-            <tr>
-              <td class="table-left">低</td>
-              <td class="table-no-4 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 1 && $task->severity == 1) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-4 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 1 && $task->severity == 2) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-4 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 1 && $task->severity == 3) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-3 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 1 && $task->severity == 4) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-3 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 1 && $task->severity == 5) {{ $number + 1 }} @endif @endforeach</td>
-              <td class="table-no-3 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 1 && $task->severity == 6) {{ $number + 1 }} @endif @endforeach</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="table-bottom">低</td>
-              <td colspan="4" class="th-severity table-bottom">緊急度</td>
-              <td class="table-bottom severity-triangle">高</td>
-            </tr>
-          </table>
-        </div>
-
-        <div class="task-sammary-content">
-          @if (session('message'))
-            <div class="success-message">
-              @if (session('task_content'))
-                『{{ session('task_content') }}』{{ session('message') }}
-              @endif
+        <div class="table-matrix">
+          <div class="table-matrix-top">
+            <div class="matrix-priority-high">
+              <div class="matrix-th matrix-th-vertical">重要度<span class="matrix-high priority-side">高</span></div>
             </div>
-          @endif
-          <ul class="task-sammary-list">
-            @foreach ($tasks as $number => $task)
-              @if ($task->complete == 0)
-              <li class="task-sammary-item task-totall-priority-item">
-                <div class="task-priority-number">
-                  <span>{{ $number + 1 }}</span>
-                </div>
-                <div class="task-name">
-                  <span class="task-content-name">{{ $task->content }}</span>
-                  <span class="task-dot"><i class="fas fa-ellipsis-h"></i></span>
-                  <div class="task-edit-menu">
-                    <a href="/task/{{ $task->task_id }}/edit">編集</a>
-                    <form class="task-delete" action="/task/{{ $task->task_id }}" method="post" onsubmit="if(confirm('削除します。よろしいですか？')) { return true } else { return false }">
-                      <input type="hidden" name="_method" value="DELETE">
-                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                      <input type="hidden" name="content" value="{{ $task->content }}">
-                      <input type="submit" name="delete" value="削除">
-                    </form>
-                  </div>
-                </div>
 
-                <div class="memo">
-                  <span>{{ $task->memo }}</span>
-                </div>
+            <div class="high-priority-task">
+              <div class="matrix-one">
+                <div class="matrix-title">重要・緊急</div>
+                <ul>
+                  @foreach ($tasks as $task)
+                    @if ($task->priority >= 4 && $task->severity >= 4)
+                    <li class="task-sammary-item matrix-item">
+                      <div class="task-name">
+                        <span class="task-content-name">{{ $task->content }}</span>
+                        <span class="task-dot"><i class="fas fa-ellipsis-h"></i></span>
+                        <div class="task-edit-menu">
+                          <a href="/task/{{ $task->task_id }}/edit">編集</a>
+                          <form class="task-delete" action="/task/{{ $task->task_id }}" method="post" onsubmit="if(confirm('削除します。よろしいですか？')) { return true } else { return false }">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="content" value="{{ $task->content }}">
+                            <input type="submit" name="delete" value="削除">
+                          </form>
+                        </div>
+                      </div>
 
-                <div class="task-category">
-                  @foreach ($task_categories as $task_category)
-                    @if ($task_category->task_category_id == $task->task_category_id)
-                      <span style="background-color: {{ $task_category->category_color }};">{{ $task_category->task_category }}</span>
+                      <div class="memo">
+                        <span>{{ $task->memo }}</span>
+                      </div>
+
+                      <div class="task-category">
+                        @foreach ($task_categories as $task_category)
+                          @if ($task_category->task_category_id == $task->task_category_id)
+                            <span style="background-color: {{ $task_category->category_color }};">{{ $task_category->task_category }}</span>
+                          @endif
+                        @endforeach
+                      </div>
+
+                      <div class="task-term-complete">
+                        <div class="task-term">
+                          <i class="fas fa-calendar-alt"></i>
+                          <span class="task-date">{{ date('n月j日', strtotime($task->start_date)) }}〜{{ date('n月j日', strtotime($task->end_date)) }}</span>
+                        </div>
+
+                        <form class="complete-form" action="/task/{{ $task->task_id }}" method="post">
+                          {{ csrf_field() }}
+                          <input type="hidden" name="_method" value="PUT">
+                          <input type="hidden" name="content" value="{{ $task->content }}">
+                          <input type="submit" name="complete" value="完了">
+                        </form>
+                      </div>
+                    </li>
                     @endif
                   @endforeach
-                </div>
+                </ul>
+              </div>
 
-                <div class="task-term-complete">
-                  <div class="task-term">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span class="task-date">{{ date('n月j日', strtotime($task->start_date)) }}〜{{ date('n月j日', strtotime($task->end_date)) }}</span>
-                  </div>
+              <div class="matrix-two">
+                <div class="matrix-title">重要・緊急でない</div>
+                <ul>
+                  @foreach ($tasks as $task)
+                    @if ($task->priority >= 4 && $task->severity < 4)
+                    <li class="task-sammary-item matrix-item">
+                      <div class="task-name">
+                        <span class="task-content-name">{{ $task->content }}</span>
+                        <span class="task-dot"><i class="fas fa-ellipsis-h"></i></span>
+                        <div class="task-edit-menu">
+                          <a href="/task/{{ $task->task_id }}/edit">編集</a>
+                          <form class="task-delete" action="/task/{{ $task->task_id }}" method="post" onsubmit="if(confirm('削除します。よろしいですか？')) { return true } else { return false }">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="content" value="{{ $task->content }}">
+                            <input type="submit" name="delete" value="削除">
+                          </form>
+                        </div>
+                      </div>
 
-                  <form class="complete-form" action="/task/{{ $task->task_id }}" method="post">
-                    {{ csrf_field() }}
-                    <input type="hidden" name="_method" value="PUT">
-                    <input type="hidden" name="content" value="{{ $task->content }}">
-                    <input type="submit" name="complete" value="完了">
-                  </form>
-                </div>
-              </li>
-              @endif
-            @endforeach
-          </ul>
+                      <div class="memo">
+                        <span>{{ $task->memo }}</span>
+                      </div>
+
+                      <div class="task-category">
+                        @foreach ($task_categories as $task_category)
+                          @if ($task_category->task_category_id == $task->task_category_id)
+                            <span style="background-color: {{ $task_category->category_color }};">{{ $task_category->task_category }}</span>
+                          @endif
+                        @endforeach
+                      </div>
+
+                      <div class="task-term-complete">
+                        <div class="task-term">
+                          <i class="fas fa-calendar-alt"></i>
+                          <span class="task-date">{{ date('n月j日', strtotime($task->start_date)) }}〜{{ date('n月j日', strtotime($task->end_date)) }}</span>
+                        </div>
+
+                        <form class="complete-form" action="/task/{{ $task->task_id }}" method="post">
+                          {{ csrf_field() }}
+                          <input type="hidden" name="_method" value="PUT">
+                          <input type="hidden" name="content" value="{{ $task->content }}">
+                          <input type="submit" name="complete" value="完了">
+                        </form>
+                      </div>
+                    </li>
+                    @endif
+                  @endforeach
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-matrix-bottom">
+            <div class="matrix-priority-high">
+              <div class="matrix-th matrix-th-vertical">重要度<span class="matrix-low priority-side">低</span></div>
+            </div>
+
+            <div class="low-priority-task">
+              <div class="matrix-three">
+                <div class="matrix-title">緊急・重要でない</div>
+                <ul>
+                  @foreach ($tasks as $task)
+                    @if ($task->priority < 4 && $task->severity >= 4)
+                    <li class="task-sammary-item matrix-item">
+                      <div class="task-name">
+                        <span class="task-content-name">{{ $task->content }}</span>
+                        <span class="task-dot"><i class="fas fa-ellipsis-h"></i></span>
+                        <div class="task-edit-menu">
+                          <a href="/task/{{ $task->task_id }}/edit">編集</a>
+                          <form class="task-delete" action="/task/{{ $task->task_id }}" method="post" onsubmit="if(confirm('削除します。よろしいですか？')) { return true } else { return false }">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="content" value="{{ $task->content }}">
+                            <input type="submit" name="delete" value="削除">
+                          </form>
+                        </div>
+                      </div>
+
+                      <div class="memo">
+                        <span>{{ $task->memo }}</span>
+                      </div>
+
+                      <div class="task-category">
+                        @foreach ($task_categories as $task_category)
+                          @if ($task_category->task_category_id == $task->task_category_id)
+                            <span style="background-color: {{ $task_category->category_color }};">{{ $task_category->task_category }}</span>
+                          @endif
+                        @endforeach
+                      </div>
+
+                      <div class="task-term-complete">
+                        <div class="task-term">
+                          <i class="fas fa-calendar-alt"></i>
+                          <span class="task-date">{{ date('n月j日', strtotime($task->start_date)) }}〜{{ date('n月j日', strtotime($task->end_date)) }}</span>
+                        </div>
+
+                        <form class="complete-form" action="/task/{{ $task->task_id }}" method="post">
+                          {{ csrf_field() }}
+                          <input type="hidden" name="_method" value="PUT">
+                          <input type="hidden" name="content" value="{{ $task->content }}">
+                          <input type="submit" name="complete" value="完了">
+                        </form>
+                      </div>
+                    </li>
+                    @endif
+                  @endforeach
+                </ul>
+              </div>
+
+              <div class="matrix-four">
+                <div class="matrix-title">重要でない・緊急でない</div>
+                <ul>
+                  @foreach ($tasks as $task)
+                    @if ($task->priority < 4 && $task->severity < 4)
+                    <li class="task-sammary-item matrix-item">
+                      <div class="task-name">
+                        <span class="task-content-name">{{ $task->content }}</span>
+                        <span class="task-dot"><i class="fas fa-ellipsis-h"></i></span>
+                        <div class="task-edit-menu">
+                          <a href="/task/{{ $task->task_id }}/edit">編集</a>
+                          <form class="task-delete" action="/task/{{ $task->task_id }}" method="post" onsubmit="if(confirm('削除します。よろしいですか？')) { return true } else { return false }">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="content" value="{{ $task->content }}">
+                            <input type="submit" name="delete" value="削除">
+                          </form>
+                        </div>
+                      </div>
+
+                      <div class="memo">
+                        <span>{{ $task->memo }}</span>
+                      </div>
+
+                      <div class="task-category">
+                        @foreach ($task_categories as $task_category)
+                          @if ($task_category->task_category_id == $task->task_category_id)
+                            <span style="background-color: {{ $task_category->category_color }};">{{ $task_category->task_category }}</span>
+                          @endif
+                        @endforeach
+                      </div>
+
+                      <div class="task-term-complete">
+                        <div class="task-term">
+                          <i class="fas fa-calendar-alt"></i>
+                          <span class="task-date">{{ date('n月j日', strtotime($task->start_date)) }}〜{{ date('n月j日', strtotime($task->end_date)) }}</span>
+                        </div>
+
+                        <form class="complete-form" action="/task/{{ $task->task_id }}" method="post">
+                          {{ csrf_field() }}
+                          <input type="hidden" name="_method" value="PUT">
+                          <input type="hidden" name="content" value="{{ $task->content }}">
+                          <input type="submit" name="complete" value="完了">
+                        </form>
+                      </div>
+                    </li>
+                    @endif
+                  @endforeach
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-matrix-bottom">
+            <div class="matrix-priority-low"><span class="matrix-hide">/</span></div>
+            <div class="low-priority-task">
+              <div class="matrix-severity-high">
+                <div class="matrix-th matrix-th-row">緊急度<span class="matrix-high severity-side">高</span></div>
+              </div>
+
+              <div class="matrix-severity-low">
+                <div class="matrix-th matrix-th-row">緊急度<span class="matrix-low severity-side">低</span></div>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
 </x-app-layout>
