@@ -24,54 +24,54 @@
           <table class="matrix-table">
             <tr>
               <td class="table-left priority-triangle">高</td>
-              <td class="table-no-2 matrix-td"></td>
-              <td class="table-no-2 matrix-td"></td>
-              <td class="table-no-2 matrix-td"></td>
-              <td class="table-no-1 matrix-td"></td>
-              <td class="table-no-1 matrix-td"></td>
-              <td class="table-no-1 matrix-td"></td>
+              <td class="table-no-2 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 6 && $task->severity == 1) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-2 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 6 && $task->severity == 2) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-2 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 6 && $task->severity == 3) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-1 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 6 && $task->severity == 4) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-1 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 6 && $task->severity == 5) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-1 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 6 && $task->severity == 6) {{ $number + 1 }} @endif @endforeach</td>
             </tr>
             <tr>
               <td class="table-left" rowspan="4"><span class="th-priority">重要度</span></td>
-              <td class="table-no-2 matrix-td"></td>
-              <td class="table-no-2 matrix-td"></td>
-              <td class="table-no-2 matrix-td"></td>
-              <td class="table-no-1 matrix-td"></td>
-              <td class="table-no-1 matrix-td"></td>
-              <td class="table-no-1 matrix-td"></td>
+              <td class="table-no-2 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 5 && $task->severity == 1) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-2 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 5 && $task->severity == 2) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-2 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 5 && $task->severity == 3) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-1 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 5 && $task->severity == 4) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-1 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 5 && $task->severity == 5) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-1 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 5 && $task->severity == 6) {{ $number + 1 }} @endif @endforeach</td>
             </tr>
             <tr>
-              <td class="table-no-2 matrix-td"></td>
-              <td class="table-no-2 matrix-td"></td>
-              <td class="table-no-2 matrix-td"></td>
-              <td class="table-no-1 matrix-td"></td>
-              <td class="table-no-1 matrix-td"></td>
-              <td class="table-no-1 matrix-td"></td>
+              <td class="table-no-2 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 4 && $task->severity == 1) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-2 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 4 && $task->severity == 2) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-2 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 4 && $task->severity == 3) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-1 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 4 && $task->severity == 4) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-1 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 4 && $task->severity == 5) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-1 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 4 && $task->severity == 6) {{ $number + 1 }} @endif @endforeach</td>
             </tr>
             <tr>
-              <td class="table-no-4 matrix-td"></td>
-              <td class="table-no-4 matrix-td"></td>
-              <td class="table-no-4 matrix-td"></td>
-              <td class="table-no-3 matrix-td"></td>
-              <td class="table-no-3 matrix-td"></td>
-              <td class="table-no-3 matrix-td"></td>
+              <td class="table-no-4 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 3 && $task->severity == 1) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-4 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 3 && $task->severity == 2) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-4 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 3 && $task->severity == 3) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-3 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 3 && $task->severity == 4) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-3 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 3 && $task->severity == 5) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-3 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 3 && $task->severity == 6) {{ $number + 1 }} @endif @endforeach</td>
             </tr>
             <tr>
-              <td class="table-no-4 matrix-td"></td>
-              <td class="table-no-4 matrix-td"></td>
-              <td class="table-no-4 matrix-td"></td>
-              <td class="table-no-3 matrix-td"></td>
-              <td class="table-no-3 matrix-td"></td>
-              <td class="table-no-3 matrix-td"></td>
+              <td class="table-no-4 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 2 && $task->severity == 1) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-4 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 2 && $task->severity == 2) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-4 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 2 && $task->severity == 3) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-3 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 2 && $task->severity == 4) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-3 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 2 && $task->severity == 5) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-3 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 2 && $task->severity == 6) {{ $number + 1 }} @endif @endforeach</td>
             </tr>
             <tr>
               <td class="table-left">低</td>
-              <td class="table-no-4 matrix-td"></td>
-              <td class="table-no-4 matrix-td"></td>
-              <td class="table-no-4 matrix-td"></td>
-              <td class="table-no-3 matrix-td"></td>
-              <td class="table-no-3 matrix-td"></td>
-              <td class="table-no-3 matrix-td"></td>
+              <td class="table-no-4 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 1 && $task->severity == 1) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-4 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 1 && $task->severity == 2) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-4 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 1 && $task->severity == 3) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-3 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 1 && $task->severity == 4) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-3 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 1 && $task->severity == 5) {{ $number + 1 }} @endif @endforeach</td>
+              <td class="table-no-3 matrix-td">@foreach ($tasks as $number => $task) @if ($task->priority == 1 && $task->severity == 6) {{ $number + 1 }} @endif @endforeach</td>
             </tr>
             <tr>
               <td></td>
