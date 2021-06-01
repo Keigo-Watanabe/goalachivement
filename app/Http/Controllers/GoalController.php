@@ -74,37 +74,70 @@ class GoalController extends Controller
         // 目標開始日〜現在
         $goal_now = $goal->created_at->diffInDays($date);
 
-        if ($goal_term == 0) {
-          $goal_term = 1;
-        } else if ($goal_now == 0) {
-          $goal_now = 1;
-        }
-
-        $goal_percent = $goal_now / $goal_term;
-
-        // 円グラフの角度
-        if ($goal_percent == 1) {
-          $goal_circle_percent = 360;
-        } else {
-          $goal_circle_percent = 360 * round($goal_percent, 2);
-        }
-        $goal_circle_percent = round($goal_circle_percent, 0);
-
-        // 目標の進行率
-        $goal_percent = round($goal_percent, 2) * 100;
-
         // 残りの日数
         $goal_remaining_days = $goal_term - $goal_now;
 
-
         // タスクを取得
         $tasks = Task::where('goal_id', $goal->goal_id)->get();
+
+        // if ($goal_term == 0) {
+        //   $goal_term = 1;
+        // } else if ($goal_now == 0) {
+        //   $goal_now = 1;
+        // }
+
+        // $goal_percent = $goal_now / $goal_term;
+
+        // // 円グラフの角度
+        // if ($goal_percent == 1) {
+        //   $goal_circle_percent = 360;
+        // } else {
+        //   $goal_circle_percent = 360 * round($goal_percent, 2);
+        // }
+        // $goal_circle_percent = round($goal_circle_percent, 0);
+
+        // // 目標の進行率
+        // $goal_percent = round($goal_percent, 2) * 100;
+
+        // タスクの数を計算
+        $tasks_number = count($tasks);
+
+        // タスクの数が0の場合は1にする（0のままだと計算できないため）
+        if ($tasks_number == 0) {
+          $tasks_number = 1;
+        }
+        // タスク1つの完了率を計算
+        $goal_percent = 100 / $tasks_number;
+
+        $task_complete = [];
+
+        foreach ($tasks as $task) {
+          // タスクが完了すれば、完了率を配列に格納
+          if ($task->complete == 1) {
+            $task_complete[] = $goal_percent;
+          }
+        }
+
+        // 配列に格納された完了率の合計を計算
+        $sum = array_sum($task_complete);
+        $sum = floor($sum);
+
+        if ($sum == 0) {
+          $goal_circle_percent = 1 / 100;
+        } else {
+          $goal_circle_percent = $sum / 100;
+        }
+        $goal_circle_percent = 360 * $goal_circle_percent;
+
+        // 円グラフが180度以上の場合
+        $mul = 360 - $goal_circle_percent;
+
 
         $goal_view = new GoalChart($goal);
         $goal_chart = $goal_view->goalChart();
         $task_chart = $goal_view->taskChart();
 
-        return view('goal.show', compact('goal', 'date', 'goal_circle_percent', 'goal_percent', 'goal_remaining_days', 'tasks', 'goal_chart', 'task_chart'));
+        return view('goal.show', compact('goal', 'date', 'sum', 'goal_circle_percent', 'mul', 'goal_remaining_days', 'tasks', 'goal_chart', 'task_chart'));
     }
 
     /**

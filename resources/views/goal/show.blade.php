@@ -20,18 +20,10 @@
                 </div>
                 <div class="goal-graph">
                   <div class="goal-bar">
-                    @if ($date > $goal->date)
-                    <span class="goal-bar-inner" style="width: 100%;">
-                    @else
-                    <span class="goal-bar-inner" style="width: {{ $goal_percent }}%;">
-                    @endif
+                    <span class="goal-bar-inner" style="width: {{ $sum }}%;">
                       <span class="goal-icon"><i class="fas fa-hiking"></i></span>
                       <span class="goal-persent-triangle"></span>
-                      @if ($date > $goal->date)
-                      <span class="goal-persent">100%</span>
-                      @else
-                      <span class="goal-persent">{{ $goal_percent }}%</span>
-                      @endif
+                      <span class="goal-persent">{{ $sum }}%</span>
                     </span>
                   </div>
                 </div>
@@ -52,10 +44,14 @@
                   <div class="goal-circle-inner-white" style="transform: rotate(-180deg); z-index: 2;"></div>
                   <div class="goal-circle-inner-red" style="transform: rotate(180deg); z-index: 3;"></div>
                 <!-- 180度以上 -->
-                @elseif ($goal_circle_percent >= 180)
+                @elseif ($goal_circle_percent >= 181)
                 <div class="goal-circle-inner" style="transform: rotate(180deg);">
                   <div class="goal-circle-inner-white" style="transform: rotate(-180deg); z-index: 2;"></div>
-                  <div class="goal-circle-inner-red" style="transform: rotate(360 - {{ $goal_circle_percent }}deg); z-index: 3;"></div>
+                  <div class="goal-circle-inner-red" style="transform: rotate({{ $mul }}deg); z-index: 3;"></div>
+                <!-- 0度 -->
+                @elseif ($sum == 0)
+                <div class="goal-circle-inner" style="transform: rotate(0);">
+                  <div class="goal-circle-inner-white" style="transform: rotate(0); z-index: 2;"></div>
                 <!-- 180度未満 -->
                 @else
                 <div class="goal-circle-inner" style="transform: rotate({{ $goal_circle_percent }}deg);">
@@ -64,24 +60,17 @@
                 @endif
                 </div>
                 <div class="goal-circle-percent">
-                  @if ($date > $goal->date)
-                  <span class="goal-circle-big-percent">100<span class="small-percent">%</span></span>
-                  @else
-                  <span class="goal-circle-big-percent">{{ $goal_percent }}<span class="small-percent">%</span></span>
-                  @endif
+                  <span class="goal-circle-big-percent">{{ $sum }}<span class="small-percent">%</span></span>
                 </div>
               </div>
             </div>
 
             <div class="goal-show-description">
-              @if ($date > $goal->date)
-              <p class="goal-achivement-percent">目標達成率：100%</p>
-              @else
-              <p class="goal-achivement-percent">目標達成率：{{ $goal_percent }}%</p>
-              @endif
-              <p class="now-task">現在のタスク：</p>
-              @if ($goal_remaining_days < 0)
+              <p class="goal-achivement-percent">目標達成率：{{ $sum }}%</p>
+              @if ($sum == 100)
               <p class="remaining-days">目標達成！</p>
+              @elseif ($goal_remaining_days < 0)
+              <p class="remaining-days">目標達成まであと<span>0日</span></p>
               @else
               <p class="remaining-days">目標達成まであと<span>{{ $goal_remaining_days }}日</span></p>
               @endif

@@ -144,6 +144,15 @@
   font-weight: bold;
 }
 
+.goal-name a {
+  transition: all 0.3s ease;
+}
+
+.goal-name a:hover {
+  text-decoration: underline;
+  opacity: 0.7;
+}
+
 .goal-start {
   margin-right: 0.625rem;
 }
@@ -1042,7 +1051,7 @@
   flex: 1;
 }
 
-.matrix-hide {
+.matrix-space {
   display: block;
   opacity: 0;
 }
@@ -1075,6 +1084,15 @@
   .task-category-item,
   .matrix-item {
     width: 100%;
+  }
+
+  .table-matrix {
+    overflow: scroll;
+  }
+
+  .table-matrix-top,
+  .table-matrix-bottom {
+    width: 43.75rem;
   }
 }
 

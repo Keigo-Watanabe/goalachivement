@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Goal;
+use App\Models\Task;
 use Carbon\Carbon;
 
 class GoalView
@@ -30,34 +31,36 @@ class GoalView
         $html[] = '<div class="goal-graph">';
         $html[] = '<div class="goal-bar">';
 
-        // 目標開始日〜終了日
-        $goal_term = $goal->created_at->diffInDays($goal->date);
-        // 目標開始日〜現在
-        $goal_now = $goal->created_at->diffInDays($date);
+        $tasks = Task::where('goal_id', $goal->goal_id)->get();
 
-        if ($goal_term == 0) {
-          $goal_term = 1;
-        } else if ($goal_now == 0) {
-          $goal_now = 1;
+        // タスクの数を計算
+        $tasks_number = count($tasks);
+
+        // タスクの数が0の場合は1にする（0のままだと計算できないため）
+        if ($tasks_number == 0) {
+          $tasks_number = 1;
+        }
+        // タスク1つの完了率を計算
+        $goal_percent = 100 / $tasks_number;
+
+        $task_complete = [];
+
+        foreach ($tasks as $task) {
+          // タスクが完了すれば、完了率を配列に格納
+          if ($task->complete == 1) {
+            $task_complete[] = $goal_percent;
+          }
         }
 
-        $goal_percent = $goal_now / $goal_term;
-        $goal_percent = round($goal_percent, 2) * 100;
+        // 配列に格納された完了率の合計を計算
+        $sum = array_sum($task_complete);
+        $sum = floor($sum);
 
-        if ($date > $goal->date) {
-          $html[] = '<span class="goal-bar-inner" style="width: 100%;">';
-        } else {
-          $html[] = '<span class="goal-bar-inner" style="width: '.$goal_percent.'%;">';
-        }
+        $html[] = '<span class="goal-bar-inner" style="width: '.$sum.'%;">';
 
         $html[] = '<span class="goal-icon"><i class="fas fa-hiking"></i></span>';
         $html[] = '<span class="goal-persent-triangle"></span>';
-
-        if ($date > $goal->date) {
-          $html[] = '<span class="goal-persent">100%</span>';
-        } else {
-          $html[] = '<span class="goal-persent">'.$goal_percent.'%</span>';
-        }
+        $html[] = '<span class="goal-persent">'.$sum.'%</span>';
 
         $html[] = '</span>';
         $html[] = '</div>';

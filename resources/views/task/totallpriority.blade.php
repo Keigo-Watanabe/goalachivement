@@ -242,7 +242,7 @@
           </div>
 
           <div class="table-matrix-bottom">
-            <div class="matrix-priority-low"><span class="matrix-hide">/</span></div>
+            <div class="matrix-priority-low"><span class="matrix-space">/</span></div>
             <div class="low-priority-task">
               <div class="matrix-severity-high">
                 <div class="matrix-th matrix-th-row">緊急度<span class="matrix-high severity-side">高</span></div>
