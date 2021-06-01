@@ -80,25 +80,6 @@ class GoalController extends Controller
         // タスクを取得
         $tasks = Task::where('goal_id', $goal->goal_id)->get();
 
-        // if ($goal_term == 0) {
-        //   $goal_term = 1;
-        // } else if ($goal_now == 0) {
-        //   $goal_now = 1;
-        // }
-
-        // $goal_percent = $goal_now / $goal_term;
-
-        // // 円グラフの角度
-        // if ($goal_percent == 1) {
-        //   $goal_circle_percent = 360;
-        // } else {
-        //   $goal_circle_percent = 360 * round($goal_percent, 2);
-        // }
-        // $goal_circle_percent = round($goal_circle_percent, 0);
-
-        // // 目標の進行率
-        // $goal_percent = round($goal_percent, 2) * 100;
-
         // タスクの数を計算
         $tasks_number = count($tasks);
 

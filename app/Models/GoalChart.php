@@ -50,9 +50,9 @@ class GoalChart
           $today = $today->copy()->timezone('Asia/Tokyo');
 
           if (date('Y-m-d', strtotime($day)) == date('Y-m-d', strtotime($today))) {
-            $html[] = '<div id="th-today" class="th th-today">'.date('j', strtotime($day)).'日</div>';
+            $html[] = '<div id="th-today" class="th th-today">'.date('n/j', strtotime($day)).'</div>';
           } else {
-            $html[] = '<div class="th">'.date('j', strtotime($day)).'日</div>';
+            $html[] = '<div class="th">'.date('n/j', strtotime($day)).'</div>';
           }
         }
 

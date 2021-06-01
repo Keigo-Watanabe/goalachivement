@@ -86,7 +86,11 @@
             @if ($tasks)
               @foreach ($tasks as $task)
                 <li>
-                  {{ $task->content }}
+                  @if ($task->complete == 1)
+                    <i class="fas fa-check-circle"></i><span style="color: #898989;">{{ $task->content }}</span>
+                  @else
+                    <i class="far fa-circle"></i>{{ $task->content }}
+                  @endif
                 </li>
               @endforeach
             @endif
