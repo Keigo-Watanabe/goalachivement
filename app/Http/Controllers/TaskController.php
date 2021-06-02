@@ -189,7 +189,10 @@ class TaskController extends Controller
      */
     public function show(Task $task)
     {
-        //
+        $goals = Goal::all();
+        $taskCategories = TaskCategory::all();
+
+        return view('task.show', compact('task', 'goals', 'taskCategories'));
     }
 
     /**
@@ -231,7 +234,7 @@ class TaskController extends Controller
           $task->complete = 0;
           $task->save();
 
-          return redirect()->to('/taskcomplete')->with([
+          return redirect()->back()->with([
             'task_content' => $task->content,
             'message' => 'の完了を取り消しました',
           ]);
@@ -298,7 +301,7 @@ class TaskController extends Controller
 
         $task->save();
 
-        return redirect()->route('task.index')->with([
+        return redirect()->back()->with([
           'task_content' => $task->content,
           'message' => 'の編集が完了しました',
         ]);

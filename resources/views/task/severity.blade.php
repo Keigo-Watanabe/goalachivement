@@ -33,8 +33,8 @@
               <div class="task-category-box">
                 <div class="task-category-title">
                   <div class="task-category-title-color"
-                    style="@if ($priority == 6) background-color: #ff0707;
-                           @elseif ($priority == 5) background-color: #ff5454;
+                    style="@if ($severity == 6) background-color: #ff0707;
+                           @elseif ($severity == 5) background-color: #ff5454;
                            @elseif ($severity == 4) background-color: #FF8115;
                            @elseif ($severity == 3) background-color: #FFC543;
                            @elseif ($severity == 2) background-color: #FFE943;
@@ -49,17 +49,7 @@
                     @if ($task->severity == $severity)
                     <li class="task-sammary-item task-category-item">
                       <div class="task-name">
-                        <span class="task-content-name">{{ $task->content }}</span>
-                        <span class="task-dot"><i class="fas fa-ellipsis-h"></i></span>
-                        <div class="task-edit-menu">
-                          <a href="/task/{{ $task->task_id }}/edit">編集</a>
-                          <form class="task-delete" action="/task/{{ $task->task_id }}" method="post" onsubmit="if(confirm('削除します。よろしいですか？')) { return true } else { return false }">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <input type="hidden" name="content" value="{{ $task->content }}">
-                            <input type="submit" name="delete" value="削除">
-                          </form>
-                        </div>
+                        <a href="/task/{{ $task->task_id }}"><span class="task-content-name">{{ $task->content }}</span></a>
                       </div>
 
                       <div class="memo">

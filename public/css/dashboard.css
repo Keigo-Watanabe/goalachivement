@@ -611,6 +611,15 @@
   color: #57d19e;
 }
 
+.task-list ul li a {
+  transition: all 0.3s ease;
+}
+
+.task-list ul li a:hover {
+  text-decoration: underline;
+  opacity: 0.7;
+}
+
 .task-chart {
   flex: 1;
   overflow: scroll;
@@ -766,39 +775,12 @@
 .task-content-name {
   font-size: 1rem;
   font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-.task-dot i {
-  color: #989898;
-  font-size: 1.125rem;
-  cursor: pointer;
-}
-
-.task-edit-menu {
-  background-color: #fff;
-  position: absolute;
-  bottom: -4.375rem;
-  right: 0;
-  padding: 0.625rem 0.9375rem;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 16%);
-  display: none;
-}
-
-.task-edit-menu a,
-.task-delete input[type="submit"]{
-  padding: 0 0.625rem;
-  font-size: 0.875rem;
-}
-
-.task-edit-menu-open {
-  display: block;
-}
-
-.task-delete input[type="submit"] {
-  color: #fff;
-  background-color: #ff4444;
-  margin-top: 0.625rem;
-  cursor: pointer;
+.task-content-name:hover {
+  text-decoration: underline;
+  opacity: 0.7;
 }
 
 .memo span {
@@ -849,6 +831,98 @@
 .complete-form input:hover {
   background-color: #3E9F6F;
 }
+
+
+/*
+タスク詳細
+*/
+.task-show-message {
+  margin: 1.875rem;
+}
+
+.task-show {
+  margin: 1.875rem;
+  padding: 1.875rem;
+  background-color: #FFFEF2;
+  border: solid 1px #707070;
+}
+
+.task-show-top {
+  border-bottom: solid 1px #707070;
+}
+
+.task-show-bottom {
+  margin-top: 1.75rem;
+}
+
+.task-show-content {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 1.5625rem;
+}
+
+.task-show-item {
+  font-weight: bold;
+  margin-right: 1.875rem;
+}
+
+.task-show-category span {
+  border-radius: 0.625rem;
+  font-size: 0.75rem;
+  padding: 0.3125rem 0.5rem;
+  color: #fff;
+}
+
+.task-show-star {
+  color: #FFE41A;
+}
+
+.task-show-goal,
+.task-show-category {
+  margin-bottom: 0.875rem;
+}
+
+.task-show-term,
+.task-show-priority,
+.task-show-memo {
+  margin-bottom: 1.5625rem;
+}
+
+.task-edit-content {
+  margin: 1.875rem;
+  padding: 1.875rem;
+}
+
+.task-edit-title {
+  margin-bottom: 2.5rem;
+  border-bottom: solid 3px #1A3F5F;
+}
+
+
+.task-edit-title h2 {
+  color: #1A3F5F;
+  font-size: 1.75rem;
+  font-weight: bold;
+  line-height: 2;
+}
+
+.task-show-delete {
+  margin-top: 0.625rem;
+}
+
+.task-show-delete input[type="submit"] {
+  font-size: 0.75rem;
+  padding: 0.3125rem 0.625rem;
+  background-color: #FF5252;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.task-show-delete input[type="submit"]:hover {
+  background-color: #D93636;
+}
+
 
 /*
 タスクカテゴリー別一覧

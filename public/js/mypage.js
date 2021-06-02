@@ -54,24 +54,6 @@ if (priorityList) {
 
 
 /*
-タスク編集（開閉）
-*/
-let editMenu = document.querySelectorAll('.task-dot');
-
-if (editMenu) {
-  for (let i = 0; i < editMenu.length; i++) {
-
-    let each_editMenu = editMenu[i];
-    let item = each_editMenu.nextElementSibling;
-
-    each_editMenu.addEventListener('click', () => {
-      item.classList.toggle('task-edit-menu-open');
-    });
-  }
-}
-
-
-/*
 タスクカテゴリー一覧
 */
 let taskCategoryBox = document.querySelectorAll('.task-category-box');

@@ -87,9 +87,9 @@
               @foreach ($tasks as $task)
                 <li>
                   @if ($task->complete == 1)
-                    <i class="fas fa-check-circle"></i><span style="color: #898989;">{{ $task->content }}</span>
+                    <i class="fas fa-check-circle"></i><span style="color: #898989;"><a href="/task/{{ $task->task_id }}">{{ $task->content }}</a></span>
                   @else
-                    <i class="far fa-circle"></i>{{ $task->content }}
+                    <i class="far fa-circle"></i><a href="/task/{{ $task->task_id }}">{{ $task->content }}</a>
                   @endif
                 </li>
               @endforeach
