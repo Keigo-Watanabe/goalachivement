@@ -112,5 +112,12 @@
           </div>
         </div>
       </div>
+
+      <form class="goal-delete" action="/goal/{{ $goal->goal_id }}" method="post" onsubmit="if(confirm('削除します。よろしいですか？')) { return true } else { return false }">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="title" value="{{ $goal->title }}">
+        <input type="submit" name="delete" value="目標を削除する">
+      </form>
     </div>
 </x-app-layout>

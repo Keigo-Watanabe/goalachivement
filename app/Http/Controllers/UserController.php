@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\GoalView;
+use App\Models\CalendarView;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class UserController extends Controller
 {
@@ -19,7 +21,14 @@ class UserController extends Controller
 
       $getGoal = $goals->getGoal();
 
-      return view('dashboard', compact('getGoal'));
+      $date = new Carbon();
+
+      $calendar = new CalendarView($date);
+
+      $getTitle = $calendar->getTitle();
+      $getCalendar = $calendar->calendar();
+
+      return view('dashboard', compact('getGoal', 'getTitle', 'getCalendar'));
     }
 
     /**

@@ -681,6 +681,23 @@
   background-color: #FFAE72;
 }
 
+.goal-delete {
+  margin: 1.875rem;
+}
+
+.goal-delete input[type="submit"] {
+  color: #fff;
+  background-color: #FF5252;
+  font-size: 0.75rem;
+  padding: 0.3125rem 0.625rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.goal-delete input[type="submit"]:hover {
+  background-color: #D93636;
+}
+
 
 /*
 タスク一覧
@@ -1139,6 +1156,82 @@
 .matrix-space {
   display: block;
   opacity: 0;
+}
+
+
+/*
+カレンダー
+*/
+.calendar-container {
+  margin: 1.875rem;
+}
+
+.calendar {
+  width: 100%;
+  max-width: 43.75rem;
+}
+
+.calendar-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.625rem 1.875rem;
+  border: solid 1px #333;
+}
+
+.this-month {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1A3F5F;
+}
+
+.calendar-title a {
+  color: #1A3F5F;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.calendar-title a:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+.calendar-table {
+  width: 100%;
+}
+
+.calendar-table th {
+  background-color: #1A3F5F;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.125rem;
+  padding: 0.75rem;
+  border: solid 1px #1A3F5F;
+}
+
+.calendar-table td {
+  border: solid 1px #333;
+  height: 6.25rem;
+  padding: 0.625rem 0.3125rem;
+  vertical-align: top;
+}
+
+.prev-next-month {
+  color: #333;
+  opacity: 0.5;
+}
+
+.today {
+  background-color: #E6F7FF;
+  font-weight: bold;
+}
+
+.sunday {
+  color: #FF0000;
+}
+
+.saturday {
+  color: #0045FF;
 }
 
 

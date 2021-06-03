@@ -150,8 +150,24 @@ class GoalController extends Controller
      * @param  \App\Models\Goal  $goal
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Goal $goal)
+    public function destroy(Request $request, Goal $goal)
     {
-        //
+        $goal->title = $request->input('title');
+
+        $tasks = Task::all();
+
+        foreach ($tasks as $task) {
+          // 目標に含まれるタスクも削除
+          if ($task->goal_id == $goal->goal_id) {
+            $task->delete();
+          }
+        }
+
+        $goal->delete();
+
+        return redirect()->to('/dashboard')->with([
+          'goal_title' => $goal->title,
+          'message' => 'を削除しました。',
+        ]);
     }
 }
