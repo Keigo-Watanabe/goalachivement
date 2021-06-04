@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Yasumi\Yasumi;
+use Yasumi\Holiday;
 use Carbon\Carbon;
 
 class CalendarView extends Model
@@ -30,9 +32,41 @@ class CalendarView extends Model
     }
 
 
+    // 前月
+    public function prevMonth()
+    {
+        return $this->date->copy()->subMonth()->format('Y-m');
+    }
+
+
+    // 来月
+    public function nextMonth()
+    {
+        return $this->date->copy()->addMonth()->format('Y-m');
+    }
+
+
     // カレンダー
     public function calendar()
     {
+        /*
+        祝日を取得
+        */
+        $year = $this->date->format('Y');
+
+        $holidays = Yasumi::create('Japan', $year, 'ja_JP');
+
+        // 2021年に変更になった祝日
+        $marineDay = new \Yasumi\Holiday('Marine Day', ['ja_JP' => '海の日'], new Carbon('2021-07-22'), 'ja_JP');
+        $sportsDay = new \Yasumi\Holiday('Sports Day', ['ja_JP' => 'スポーツの日'], new Carbon('2021-07-23'), 'ja_JP');
+        $mountainDay = new \Yasumi\Holiday('Mountain Day', ['ja_JP' => '振替休日'], new Carbon('2021-08-09'), 'ja_JP');
+
+        $holidays->addHoliday($marineDay);
+        $holidays->addHoliday($sportsDay);
+        $holidays->addHoliday($mountainDay);
+        // 2021年が終わったら削除 ↑
+
+
         /*
         今月の1週間ずつを取得する
         */
@@ -97,6 +131,9 @@ class CalendarView extends Model
 
           foreach ($days as $day) {
 
+            // 祝日かどうか
+            $holiday = $holidays->isHoliday($day);
+
             // 今日かどうか
             $today = $day->isToday();
 
@@ -106,8 +143,14 @@ class CalendarView extends Model
               $today_class = null;
             }
 
+            // 2021年に移動した祝日の場合
+            if ($day->format('Y-m-d') == '2021-07-19' || $day->format('Y-m-d') == '2021-08-11' || $day->format('Y-m-d') == '2021-10-11') {
+              $day_class = 'weekday';
+            // 祝日の場合
+            } else if ($holiday) {
+              $day_class = 'holiday';
             // 日曜の場合
-            if ($day->dayOfWeek == 0) {
+            } else if ($day->dayOfWeek == 0) {
               $day_class = 'sunday';
             // 土曜の場合
             } else if ($day->dayOfWeek == 6) {

@@ -15,20 +15,32 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
       $goals = new GoalView();
 
       $getGoal = $goals->getGoal();
 
-      $date = new Carbon();
+      // dateパラメータを取得
+      $date = $request->input('date');
+
+      // dateパラメータが存在したら
+      if ($date) {
+        // パラメータの日付をCarbonに指定
+        $date = new Carbon($date.'-01');
+      } else {
+        // 存在しない場合は現在の日付
+        $date = new Carbon();
+      }
 
       $calendar = new CalendarView($date);
 
       $getTitle = $calendar->getTitle();
       $getCalendar = $calendar->calendar();
+      $prevMonth = $calendar->prevMonth();
+      $nextMonth = $calendar->nextMonth();
 
-      return view('dashboard', compact('getGoal', 'getTitle', 'getCalendar'));
+      return view('dashboard', compact('getGoal', 'getTitle', 'getCalendar', 'prevMonth', 'nextMonth'));
     }
 
     /**

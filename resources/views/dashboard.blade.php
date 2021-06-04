@@ -26,9 +26,9 @@
       <div class="calendar-container">
         <div class="calendar">
           <div class="calendar-title">
-            <a href="#">< 前月</a>
+            <a href="/dashboard/?date={{ $prevMonth }}">< 前月</a>
             <span class="this-month">{!! $getTitle !!}</span>
-            <a href="#">来月 ></a>
+            <a href="/dashboard/?date={{ $nextMonth }}">来月 ></a>
           </div>
 
           <div class="calendar-content">

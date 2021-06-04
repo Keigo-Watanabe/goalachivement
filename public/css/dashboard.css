@@ -1226,7 +1226,8 @@
   font-weight: bold;
 }
 
-.sunday {
+.sunday,
+.holiday {
   color: #FF0000;
 }
 
