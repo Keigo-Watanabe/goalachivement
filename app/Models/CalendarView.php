@@ -166,7 +166,9 @@ class CalendarView extends Model
               $html[] = '<td class="'.$prev_next_month_class.'">'.$day->format('j').'</td>';
             // 今月の場合
             } else {
-              $html[] = '<td class="'.$day_class.' '.$today_class.'">'.$day->format('j').'</td>';
+              $html[] = '<td class="'.$day_class.' '.$today_class.'">';
+              $html[] = '<a href="/schedule/?date='.$day->format('Y-m-d\TH:i').'">'.$day->format('j').'</a>';
+              $html[] = '</td>';
             }
           }
 

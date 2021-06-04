@@ -1216,6 +1216,12 @@
   vertical-align: top;
 }
 
+.calendar-table td a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .prev-next-month {
   color: #333;
   opacity: 0.5;
@@ -1234,6 +1240,11 @@
 .saturday {
   color: #0045FF;
 }
+
+
+/*
+予定詳細・追加
+*/
 
 
 /*
@@ -1293,6 +1304,11 @@
   .task-sammary-item,
   .task-category-box {
     width: 100%;
+  }
+
+  /* カレンダー */
+  .calendar-table td {
+    height: 4.375rem;
   }
 }
 
@@ -1354,6 +1370,7 @@
   .goal-container {
     margin: 0.93rem;
   }
+
   .goal-content li {
     flex-direction: column;
     align-items: flex-start;
@@ -1368,5 +1385,22 @@
   /* タスク一覧 */
   .task-sammary {
     margin: 1.875rem 1.25rem;
+  }
+
+  /* カレンダー */
+  .calendar-container {
+    margin: 0.93rem;
+  }
+
+  .this-month {
+    font-size: 1.28rem;
+  }
+
+  .calendar-table th {
+    font-size: 1rem;
+  }
+
+  .calendar-table td a {
+    font-size: 0.85rem;
   }
 }
