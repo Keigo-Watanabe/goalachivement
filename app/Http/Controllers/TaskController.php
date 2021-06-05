@@ -78,7 +78,30 @@ class TaskController extends Controller
         $tasks = Task::orderBy('severity', 'desc')->orderBy('priority', 'desc')->where('complete', 0)->get();
         $task_categories = TaskCategory::all();
 
-        return view('task.totallpriority', compact('tasks', 'task_categories'));
+        // 重要・緊急
+        $matrix_a = [];
+        $matrix_b = [];
+        $matrix_c = [];
+        $matrix_d = [];
+
+        foreach ($tasks as $task) {
+          if ($task->priority >= 3 && $task->severity >= 3) {
+            $matrix_a[] = $task->task_id;
+          } else if ($task->priority >= 3 && $task->severity < 3) {
+            $matrix_b[] = $task->task_id;
+          } else if ($task->priority < 3 && $task->severity >= 3) {
+            $matrix_c[] = $task->task_id;
+          } else if ($task->priority < 3 && $task->severity < 3) {
+            $matrix_d[] = $task->task_id;
+          }
+        }
+
+        $matrix_a_count = count($matrix_a);
+        $matrix_b_count = count($matrix_b);
+        $matrix_c_count = count($matrix_c);
+        $matrix_d_count = count($matrix_d);
+
+        return view('task.totallpriority', compact('tasks', 'task_categories', 'matrix_a_count', 'matrix_b_count', 'matrix_c_count', 'matrix_d_count'));
     }
 
     public function complete()

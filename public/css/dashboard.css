@@ -1066,17 +1066,11 @@
   background-color: #69C5FF;
 }
 
-.matrix-one,
-.matrix-two,
-.matrix-three,
-.matrix-four {
+.matrix-box {
   flex: 1;
 }
 
-.matrix-one ul,
-.matrix-two ul,
-.matrix-three ul,
-.matrix-four ul {
+.matrix-box ul {
   padding: 1.25rem;
 }
 
@@ -1158,6 +1152,10 @@
   opacity: 0;
 }
 
+.matrix-responsive {
+  display: none;
+}
+
 
 /*
 カレンダー
@@ -1204,15 +1202,15 @@
   background-color: #1A3F5F;
   color: #fff;
   font-weight: bold;
-  font-size: 1.125rem;
+  font-size: 1rem;
   padding: 0.75rem;
   border: solid 1px #1A3F5F;
 }
 
 .calendar-table td {
   border: solid 1px #333;
-  height: 6.25rem;
-  padding: 0.625rem 0.3125rem;
+  height: 5rem;
+  padding: 0.3125rem;
   vertical-align: top;
 }
 
@@ -1245,6 +1243,39 @@
 /*
 予定詳細・追加
 */
+.schedule-container,
+.schedule-create {
+  margin: 4.6875rem 4.375rem;
+}
+
+.schedule-title,
+.schedule-create-title {
+  border-bottom: solid 3px #1A3F5F;
+}
+
+.schedule-create-title {
+  margin-bottom: 4.375rem;
+}
+
+.schedule-title h2 {
+  color: #1A3F5F;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.schedule-create-title h2 {
+  color: #1A3F5F;
+  font-weight: bold;
+  font-size: 1.75rem;
+}
+
+.form-p .fa-calendar-alt {
+  color: #62AFF2;
+}
+
+.form-p .fa-share-alt {
+  color: #4C7EDB;
+}
 
 
 /*
@@ -1275,15 +1306,6 @@
   .matrix-item {
     width: 100%;
   }
-
-  .table-matrix {
-    overflow: scroll;
-  }
-
-  .table-matrix-top,
-  .table-matrix-bottom {
-    width: 43.75rem;
-  }
 }
 
 
@@ -1304,6 +1326,83 @@
   .task-sammary-item,
   .task-category-box {
     width: 100%;
+  }
+
+  .high-priority-task,
+  .low-priority-task {
+    flex-direction: column;
+  }
+
+  .matrix-priority-high,
+  .matrix-severity-bottom,
+  .matrix-two::after,
+  .matrix-three::after {
+    display: none;
+  }
+
+  .matrix-two,
+  .matrix-four {
+    border-left: none;
+  }
+
+  .matrix-three,
+  .matrix-four {
+    border-bottom: none;
+  }
+
+  .matrix-title {
+    padding: 0.625rem;
+    margin-top: 0;
+  }
+
+  .matrix-box {
+    cursor: pointer;
+  }
+
+  .matrix-box ul {
+    display: none;
+  }
+
+  .matrix-box-open ul {
+    display: block;
+  }
+
+  .matrix-responsive {
+    display: block;
+    padding: 0 0.625rem 0.625rem 0.625rem;
+  }
+
+  .matrix-task-count {
+    text-align: center;
+    margin-bottom: 0.625rem;
+  }
+
+  .matrix-number span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.875rem;
+    height: 1.875rem;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: bold;
+    margin: 0 auto;
+  }
+
+  .matrix-1 span {
+    background-color: #FF4D4D;
+  }
+
+  .matrix-2 span {
+    background-color: #FF5519;
+  }
+
+  .matrix-3 span {
+    background-color: #FF860D;
+  }
+
+  .matrix-4 span {
+    background-color: #FFC400;
   }
 
   /* カレンダー */

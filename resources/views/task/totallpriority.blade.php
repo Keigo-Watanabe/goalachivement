@@ -27,11 +27,20 @@
             </div>
 
             <div class="high-priority-task">
-              <div class="matrix-one">
+              <div class="matrix-one matrix-box">
                 <div class="matrix-title">重要・緊急</div>
+                <!-- レスポンシブ -->
+                <div class="matrix-responsive">
+                  <div class="matrix-task-count">
+                    タスク：{{ $matrix_a_count }}
+                  </div>
+                  <div class="matrix-number matrix-1">
+                    <span>1</span>
+                  </div>
+                </div>
                 <ul>
                   @foreach ($tasks as $task)
-                    @if ($task->priority >= 4 && $task->severity >= 4)
+                    @if ($task->priority >= 3 && $task->severity >= 3)
                     <li class="task-sammary-item matrix-item">
                       <div class="task-name">
                         <a href="/task/{{ $task->task_id }}"><span class="task-content-name">{{ $task->content }}</span></a>
@@ -68,11 +77,20 @@
                 </ul>
               </div>
 
-              <div class="matrix-two">
+              <div class="matrix-two matrix-box">
                 <div class="matrix-title">重要・緊急でない</div>
+                <!-- レスポンシブ -->
+                <div class="matrix-responsive">
+                  <div class="matrix-task-count">
+                    タスク：{{ $matrix_b_count }}
+                  </div>
+                  <div class="matrix-number matrix-2">
+                    <span>2</span>
+                  </div>
+                </div>
                 <ul>
                   @foreach ($tasks as $task)
-                    @if ($task->priority >= 4 && $task->severity < 4)
+                    @if ($task->priority >= 3 && $task->severity < 3)
                     <li class="task-sammary-item matrix-item">
                       <div class="task-name">
                         <a href="/task/{{ $task->task_id }}"><span class="task-content-name">{{ $task->content }}</span></a>
@@ -117,11 +135,20 @@
             </div>
 
             <div class="low-priority-task">
-              <div class="matrix-three">
+              <div class="matrix-three matrix-box">
                 <div class="matrix-title">緊急・重要でない</div>
+                <!-- レスポンシブ -->
+                <div class="matrix-responsive">
+                  <div class="matrix-task-count">
+                    タスク：{{ $matrix_c_count }}
+                  </div>
+                  <div class="matrix-number matrix-3">
+                    <span>3</span>
+                  </div>
+                </div>
                 <ul>
                   @foreach ($tasks as $task)
-                    @if ($task->priority < 4 && $task->severity >= 4)
+                    @if ($task->priority < 3 && $task->severity >= 3)
                     <li class="task-sammary-item matrix-item">
                       <div class="task-name">
                         <a href="/task/{{ $task->task_id }}"><span class="task-content-name">{{ $task->content }}</span></a>
@@ -158,11 +185,20 @@
                 </ul>
               </div>
 
-              <div class="matrix-four">
+              <div class="matrix-four matrix-box">
                 <div class="matrix-title">重要でない・緊急でない</div>
+                <!-- レスポンシブ -->
+                <div class="matrix-responsive">
+                  <div class="matrix-task-count">
+                    タスク：{{ $matrix_d_count }}
+                  </div>
+                  <div class="matrix-number matrix-4">
+                    <span>4</span>
+                  </div>
+                </div>
                 <ul>
                   @foreach ($tasks as $task)
-                    @if ($task->priority < 4 && $task->severity < 4)
+                    @if ($task->priority < 3 && $task->severity < 3)
                     <li class="task-sammary-item matrix-item">
                       <div class="task-name">
                         <a href="/task/{{ $task->task_id }}"><span class="task-content-name">{{ $task->content }}</span></a>
@@ -201,7 +237,7 @@
             </div>
           </div>
 
-          <div class="table-matrix-bottom">
+          <div class="table-matrix-bottom matrix-severity-bottom">
             <div class="matrix-priority-low"><span class="matrix-space">/</span></div>
             <div class="low-priority-task">
               <div class="matrix-severity-high">

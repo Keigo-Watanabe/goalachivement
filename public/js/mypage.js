@@ -93,6 +93,22 @@ if (matrixDescription) {
 
 
 /*
+マトリックス開閉ボタン
+*/
+let matrixBox = document.querySelectorAll('.matrix-box');
+
+if (matrixBox) {
+  for (let i = 0; i < matrixBox.length; i++) {
+    let each_matrixBox = matrixBox[i];
+
+    each_matrixBox.addEventListener('click', () => {
+      each_matrixBox.classList.toggle('matrix-box-open');
+    });
+  }
+}
+
+
+/*
 タスクガントチャート（現在日までスクロール）
 */
 const taskChart = document.getElementById('task-chart');

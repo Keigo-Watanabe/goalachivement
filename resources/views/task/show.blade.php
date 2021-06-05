@@ -194,25 +194,25 @@
             <div class="form-block">
               <i class="fas fa-star priority"></i>重要度
               <select class="create-input select-stars" name="priority">
-                <option hidden>★ 〜 ★★★★★★</option>
+                <option hidden>0 〜 ★★★★★</option>
+                <option value="0" @if ($task->priority == 0) selected @endif></option>
                 <option value="1" @if ($task->priority == 1) selected @endif>★</option>
                 <option value="2" @if ($task->priority == 2) selected @endif>★★</option>
                 <option value="3" @if ($task->priority == 3) selected @endif>★★★</option>
                 <option value="4" @if ($task->priority == 4) selected @endif>★★★★</option>
                 <option value="5" @if ($task->priority == 5) selected @endif>★★★★★</option>
-                <option value="6" @if ($task->priority == 6) selected @endif>★★★★★★</option>
               </select>
             </div>
             <div class="form-block">
               <i class="fas fa-star severity"></i>緊急度
               <select class="create-input select-stars" name="severity">
-                <option hidden>★ 〜 ★★★★★★</option>
+                <option hidden>0 〜 ★★★★★</option>
+                <option value="0" @if ($task->severity == 0) selected @endif></option>
                 <option value="1" @if ($task->severity == 1) selected @endif>★</option>
                 <option value="2" @if ($task->severity == 2) selected @endif>★★</option>
                 <option value="3" @if ($task->severity == 3) selected @endif>★★★</option>
                 <option value="4" @if ($task->severity == 4) selected @endif>★★★★</option>
                 <option value="5" @if ($task->severity == 5) selected @endif>★★★★★</option>
-                <option value="6" @if ($task->severity == 6) selected @endif>★★★★★★</option>
               </select>
             </div>
           </div>
