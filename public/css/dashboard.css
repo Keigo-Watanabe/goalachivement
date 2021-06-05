@@ -1257,6 +1257,10 @@
   margin-bottom: 4.375rem;
 }
 
+.schedule-title {
+  margin-bottom: 1.875rem;
+}
+
 .schedule-title h2 {
   color: #1A3F5F;
   font-weight: bold;
@@ -1275,6 +1279,62 @@
 
 .form-p .fa-share-alt {
   color: #4C7EDB;
+}
+
+.schedule-item {
+  background-color: #FFFEF2;
+  padding: 1.25rem;
+  border: solid 1px #707070;
+}
+
+.schedule-item-title {
+  border-bottom: solid 3px #1A3F5F;
+  margin-bottom: 0.9375rem;
+}
+
+.schedule-item-title h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1A3F5F;
+  line-height: 1.5;
+}
+
+.schedule-item-title h3 i {
+  color: #62AFF2;
+  margin-left: 0.625rem;
+}
+
+.schedule-list ul li {
+  border: solid 1px #707070;
+  background-color: #fff;
+  padding: 0.9375rem;
+  margin-bottom: 0.9375rem;
+}
+
+.schedule-time,
+.schedule-time i {
+  color: #777;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.schedule-name {
+  font-size: 1.125rem;
+  color: #333;
+  font-weight: bold;
+  margin: 0.625rem 0;
+}
+
+.common-schedule {
+  margin-top: 0.625rem;
+}
+
+.common-schedule span {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #333;
+  padding: 0.3125rem 0.625rem;
+  border-radius: 0.625rem;
 }
 
 

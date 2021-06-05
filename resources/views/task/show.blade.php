@@ -148,7 +148,6 @@
                 <option value="#e91e63"></option>
                 <option value="#9c26b0"></option>
                 <option value="#673bb7"></option>
-                <option value="#3f51b5"></option>
                 <option value="#2296f3"></option>
                 <option value="#03a9f4"></option>
                 <option value="#01bcd4"></option>
