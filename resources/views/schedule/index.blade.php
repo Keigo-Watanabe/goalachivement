@@ -29,6 +29,11 @@
               </div>
               <div class="schedule-list">
                 <ul>
+                  @if ($schedules->count() == 0)
+                    <div class="no-schedule">
+                      予定はありません
+                    </div>
+                  @else
                   @foreach ($schedules as $schedule)
                     <li>
                       <div class="schedule-time">
@@ -54,10 +59,50 @@
                       @endif
                     </li>
                   @endforeach
+                  @endif
                 </ul>
               </div>
             </div>
 
+            <div class="schedule-item">
+              <div class="schedule-item-title">
+                <h3>タスク<i class="fas fa-tasks"></i></h3>
+              </div>
+              <div class="schedule-list">
+                <ul class="task-sammary-list">
+                  @foreach ($tasks as $task)
+                    @if ($task->complete == 0)
+                      @if ($day > date('Y-m-d', strtotime($task->start_date)) && $day < date('Y-m-d', strtotime($task->end_date)))
+                      <li class="task-sammary-item schedule-sammary-item">
+                        <div class="task-name">
+                          <a href="/task/{{ $task->task_id }}"><span class="task-content-name">{{ $task->content }}</span></a>
+                        </div>
+
+                        <div class="memo">
+                          <span>{{ $task->memo }}</span>
+                        </div>
+
+                        <div class="task-category task-category-complete">
+                          @foreach ($task_categories as $task_category)
+                            @if ($task_category->task_category_id == $task->task_category_id)
+                            <span style="background-color: {{ $task_category->category_color }};">{{ $task_category->task_category }}</span>
+                            @endif
+                          @endforeach
+
+                          <form class="complete-form" action="/task/{{ $task->task_id }}" method="post">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="_method" value="PUT">
+                            <input type="hidden" name="content" value="{{ $task->content }}">
+                            <input type="submit" name="complete" value="完了">
+                          </form>
+                        </div>
+                      </li>
+                      @endif
+                    @endif
+                  @endforeach
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       @endif
@@ -114,11 +159,11 @@
           <div class="form-p">
             <div class="form-block">
               <i class="fas fa-hourglass-start"></i>予定開始時間
-              <input class="create-input" type="datetime-local" name="start_time">
+              <input class="create-input" type="datetime-local" name="start_time" value="{{ $date }}">
             </div>
             <div class="form-block">
               <i class="fas fa-hourglass-end"></i>予定終了時間
-              <input class="create-input" type="datetime-local" name="end_time">
+              <input class="create-input" type="datetime-local" name="end_time" value="{{ $date }}">
             </div>
           </div>
 

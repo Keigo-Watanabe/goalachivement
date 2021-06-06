@@ -1253,6 +1253,15 @@
   border-bottom: solid 3px #1A3F5F;
 }
 
+.schedule-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.schedule-item {
+  width: 49%;
+}
+
 .schedule-create-title {
   margin-bottom: 4.375rem;
 }
@@ -1299,9 +1308,35 @@
   line-height: 1.5;
 }
 
-.schedule-item-title h3 i {
+.schedule-item-title .fa-calendar-alt {
   color: #62AFF2;
   margin-left: 0.625rem;
+}
+
+.schedule-item-title .fa-tasks {
+  color: #F2AA62;
+  margin-left: 0.625rem;
+}
+
+.schedule-sammary-item {
+  width: 100%;
+}
+
+.task-category-complete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.task-category-complete span {
+  border-radius: 1rem;
+}
+
+.no-schedule {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
 .schedule-list ul li {

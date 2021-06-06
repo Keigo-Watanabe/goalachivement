@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Schedule;
 use App\Models\CommonSchedule;
+use App\Models\Task;
+use App\Models\TaskCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,10 +26,13 @@ class ScheduleController extends Controller
 
         $day = date('Y-m-d', strtotime($date));
 
-        $schedules = Schedule::where('start_time', 'like', $day.'%')->get();
+        $schedules = Schedule::where('start_time', 'like', $day.'%')->orderBy('start_time', 'asc')->get();
         $commonSchedules = CommonSchedule::all();
 
-        return view('schedule.index', compact('date', 'schedules', 'commonSchedules'));
+        $tasks = Task::all();
+        $task_categories = TaskCategory::all();
+
+        return view('schedule.index', compact('date', 'schedules', 'commonSchedules', 'tasks', 'task_categories', 'day'));
     }
 
     /**
