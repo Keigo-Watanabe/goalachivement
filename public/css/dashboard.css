@@ -1162,10 +1162,12 @@
 */
 .calendar-container {
   margin: 1.875rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .calendar {
-  width: 100%;
+  width: 70%;
   max-width: 43.75rem;
 }
 
@@ -1209,7 +1211,8 @@
 
 .calendar-table td {
   border: solid 1px #333;
-  height: 5rem;
+  width: 14.28%;
+  height: 5.625rem;
   padding: 0.3125rem;
   vertical-align: top;
 }
@@ -1239,12 +1242,64 @@
   color: #0045FF;
 }
 
+.schedule-icon {
+  font-size: 0.75rem;
+  height: 1rem;
+  vertical-align: middle;
+  font-weight: bold;
+  display: block;
+  overflow: hidden;
+  margin-bottom: 3px;
+  padding: 0 0.3125rem;
+}
+
+.schedule-dot {
+  font-size: 0.625rem;
+  display: block;
+  margin-top: 0;
+}
+
+.calendar-schedule {
+  border: solid 1px #707070;
+  background-color: #FFFEEB;
+  padding: 0.9375rem;
+  width: 30%;
+}
+
+.calendar-schedule-title {
+  color: #1A3F5F;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: solid 3px #1A3F5F;
+  margin-bottom: 1.25rem;
+}
+
+.calendar-schedule-content li {
+  margin-bottom: 0.625rem;
+  border-bottom: solid 1px #333;
+  line-height: 2;
+  display: flex;
+  align-items: center;
+}
+
+.calendar-schedule-time {
+  margin-right: 0.3125rem;
+  font-size: 0.75rem;
+}
+
+.calendar-schedule-name {
+  font-weight: bold;
+}
+
+
 
 /*
 予定詳細・追加
 */
 .schedule-container,
-.schedule-create {
+.schedule-create,
+.schedule-success {
   margin: 4.6875rem 4.375rem;
 }
 
@@ -1401,6 +1456,10 @@
   .matrix-item {
     width: 100%;
   }
+
+  .schedule-sammary-item {
+    width: 100%;
+  }
 }
 
 
@@ -1502,7 +1561,26 @@
 
   /* カレンダー */
   .calendar-table td {
-    height: 4.375rem;
+    height: 5rem;
+  }
+
+  /* 予定 */
+  .schedule-content {
+    flex-direction: column;
+  }
+
+  .schedule-item {
+    width: 100%;
+  }
+
+  .schedule-item:first-child {
+    margin-bottom: 1.25rem;
+  }
+
+  .schedule-container,
+  .schedule-create,
+  .schedule-success {
+    margin: 1.42rem;
   }
 }
 

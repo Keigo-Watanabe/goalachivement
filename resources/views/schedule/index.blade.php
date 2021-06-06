@@ -2,7 +2,7 @@
     <div class="my-page-main">
 
       @if (session('message'))
-        <div class="success-message">
+        <div class="success-message schedule-success">
           {{ session('message') }}
         </div>
       @endif
@@ -38,7 +38,7 @@
                     <li>
                       <div class="schedule-time">
                         <i class="fas fa-clock"></i>
-                        {{ date('H:i', strtotime($schedule->start_time)) }} 〜 @if ($schedule->start_time != $schedule->end_time) {{ date('H:i', strtotime($schedule->end_time)) }} @endif
+                        {{ date('G:i', strtotime($schedule->start_time)) }} 〜 @if ($schedule->end_time != date('Y-m-d 00:00:00', strtotime($date))) {{ date('G:i', strtotime($schedule->end_time)) }} @endif
                       </div>
                       <div class="schedule-name">
                         {{ $schedule->content }}
@@ -70,6 +70,11 @@
               </div>
               <div class="schedule-list">
                 <ul class="task-sammary-list">
+                  @if ($tasks->count() == 0)
+                    <div class="no-schedule">
+                      タスクはありません
+                    </div>
+                  @else
                   @foreach ($tasks as $task)
                     @if ($task->complete == 0)
                       @if ($day > date('Y-m-d', strtotime($task->start_date)) && $day < date('Y-m-d', strtotime($task->end_date)))
@@ -100,6 +105,7 @@
                       @endif
                     @endif
                   @endforeach
+                  @endif
                 </ul>
               </div>
             </div>

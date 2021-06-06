@@ -9,19 +9,6 @@
         </div>
       </div>
       @endif
-      <div class="goal-container">
-        <div class="goal-title">
-          <p>
-            <span class="goal-proccess">目標までの道のり</span>
-          </p>
-        </div>
-
-        <div class="goal-content">
-          <ul>
-            {!! $getGoal !!}
-          </ul>
-        </div>
-      </div>
 
       <div class="calendar-container">
         <div class="calendar">
@@ -51,6 +38,42 @@
           </div>
         </div>
 
+        <div class="calendar-schedule">
+          <div class="calendar-schedule-title">
+            {{ date('Y年n月j日', strtotime($date)) }}
+          </div>
+
+          <div class="calendar-schedule-content">
+            <ul>
+              @if ($schedules->count() == 0)
+                <div class="no-schedule">
+                  予定はありません
+                </div>
+              @else
+              @foreach ($schedules as $schedule)
+                <li>
+                  <span class="calendar-schedule-time">{{ date('G:i', strtotime($schedule->start_time)) }} 〜 @if ($schedule->end_time != date('Y-m-d 00:00:00', strtotime($date))) {{ date('G:i', strtotime($schedule->end_time)) }} @endif</span>
+                  <span class="calendar-schedule-name">{{ $schedule->content }}</span>
+                </li>
+              @endforeach
+              @endif
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="goal-container">
+        <div class="goal-title">
+          <p>
+            <span class="goal-proccess">目標までの道のり</span>
+          </p>
+        </div>
+
+        <div class="goal-content">
+          <ul>
+            {!! $getGoal !!}
+          </ul>
+        </div>
       </div>
     </div>
 </x-app-layout>

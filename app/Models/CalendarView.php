@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Yasumi\Yasumi;
 use Yasumi\Holiday;
 use Carbon\Carbon;
+use App\Models\Schedule;
+use App\Models\CommonSchedule;
 
 class CalendarView extends Model
 {
@@ -167,7 +169,39 @@ class CalendarView extends Model
             // 今月の場合
             } else {
               $html[] = '<td class="'.$day_class.' '.$today_class.'">';
-              $html[] = '<a href="/schedule/?date='.$day->format('Y-m-d\TH:i').'">'.$day->format('j').'</a>';
+              $html[] = '<a href="/dashboard/?date='.$day->format('Y-m-d\TH:i').'">'.$day->format('j');
+
+              // 予定があるかどうか
+              $schedules = Schedule::where('start_time', 'like', $day->format('Y-m-d').'%')->orderBy('start_time', 'asc')->get();
+
+              // 予定の数をカウント
+              $counter = 0;
+
+              foreach ($schedules as $schedule) {
+                // 予定のグループを取得
+                $commonSchedules = CommonSchedule::all();
+
+                if ($schedule->common_schedule_id == 0) {
+                  // 予定のグループがない場合
+                  $html[] = '<span class="schedule-icon" style="background: #cecece;">'.$schedule->content.'</span>';
+                } else {
+                  // 予定のグループがある場合
+                  foreach ($commonSchedules as $commonSchedule) {
+                    if ($schedule->common_schedule_id == $commonSchedule->common_schedule_id) {
+                      $html[] = '<span class="schedule-icon" style="background: '.$commonSchedule->common_color.';">'.$schedule->content.'</span>';
+                    }
+                  }
+                }
+
+                $counter++;
+
+                if ($counter >= 2) {
+                  $html[] = '<span class="schedule-dot">･･･</span>';
+                  break;
+                }
+              }
+
+              $html[] = '</a>';
               $html[] = '</td>';
             }
           }

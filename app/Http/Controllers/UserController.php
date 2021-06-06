@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\GoalView;
 use App\Models\CalendarView;
+use App\Models\Schedule;
+use App\Models\CommonSchedule;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -40,7 +42,10 @@ class UserController extends Controller
       $prevMonth = $calendar->prevMonth();
       $nextMonth = $calendar->nextMonth();
 
-      return view('dashboard', compact('getGoal', 'getTitle', 'getCalendar', 'prevMonth', 'nextMonth'));
+      $schedules = Schedule::where('start_time', 'like', date('Y-m-d', strtotime($date)).'%')->orderBy('start_time', 'asc')->get();
+      $commonSchedules = CommonSchedule::all();
+
+      return view('dashboard', compact('getGoal', 'date', 'getTitle', 'getCalendar', 'prevMonth', 'nextMonth', 'schedules', 'commonSchedules'));
     }
 
     /**
