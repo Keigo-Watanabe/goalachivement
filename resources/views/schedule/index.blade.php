@@ -38,7 +38,7 @@
                     <li>
                       <div class="schedule-time">
                         <i class="fas fa-clock"></i>
-                        {{ date('G:i', strtotime($schedule->start_time)) }} 〜 @if ($schedule->end_time != date('Y-m-d 00:00:00', strtotime($date))) {{ date('G:i', strtotime($schedule->end_time)) }} @endif
+                        {{ date('G:i', strtotime($schedule->start_time)) }} 〜 @if ($schedule->end_time != date('Y-m-d 00:00:00', strtotime($date)) && $schedule->start_time != $schedule->end_time) {{ date('G:i', strtotime($schedule->end_time)) }} @endif
                       </div>
                       <div class="schedule-name">
                         {{ $schedule->content }}

@@ -1167,7 +1167,7 @@
 }
 
 .calendar {
-  width: 70%;
+  width: 100%;
   max-width: 43.75rem;
 }
 
@@ -1263,7 +1263,9 @@
   border: solid 1px #707070;
   background-color: #FFFEEB;
   padding: 0.9375rem;
-  width: 30%;
+  flex: 1;
+  overflow: hidden;
+  margin-left: 0.625rem;
 }
 
 .calendar-schedule-title {
@@ -1273,6 +1275,23 @@
   text-align: center;
   border-bottom: solid 3px #1A3F5F;
   margin-bottom: 1.25rem;
+}
+
+.calendar-schedule-task {
+  height: 90%;
+  position: relative;
+  overflow: scroll;
+}
+
+.calendar-schedule-task-inner {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.calendar-schedule-content {
+  margin-bottom: 1.875rem;
 }
 
 .calendar-schedule-content li {
@@ -1290,6 +1309,37 @@
 
 .calendar-schedule-name {
   font-weight: bold;
+}
+
+.calendar-task-title {
+  border-bottom: solid 3px #1A3F5F;
+  margin-bottom: 1.25rem;
+}
+
+.calendar-task-title h3 {
+  color: #1A3F5F;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.schedule-link {
+  margin-top: 1.25rem;
+}
+
+.schedule-link a {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.3125rem 0.625rem;
+  background-color: #4c7cff;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.schedule-link a:hover {
+  background-color: #6b95ff;
 }
 
 
@@ -1375,6 +1425,7 @@
 
 .schedule-sammary-item {
   width: 100%;
+  background-color: #fff;
 }
 
 .task-category-complete {
@@ -1434,6 +1485,19 @@
 
 
 /*
+〜1200px
+*/
+@media screen and (max-width: 1200px) {
+  /* カレンダー */
+  .calendar {
+    max-width: 100%;
+    height: auto;
+    flex: 2;
+  }
+}
+
+
+/*
 〜1024px
 */
 @media screen and (max-width: 1024px) {
@@ -1474,6 +1538,10 @@
 
   .goal-circle-graph {
     margin-bottom: 1.875rem;
+  }
+
+  .goal-show-description {
+    width: 100%;
   }
 
   /* タスク一覧 */
@@ -1564,6 +1632,30 @@
     height: 5rem;
   }
 
+  .calendar-container {
+    flex-direction: column;
+  }
+
+  .calendar-schedule {
+    margin-top: 1.25rem;
+    margin-left: 0;
+  }
+
+  .calendar-schedule-task,
+  .calendar-schedule-task-inner {
+    position: static;
+  }
+
+  .calendar-schedule-task-inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .calendar-schedule-content,
+  .calendar-task-content {
+    width: 48%;
+  }
+
   /* 予定 */
   .schedule-content {
     flex-direction: column;
@@ -1639,7 +1731,8 @@
 
 
   /* 目標 */
-  .goal-container {
+  .goal-container,
+  .task-chart-container {
     margin: 0.93rem;
   }
 
@@ -1652,6 +1745,14 @@
     margin-bottom: 1.25rem;
     width: 100%;
     border-bottom: solid 1px #333;
+  }
+
+  .task-list ul li {
+    font-size: 1vw;
+  }
+
+  .td {
+    height: 2.5rem;
   }
 
   /* タスク一覧 */
@@ -1674,5 +1775,14 @@
 
   .calendar-table td a {
     font-size: 0.85rem;
+  }
+
+  .calendar-schedule-task-inner {
+    flex-direction: column;
+  }
+
+  .calendar-schedule-content,
+  .calendar-task-content {
+    width: 100%;
   }
 }

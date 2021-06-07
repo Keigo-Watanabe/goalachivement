@@ -132,7 +132,7 @@
                   </ul>
                 </li>
                 <li>
-                  <a href=""><i class="fas fa-calendar-alt"></i>予定</a>
+                  <a href="/schedule"><i class="fas fa-calendar-alt"></i>予定</a>
                 </li>
               </ul>
             </nav>
@@ -231,7 +231,7 @@
             </ul>
           </li>
           <li>
-            <a href=""><i class="fas fa-calendar-alt"></i>予定</a>
+            <a href="/schedule"><i class="fas fa-calendar-alt"></i>予定</a>
           </li>
         </ul>
       </nav>

@@ -98,13 +98,11 @@ class ScheduleController extends Controller
       $schedule->end_time = $request->input('end_time');
 
       // 予定終了時間が入力されなかったら
-      // $date = $request->input('date');
-      //
-      // if ($request->input('end_time') == date('Y-m-dT00:00', strtotime($date))) {
-      //   $schedule->end_time = $request->input('start_time');
-      // } else {
-      //   $schedule->end_time = $request->input('end_time');
-      // }
+      if ($request->input('end_time') == null) {
+        $schedule->end_time = $request->input('start_time');
+      } else {
+        $schedule->end_time = $request->input('end_time');
+      }
 
       // メモが入力されたら
       if ($request->input('memo')) {
