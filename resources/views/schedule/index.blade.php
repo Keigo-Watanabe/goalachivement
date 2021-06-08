@@ -41,7 +41,7 @@
                         {{ date('G:i', strtotime($schedule->start_time)) }} 〜 @if ($schedule->end_time != date('Y-m-d 00:00:00', strtotime($date)) && $schedule->start_time != $schedule->end_time) {{ date('G:i', strtotime($schedule->end_time)) }} @endif
                       </div>
                       <div class="schedule-name">
-                        {{ $schedule->content }}
+                        <a href="/schedule/{{ $schedule->schedule_id }}">{{ $schedule->content }}</a>
                       </div>
                       @if ($schedule->memo != '')
                       <div class="schedule-memo">

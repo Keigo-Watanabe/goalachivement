@@ -1473,15 +1473,28 @@
 .schedule-time,
 .schedule-time i {
   color: #777;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
 .schedule-name {
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: #333;
   font-weight: bold;
   margin: 0.625rem 0;
+}
+
+.schedule-name a {
+  transition: all 0.3s ease;
+}
+
+.schedule-name a:hover {
+  text-decoration: underline;
+  opacity: 0.7;
+}
+
+.schedule-memo {
+  font-size: 0.875rem;
 }
 
 .common-schedule {
@@ -1494,6 +1507,85 @@
   color: #333;
   padding: 0.3125rem 0.625rem;
   border-radius: 0.625rem;
+}
+
+
+/*
+予定一覧
+*/
+.schedule-sammary-container {
+  margin: 4.6875rem 3.75rem;
+}
+
+.schedule-sammary-title {
+  border-bottom: solid 3px #1A3F5F;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 0.625rem;
+  margin-bottom: 2.5rem;
+}
+
+.schedule-sammary-title h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1A3F5F;
+}
+
+.schedule-sammary-title a {
+  color: #1A3F5F;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.schedule-sammary-title a:hover {
+  text-decoration: underline;
+}
+
+.schedule-sammary-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.schedule-date-sammary {
+  width: 33%;
+  border: solid 1px #707070;
+  background-color: #FFFEF2;
+  margin-bottom: 2.5rem;
+}
+
+.schedule-date {
+  color: #fff;
+  text-align: center;
+  background-color: #1A3F5F;
+  font-weight: bold;
+  font-size: 1.25rem;
+  padding: 0.625rem;
+}
+
+.schedule-date-sammary ul {
+  padding: 1.25rem 0.625rem;
+}
+
+.schedule-date-sammary ul li {
+  background-color: #fff;
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  border: solid 1px #707070;
+}
+
+.common-schedule-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.3125rem 0.625rem;
+  background-color: #fff;
+  border-bottom: solid 1px #707070;
+}
+
+.common-schedule-color {
+  height: 0.625rem;
 }
 
 
@@ -1541,6 +1633,11 @@
 
   .schedule-sammary-item {
     width: 100%;
+  }
+
+  /* 予定一覧 */
+  .schedule-date-sammary {
+    width: 49%;
   }
 }
 
@@ -1692,6 +1789,11 @@
   .schedule-success {
     margin: 1.42rem;
   }
+
+  /* 予定一覧 */
+  .schedule-date-sammary {
+    width: 100%;
+  }
 }
 
 
@@ -1802,5 +1904,10 @@
   .calendar-schedule-content,
   .calendar-task-content {
     width: 100%;
+  }
+
+  /* 予定一覧 */
+  .schedule-sammary-container {
+    margin: 1.875rem 1.25rem;
   }
 }

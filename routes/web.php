@@ -45,6 +45,8 @@ Route::resource('schedule', ScheduleController::class)->middleware('auth');
 
 Route::get('schedulesammary', [ScheduleController::class, 'sammary'])->middleware('auth');
 
+Route::get('commonschedule', [ScheduleController::class, 'common'])->middleware('auth');
+
 Route::get('taskcategory', [TaskController::class, 'category'])->middleware('auth');
 
 Route::get('taskpriority', [TaskController::class, 'priority'])->middleware('auth');

@@ -8,6 +8,7 @@ use App\Models\Task;
 use App\Models\TaskCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class ScheduleController extends Controller
 {
@@ -56,7 +57,25 @@ class ScheduleController extends Controller
         // 同じ日にちは1つにまとめる
         $schedule_date = array_unique($schedule_date);
 
-        return view('schedule.sammary', compact('schedules', 'commonSchedules', 'schedule_date'));
+        $day = new Carbon();
+        $day = $day->copy()->timezone('Asia/Tokyo')->format('Y-m-d');
+
+        return view('schedule.sammary', compact('schedules', 'commonSchedules', 'schedule_date', 'day'));
+    }
+
+
+    /*
+    予定一覧（グループ別）
+    */
+    public function common()
+    {
+        $schedules = Schedule::orderBy('start_time', 'asc')->get();
+        $commonSchedules = CommonSchedule::all();
+
+        $day = new Carbon();
+        $day = $day->copy()->timezone('Asia/Tokyo')->format('Y-m-d');
+
+        return view('schedule.common', compact('schedules', 'commonSchedules', 'day'));
     }
 
 
