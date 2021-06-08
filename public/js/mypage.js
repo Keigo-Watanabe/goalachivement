@@ -40,6 +40,20 @@ if (taskBtn) {
 
 
 /*
+ヘッダーメニュー・予定（開閉ボタン）
+*/
+const scheduleBtn = document.getElementById('schedule-btn');
+
+if (scheduleBtn) {
+  scheduleBtn.addEventListener('click', () => {
+    const scheduleNavMenu = document.getElementById('schedule-nav-menu');
+
+    scheduleNavMenu.classList.toggle('schedule-nav-menu-show');
+  });
+}
+
+
+/*
 タスク優先後（開閉ボタン）
 */
 const priorityList = document.getElementById('priority-list');

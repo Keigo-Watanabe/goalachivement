@@ -93,6 +93,24 @@
   font-weight: normal !important;
 }
 
+.schedule-btn {
+  cursor: pointer;
+}
+
+.schedule-nav-menu {
+  margin-top: 1.56rem;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.schedule-nav-menu-show {
+  display: block;
+}
+
+.schedule-nav-menu li a {
+  font-weight: normal !important;
+}
+
 
 /*
 マイページ内容

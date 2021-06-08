@@ -35,6 +35,31 @@ class ScheduleController extends Controller
         return view('schedule.index', compact('date', 'schedules', 'commonSchedules', 'tasks', 'task_categories', 'day'));
     }
 
+
+    /*
+    予定一覧
+    */
+    public function sammary()
+    {
+        $schedules = Schedule::orderBy('start_time', 'asc')->get();
+        $commonSchedules = CommonSchedule::all();
+
+        $schedules_date = Schedule::orderBy('start_time', 'asc')->get(['start_time']);
+
+        $schedule_date = [];
+
+        foreach ($schedules_date as $schedule) {
+          // 配列に格納
+          $schedule_date[] = date('Y-m-d', strtotime($schedule->start_time));
+        }
+
+        // 同じ日にちは1つにまとめる
+        $schedule_date = array_unique($schedule_date);
+
+        return view('schedule.sammary', compact('schedules', 'commonSchedules', 'schedule_date'));
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

@@ -132,7 +132,11 @@
                   </ul>
                 </li>
                 <li>
-                  <a href="/schedule"><i class="fas fa-calendar-alt"></i>予定</a>
+                  <a id="schedule-btn" class="schedule-btn"><i class="fas fa-calendar-alt"></i>予定</a>
+                  <ul id="schedule-nav-menu" class="schedule-nav-menu">
+                    <li><a href="/schedulesammary">予定一覧</a></li>
+                    <li><a href="/schedule">予定追加</a></li>
+                  </ul>
                 </li>
               </ul>
             </nav>
@@ -231,7 +235,11 @@
             </ul>
           </li>
           <li>
-            <a href="/schedule"><i class="fas fa-calendar-alt"></i>予定</a>
+            <a id="schedule-btn" class="schedule-btn"><i class="fas fa-calendar-alt"></i>予定</a>
+            <ul id="schedule-nav-menu" class="schedule-nav-menu schedule-nav-menu-show">
+              <li><a href="/schedulesammary">予定一覧</a></li>
+              <li><a href="/schedule">予定追加</a></li>
+            </ul>
           </li>
         </ul>
       </nav>
