@@ -1947,4 +1947,17 @@
   .schedule-sammary-container {
     margin: 1.875rem 1.25rem;
   }
+
+  /* 予定編集 */
+  .schedule-delete-form input[type="submit"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .back-schedule-sammary {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+  }
 }

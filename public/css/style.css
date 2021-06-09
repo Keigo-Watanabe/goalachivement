@@ -28,7 +28,7 @@ a {
   transition: all 0.3s ease;
 }
 
-.start-btn {
+/* .start-btn {
   position: relative;
   display: block;
   width: fit-content;
@@ -66,11 +66,200 @@ a {
 
 .start-btn:hover::before {
   opacity: 0;
-}
+} */
 
 
 /* LPヘッダー */
 .lp-header {
+  padding: 1.5625rem 3.125rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goalachivement {
+  font-family: 'Alata', sans-serif;
+  font-size: 1.3125rem;
+  color: #333;
+}
+
+.logo-achivement {
+  color: #00E6F0;
+}
+
+.header-nav ul {
+  display: flex;
+}
+
+.header-nav ul li {
+  margin-left: 1.875rem;
+  color: #333;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.header-nav ul li:last-child {
+  margin-left: 1rem;
+}
+
+.header-register a {
+  padding: 0.3125rem 1.25rem;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 20%);
+  border-radius: 0.9375rem;
+  background-color: #fff;
+}
+
+.header-login a {
+  padding: 0.3125rem 1.25rem;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 20%);
+  border-radius: 0.9375rem;
+  background-color: #E3EBFF;
+}
+
+
+/* ファーストビュー */
+.firstview {
+  background-color: #F7FCFF;
+  height: calc(100vh + 4rem);
+  padding-top: 5rem;
+  position: relative;
+}
+
+.firstview-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 60rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 1.25rem;
+}
+
+.firstview-image {
+  flex: 1;
+}
+
+.firstview-image img {
+  width: 100%;
+  height: auto;
+}
+
+.firstview-title {
+  flex: 1;
+}
+
+.firstview-title h1 {
+  margin-bottom: 3.125rem;
+}
+
+.goalachivement-jp {
+  font-size: 4.25rem;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.goalachivement-en {
+  font-size: 1.75rem;
+  font-family: 'Alata', sans-serif;
+  display: block;
+  text-align: center;
+}
+
+.start-btn {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.5rem 2.375rem;
+  border-radius: 1.25rem;
+  color: #fff;
+  background: linear-gradient(90deg, #8BE3FF, #9CBEFD);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 20%);
+}
+
+
+/* アプリの説明 */
+.app-description {
+  padding: 0 1.25rem;
+}
+
+.app-description-inner {
+  width: 100%;
+  max-width: 60rem;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 25%);
+  padding: 2.5rem 9rem;
+  transform: translateY(-4rem);
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.app-description-title h2 {
+  font-size: 2rem;
+}
+
+.app-description-p p {
+  margin-top: 1.75rem;
+}
+
+
+/* アプリの使い方 */
+.app-management {
+  background-color: #FFFCFA;
+  padding: 0 1.25rem;
+}
+
+.app-management-inner {
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.app-management-title {
+  padding: 3.125rem 0;
+}
+
+.app-management-title h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.app-management-content {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6.875rem;
+}
+
+.app-management-image img {
+  width: 100%;
+  height: auto;
+}
+
+.app-step {
+  font-size: 2rem;
+  color: #4771D0;
+  font-family: 'Alata', sans-serif;
+  display: block;
+}
+
+.step-title-name {
+  font-size: 1.5rem;
+  display: block;
+  margin: 1.75rem 0;
+}
+/* .lp-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -222,14 +411,14 @@ a {
 
 .bar2 {
   margin: 0.62rem 0;
-}
+} */
 
 
 
 /*
 ファーストビュー
 */
-.firstview {
+/* .firstview {
   height: 40.625rem;
   position: relative;
 }
@@ -323,13 +512,13 @@ a {
 .fade-in-btn {
   opacity: 1;
   transform: translateY(0);
-}
+} */
 
 
 /*
 アプリ説明
 */
-.about-app {
+/* .about-app {
   padding: 5rem 1.25rem 6.25rem 1.25rem;
   background-color: #fff;
 }
@@ -348,13 +537,13 @@ a {
 .about-app p {
   text-align: center;
   margin-top: 1.25rem;
-}
+} */
 
 
 /*
 できること
 */
-.feature {
+/* .feature {
   padding-bottom: 7.5rem;
   background-color: #fff;
 }
@@ -464,13 +653,13 @@ a {
 
 .feature-content a:hover::before {
   opacity: 0;
-}
+} */
 
 
 /*
 はじめよう
 */
-.start-app {
+/* .start-app {
   height: 18.75rem;
   background-image: url(/image/banner.jpg);
   background-position: center;
@@ -495,13 +684,13 @@ a {
   display: block;
   text-align: center;
   margin-bottom: 2.5rem;
-}
+} */
 
 
 /*
 フッター
 */
-.lp-footer {
+/* .lp-footer {
   border-top: solid 1px #333;
   padding: 2.81rem;
   background-color: #fff;
@@ -553,13 +742,13 @@ a {
 
 .copyright span {
   font-size: 0.875rem;
-}
+} */
 
 
 /*
 フェードイン
 */
-.fade-in-target {
+/* .fade-in-target {
   opacity: 0;
   transform: translateY(5rem);
   transition: all 0.5s ease;
@@ -569,13 +758,13 @@ a {
 .scroll-in {
   opacity: 1;
   transform: translateY(0);
-}
+} */
 
 
 /*
 会員登録・ログイン
 */
-.lp-header-register {
+/* .lp-header-register {
   background-color: rgba(255, 255, 255, 0%);
 }
 
@@ -589,7 +778,7 @@ a {
 .register-container-bg {
   padding-top: 3.125rem;
   background: linear-gradient(-135deg, rgba(255, 255, 255, 0%), rgba(0, 0, 0, 40%));
-}
+} */
 
 .bg-gray-100 {
   background-color: rgba(255, 255, 255, 0%);
@@ -612,7 +801,7 @@ a {
   background-color: rgba(255, 255, 255, 80%);
 }
 
-.form-input {
+/* .form-input {
   display: flex;
   align-items: flex-end;
 }
@@ -636,7 +825,7 @@ a {
   padding: 0.125rem 0.3125rem;
   color: #333;
   font-size: 1.125rem;
-}
+} */
 
 .border-gray-300 {
   border-color: rgba(255, 255, 255, 0%);
@@ -663,7 +852,7 @@ select:focus {
   border-bottom: solid 1px #333;
 }
 
-.form-register-btn {
+/* .form-register-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -744,7 +933,7 @@ select:focus {
 .forgot-password-sentence {
   color: #333;
   margin-bottom: 2.18rem;
-}
+} */
 
 .text-red-600 {
   font-weight: bold;
@@ -758,7 +947,7 @@ select:focus {
 /*
 お問い合わせ
 */
-.contact-firstview {
+/* .contact-firstview {
   height: 40.625rem;
   background-image: url(/image/firstview.jpg);
   background-position: center;
@@ -866,7 +1055,7 @@ select:focus {
 
 .submit-btn:hover::before {
   opacity: 0;
-}
+} */
 
 
 
@@ -889,7 +1078,7 @@ select:focus {
 */
 @media screen and (max-width: 1100px) {
   /* ヘッダー */
-  .menu-bar {
+  /* .menu-bar {
     display: block;
     z-index: 1000;
   }
@@ -972,7 +1161,7 @@ select:focus {
 
   .register-btn {
     margin-bottom: 1.875rem;
-  }
+  } */
 }
 
 
@@ -981,12 +1170,12 @@ select:focus {
 */
 @media screen and (max-width: 1024px) {
   /* ファーストビュー */
-  .firstview-title {
+  /* .firstview-title {
     left: 6.25rem;
-  }
+  } */
 
   /* できること */
-  .feature-box {
+  /* .feature-box {
     flex-direction: column;
   }
 
@@ -1008,7 +1197,7 @@ select:focus {
   .feature-image img {
     width: 100%;
     margin: 0;
-  }
+  } */
 }
 
 
@@ -1021,7 +1210,7 @@ select:focus {
   }
 
   /* ファーストビュー */
-  .firstview-title {
+  /* .firstview-title {
     width: fit-content;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -1041,15 +1230,15 @@ select:focus {
 
   .start-btn {
     font-size: 1.14rem;
-  }
+  } */
 
   /* アプリ説明 */
-  .about-app-title {
+  /* .about-app-title {
     font-size: 1.42rem;
-  }
+  } */
 
   /* できること */
-  .feature {
+  /* .feature {
     padding-bottom: 0;
   }
 
@@ -1064,20 +1253,20 @@ select:focus {
 
   .feature-content a {
     font-size: 1.14rem;
-  }
+  } */
 
   /* フッター */
-  .footer-nav ul {
+  /* .footer-nav ul {
     flex-direction: column;
   }
 
   .footer-nav ul li {
     margin: 0 0 0.93rem 0;
     width: fit-content;
-  }
+  } */
 
   /* 会員登録・ログイン */
-  .form-input {
+  /* .form-input {
     flex-direction: column;
     align-items: flex-start;
     max-width: 17.18rem;
@@ -1087,5 +1276,5 @@ select:focus {
   .form-input label {
     text-align: left;
     margin: 0;
-  }
+  } */
 }

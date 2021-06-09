@@ -22,7 +22,31 @@
     <body>
 
       <!-- ヘッダー -->
-      <header id="lp-header" class="lp-header lp-header-bg">
+      <header class="lp-header">
+        <div class="header-inner">
+          <div class="header-logo">
+            <span class="goalachivement">Goal<span class="logo-achivement">Achivement.</span></span>
+          </div>
+
+          <nav class="header-nav">
+            <ul>
+              <li><a href="">ホーム</a></li>
+              <li><a href="">アプリの使い方</a></li>
+              <li><a href="">機能</a></li>
+              <li><a href="">お問い合わせ</a></li>
+              <li class="header-register"><a href="{{ route('register') }}">会員登録</a></li>
+              <li class="header-login"><a href="{{ route('login') }}">ログイン</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <!-- コンポーネント -->
+        @yield('content')
+      </main>
+
+      <!-- <header id="lp-header" class="lp-header lp-header-bg">
         <div class="header-logo">
           <a href="/"><span id="logo" class="logo">Goal<span class="logo-achivement">Achivement.</span></span></a>
         </div>
@@ -48,10 +72,10 @@
         </div>
       </header>
 
-      <main class="main">
+      <main class="main"> -->
 
         <!-- ファーストビュー -->
-        <div class="firstview">
+        <!-- <div class="firstview">
           <div id="firstview-bg" class="firstview-bg">
             <div class="firstview-title">
               <h1 id="title" class="title">
@@ -63,23 +87,29 @@
               <a id="start-btn" class="start-btn firstview-btn" href="{{ route('login') }}">はじめよう</a>
             </div>
           </div>
-        </div>
-
-        <!-- コンポーネント -->
-        @yield('content')
+        </div> -->
 
         <!-- はじめよう -->
-        <div class="start-app">
+        <!-- <div class="start-app">
           <div class="start-bg">
             <span class="start-word">目標を、達成しよう。</span>
             <a class="start-btn" href="{{ route('login') }}">はじめる</a>
           </div>
         </div>
 
-      </main>
+      </main> -->
 
       <!-- フッター -->
       <footer class="lp-footer">
+        <div class="footer-logo">
+          <span class="goalachivement">Goal<span class="logo-achivement">Achivement.</span></span>
+        </div>
+
+        <div class="copyright">
+          <span>©️ Copyright GoalAchivement All right reserved.</span>
+        </div>
+      </footer>
+      <!-- <footer class="lp-footer">
         <nav class="footer-nav">
           <ul>
             <li><a href="/">ホーム</a></li>
@@ -96,7 +126,7 @@
         <div class="copyright">
           <span>©️Goal Achievement 2021</span>
         </div>
-      </footer>
+      </footer> -->
 
       <script src="/js/jquery-3.5.1.min.js"></script>
       <script src="{{ asset('js/script.js') }}"></script>
