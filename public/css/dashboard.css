@@ -1555,6 +1555,12 @@
   margin-bottom: 2.5rem;
 }
 
+.schedule-sammary-content::after {
+  content: '';
+  display: block;
+  width: 33%;
+}
+
 .schedule-date {
   color: #fff;
   text-align: center;
@@ -1586,6 +1592,37 @@
 
 .common-schedule-color {
   height: 0.625rem;
+}
+
+
+/*
+予定編集
+*/
+.back-schedule-sammary {
+  color: #2176FF;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
+.back-schedule-sammary:hover {
+  text-decoration: none;
+}
+
+.schedule-delete-form {
+  margin-bottom: 0.625rem;
+}
+
+.schedule-delete-form input[type="submit"] {
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.3125rem 0.625rem;
+  background-color: #FF5252;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.schedule-delete-form input[type="submit"]:hover {
+  background-color: #D93636;
 }
 
 

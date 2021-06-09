@@ -3,7 +3,11 @@
 
       @if (session('message'))
         <div class="success-message schedule-success">
-          {{ session('message') }}
+          @if (session('schedule_content'))
+            『{{ session('schedule_content') }}』{{ session('message') }}
+          @else
+            {{ session('message') }}
+          @endif
         </div>
       @endif
 
