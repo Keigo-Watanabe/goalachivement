@@ -21,18 +21,6 @@ Route::get('/', function () {
     return view('lp.top');
 });
 
-Route::get('lp/goal', function () {
-    return view('lp.goal');
-});
-
-Route::get('lp/task', function () {
-    return view('lp.task');
-});
-
-Route::get('lp/schedule', function () {
-    return view('lp.schedule');
-});
-
 Route::get('lp/contact', function () {
     return view('lp.contact');
 });

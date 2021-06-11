@@ -2,20 +2,28 @@
 
 @section('content')
 
+  <!-- ロード -->
+  <div id="loadview" class="loadview">
+    <div id="loadview-title" class="loadview-title">
+      <span class="goalachivement-jp">目標達成</span>
+      <span class="goalachivement-en">Goal Achivement</span>
+    </div>
+  </div>
+
   <!-- ファーストビュー -->
   <div class="firstview">
     <div class="firstview-inner">
-      <div class="firstview-image">
+      <div id="firstview-image" class="firstview-image">
         <img src="/image/goalachivement.png">
       </div>
 
-      <div class="firstview-title">
+      <div id="firstview-title" class="firstview-title">
         <h1>
           <span class="goalachivement-jp">目標達成</span>
           <span class="goalachivement-en">Goal Achivement</span>
         </h1>
 
-        <a class="firstview-start start-btn" href="">はじめる</a>
+        <a class="firstview-start start-btn" href="{{ route('login') }}">はじめる</a>
       </div>
     </div>
   </div>
@@ -39,7 +47,7 @@
 
 
   <!-- アプリの使い方 -->
-  <div class="app-management">
+  <div id="app-management" class="app-management">
     <div class="app-management-inner">
       <div class="app-management-title">
         <h2>アプリの使い方</h2>
@@ -47,7 +55,7 @@
 
       <div class="app-management-container">
         <!-- ステップ1 -->
-        <div class="app-management-content app-management-odd">
+        <div class="app-management-content app-management-odd fade-in-target">
           <div class="app-management-image">
             <img src="/image/goal.png">
           </div>
@@ -65,10 +73,12 @@
               <p>より具体的な日付を設定することで、目標達成までの期間が明確になります。</p>
             </div>
           </div>
+
+          <div class="odd-arrow arrow-show"></div>
         </div>
 
         <!-- ステップ2 -->
-        <div class="app-management-content app-management-even">
+        <div class="app-management-content app-management-even fade-in-target">
           <div class="app-management-description">
             <div class="steps-title">
               <h3>
@@ -86,10 +96,12 @@
           <div class="app-management-image">
             <img src="/image/task.png">
           </div>
+
+          <div class="even-arrow arrow-show"></div>
         </div>
 
         <!-- ステップ3 -->
-        <div class="app-management-content app-management-odd">
+        <div class="app-management-content app-management-odd fade-in-target">
           <div class="app-management-image">
             <img src="/image/process.png">
           </div>
@@ -107,10 +119,12 @@
               <p>タスクを1つ1つクリアし、目標達成まで近づくことができるでしょう。</p>
             </div>
           </div>
+
+          <div class="odd-arrow arrow-show"></div>
         </div>
 
         <!-- ステップ4 -->
-        <div class="app-management-content app-management-even">
+        <div class="app-management-content app-management-even fade-in-target">
           <div class="app-management-description">
             <div class="steps-title">
               <h3>
@@ -128,10 +142,12 @@
           <div class="app-management-image">
             <img src="/image/category.png">
           </div>
+
+          <div class="even-arrow arrow-show"></div>
         </div>
 
         <!-- ステップ5 -->
-        <div class="app-management-content app-management-odd">
+        <div class="app-management-content app-management-odd fade-in-target">
           <div class="app-management-image">
             <img src="/image/priority.png">
           </div>
@@ -157,7 +173,7 @@
 
 
   <!-- 機能 -->
-  <div class="app-feature">
+  <div id="app-feature" class="app-feature">
     <div class="app-feature-bg">
       <div class="app-feature-inner">
         <div class="app-feature-title">
@@ -165,7 +181,7 @@
         </div>
 
         <div class="app-feature-container">
-          <div class="app-feature-content">
+          <div class="app-feature-content fade-in-target">
             <div class="app-feature-image">
               <img src="/image/calendar.png">
             </div>
@@ -176,7 +192,7 @@
             </div>
           </div>
 
-          <div class="app-feature-content">
+          <div class="app-feature-content fade-in-target second-app-feature-content">
             <div class="app-feature-image">
               <img src="/image/schedule.png">
             </div>
@@ -187,7 +203,7 @@
             </div>
           </div>
 
-          <div class="app-feature-content">
+          <div class="app-feature-content fade-in-target third-app-feature-content">
             <div class="app-feature-image">
               <img src="/image/group.png">
             </div>
@@ -206,68 +222,7 @@
   <!-- 目標を達成しましょう -->
   <div class="start-app">
     <h2>目標を達成しましょう</h2>
-    <a href="start-app-btn start-btn">はじめよう</a>
+    <a class="start-app-btn start-btn" href="{{ route('login') }}">はじめよう</a>
   </div>
-  <!-- <div class="about-app">
-    <span class="about-app-title fade-in-target">目標達成までのタスクを管理。</span>
-    <span class="about-app-title fade-in-target">×</span>
-    <span class="about-app-title fade-in-target">カレンダーで予定を把握。</span>
-
-    <div class="about-app-sentence fade-in-target">
-      <p>目標を設定し、それを達成するためのタスクを追加することで、目標達成までの道のりを把握することができます。</p>
-      <p>それぞれのタスクに、重要度・緊急度をつけてタスクの優先度を設定しましょう。</p>
-      <p>また、日常の予定も把握することで、毎日のタスクを管理することができます。</p>
-      <p>目標を明確にし、タスクを1つずつこなし、夢を叶えよう。</p>
-    </div>
-  </div> -->
-
-  <!-- できること -->
-  <!-- <div class="feature">
-    <div id="feature" class="feature-title">
-      <h2>できること</h2>
-    </div>
-
-    <div class="feature-box">
-      <div class="feature-image feature-image-1">
-        <img class="fade-in-target" src="/image/lp-sample-1.jpg" alt="lp-sample-1">
-      </div>
-
-      <div class="feature-content">
-        <h3><span class="feature-number">1.</span>目標を設定し、タスクを追加</h3>
-        <p>まず、目標と達成する日を設定します。</p>
-        <p>達成日に合わせて、必要なタスクを追加し、それぞれの完了日を設定しましょう。</p>
-        <p>タスクの設定ができれば、目標達成までの道のりをひと目で把握することができます。</p>
-        <a href="{{ url('lp/goal#goal') }}">詳細はこちら</a>
-      </div>
-    </div>
-
-    <div class="feature-box feature-box-second">
-      <div class="feature-content">
-        <h3><span class="feature-number">2.</span>タスクを管理し、カテゴリー別に把握する</h3>
-        <p>目標達成までのタスクとは別に、個々のタスクを設定できます。</p>
-        <p>そして、共通するタスクはカテゴリー化して管理しましょう。</p>
-        <p>カテゴリー別に絞り込めば、管理がしやすくなります。</p>
-        <a href="{{ url('lp/task#task') }}">詳細はこちら</a>
-      </div>
-
-      <div class="feature-image feature-image-2">
-        <img class="fade-in-target" src="/image/lp-sample-2.jpg" alt="lp-sample-2">
-      </div>
-    </div>
-
-    <div class="feature-box">
-      <div class="feature-image feature-image-3">
-        <img class="fade-in-target" src="/image/lp-sample-3.jpg" alt="lp-sample-3">
-      </div>
-
-      <div class="feature-content">
-        <h3><span class="feature-number">3.</span>カレンダー上で予定やタスクを管理する</h3>
-        <p>日常の予定や習慣化したいことをカレンダーに登録できます。</p>
-        <p>関連のある予定はグループ化することで、さらに予定の管理がしやすくなります。</p>
-        <p>また、タスクをカレンダー上でも管理することが可能です。</p>
-        <a href="{{ url('lp/schedule#schedule') }}">詳細はこちら</a>
-      </div>
-    </div>
-  </div> -->
 
 @endsection
