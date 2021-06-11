@@ -1890,7 +1890,7 @@
   /* 目標 */
   .goal-container,
   .task-chart-container {
-    margin: 0.93rem;
+    margin: 0 0 1.25rem 0;
   }
 
   .goal-content li {
@@ -1919,7 +1919,7 @@
 
   /* カレンダー */
   .calendar-container {
-    margin: 0.93rem;
+    margin: 0 0 1.25rem 0;
   }
 
   .this-month {
@@ -1928,6 +1928,10 @@
 
   .calendar-table th {
     font-size: 1rem;
+  }
+
+  .calendar-table td {
+    padding: 0.3125rem 0;
   }
 
   .calendar-table td a {

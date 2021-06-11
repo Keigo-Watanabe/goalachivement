@@ -123,6 +123,27 @@ if (matrixBox) {
 
 
 /*
+予定グループ別一覧
+*/
+let commonScheduleSammary = document.querySelectorAll('.common-schedule-sammary');
+
+if (commonScheduleSammary) {
+  for (let i = 0; i < commonScheduleSammary.length; i++) {
+    let each_commonScheduleSammary = commonScheduleSammary[i];
+    let item = each_commonScheduleSammary.lastElementChild;
+
+    let itemList = item.childElementCount;
+
+    // 予定の数が0の場合はグループを非表示
+    if (itemList == 0) {
+      let parentBox = item.parentNode;
+      parentBox.style.display = 'none';
+    }
+  }
+}
+
+
+/*
 タスクガントチャート（現在日までスクロール）
 */
 const taskChart = document.getElementById('task-chart');
