@@ -15,6 +15,7 @@ class CreateGoalsTable extends Migration
     {
         Schema::create('goals', function (Blueprint $table) {
             $table->id('goal_id');
+            $table->integer('user_id');
             $table->string('title');
             $table->date('date');
             $table->softDeletes();

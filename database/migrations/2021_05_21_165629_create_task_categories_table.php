@@ -15,6 +15,7 @@ class CreateTaskCategoriesTable extends Migration
     {
         Schema::create('task_categories', function (Blueprint $table) {
             $table->id('task_category_id');
+            $table->integer('user_id');
             $table->string('task_category');
             $table->string('category_color');
             $table->softDeletes();

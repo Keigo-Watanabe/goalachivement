@@ -15,6 +15,7 @@ class CreateCommonSchedulesTable extends Migration
     {
         Schema::create('common_schedules', function (Blueprint $table) {
             $table->id('common_schedule_id');
+            $table->integer('user_id');
             $table->string('title');
             $table->string('common_color');
             $table->softDeletes();
