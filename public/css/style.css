@@ -685,29 +685,78 @@ LPヘッダー
 /*
 会員登録・ログイン
 */
-.bg-gray-100 {
-  background-color: rgba(255, 255, 255, 0%);
+.register-bg {
+  background-color: #F7FCFF;
+  padding: 9.6rem 0;
 }
 
 .register-title {
-  font-size: 2.375rem;
-  color: #fff;
+  font-size: 1.5rem;
   font-weight: bold;
-  text-shadow: 0 3px 6px rgba(0, 0, 0, 16%);
 }
 
-.sm\:rounded-lg {
-  max-width: 37.5rem;
-  border-radius: 0;
+.register-form {
+  background-color: transparent;
+  box-shadow: 0 0 0 transparent;
 }
 
-.bg-white {
-  padding: 3.75rem 2.5rem;
-  background-color: rgba(255, 255, 255, 80%);
+.form-register-btn {
+  margin-top: 3.5rem;
 }
 
-.border-gray-300 {
-  border-color: rgba(255, 255, 255, 0%);
+.already-registered {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 2rem auto;
+  color: #106CFF;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
+.already-registered:hover {
+  text-decoration: none;
+}
+
+.form-register {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+  border-radius: 1.25rem;
+  font-size: 1rem;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.form-register::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 1.25rem;
+  background-color: #333;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.form-register::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.25rem;
+  background: linear-gradient(90deg, #8BE3FF, #9CBEFD);
+  z-index: -2;
+}
+
+.form-register:hover::before {
+  width: 100%;
 }
 
 [type='text']:focus,
@@ -725,18 +774,20 @@ LPヘッダー
 [multiple]:focus,
 textarea:focus,
 select:focus {
-  --tw-ring-shadow: 0 0 0;
-  box-shadow: 0 0 0;
   border-color: transparent;
-  border-bottom: solid 1px #333;
 }
 
-.text-red-600 {
-  font-weight: bold;
+.register-yet {
+  display: block;
+  width: fit-content;
+  margin: 2rem auto;
+  color: #106CFF;
+  text-decoration: underline;
+  transition: all 0.3s ease;
 }
 
-.text-red-600 li {
-  color: #dc2626;
+.register-yet:hover {
+  text-decoration: none;
 }
 
 
@@ -1044,5 +1095,15 @@ select:focus {
     width: 100%;
     max-width: 13rem;
     margin: 0 auto 1.25rem auto;
+  }
+
+  /* お問い合わせ */
+  .contact-form p {
+    flex-direction: column;
+  }
+
+  .contact-input,
+  .contact-textarea {
+    max-width: 100%;
   }
 }
