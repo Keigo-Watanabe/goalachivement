@@ -30,10 +30,10 @@
 
           <nav id="header-nav" class="header-nav">
             <ul>
-              <li class="nav-li"><a href="">ホーム</a></li>
+              <li class="nav-li"><a href="/">ホーム</a></li>
               <li class="nav-li"><a href="#app-management">アプリの使い方</a></li>
               <li class="nav-li"><a href="#app-feature">機能</a></li>
-              <li class="nav-li"><a href="">お問い合わせ</a></li>
+              <li class="nav-li"><a href="/lp/contact">お問い合わせ</a></li>
               <li class="header-register"><a href="{{ route('register') }}">会員登録</a></li>
               <li class="header-login"><a href="{{ route('login') }}">ログイン</a></li>
             </ul>

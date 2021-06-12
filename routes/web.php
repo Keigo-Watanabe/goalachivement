@@ -25,6 +25,10 @@ Route::get('lp/contact', function () {
     return view('lp.contact');
 });
 
+Route::get('lp/thanks', function () {
+    return view('lp.thanks');
+});
+
 Route::resource('goal', GoalController::class)->middleware('auth');
 
 Route::resource('task', TaskController::class)->middleware('auth');
