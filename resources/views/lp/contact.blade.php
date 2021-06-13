@@ -15,19 +15,19 @@
       <form class="contact-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScnFRx_u0mocj-Ea93Ff8uhrI-k3HZjGFHVqlmRV3FIhj-D_w/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
         <p>
           <label>お名前</label>
-          <input class="contact-input" type="text" name="entry.1472469240" value="">
+          <input class="contact-input" type="text" name="entry.1472469240" maxlength="50" required>
         </p>
         <p>
           <label>メールアドレス</label>
-          <input class="contact-input" type="email" name="entry.954343322" value="">
+          <input class="contact-input" type="email" name="entry.954343322" maxlength="100" required>
         </p>
         <p>
           <label>件名</label>
-          <input class="contact-input" type="text" name="entry.1316688407" value="">
+          <input class="contact-input" type="text" name="entry.1316688407" maxlength="50">
         </p>
         <p>
           <label>お問い合わせ内容</label>
-          <textarea class="contact-textarea" name="entry.1670279904"></textarea>
+          <textarea class="contact-textarea" name="entry.1670279904" maxlength="500" required></textarea>
         </p>
         <p>
           <button class="contact-submit-btn" type="submit">送信</button>

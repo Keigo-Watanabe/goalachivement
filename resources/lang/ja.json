@@ -81,5 +81,13 @@
     "Please confirm access to your account by entering the authentication code provided by your authenticator application.": "認証アプリから提供される認証コードを入力して、アカウントへのアクセスを確認してください。",
     "Photo": "写真はこちら",
     "API Token Permissions": "API トークンの許可",
-    "Whoops! Something went wrong.": "エラーが発生しました。"
+    "Whoops! Something went wrong.": "エラーが発生しました。",
+    "The :attribute must be a valid role.": ":attribute は有効な役割ではありません",
+    "The :attribute must be at least :length characters and contain at least one number.": ":attribute は :length 文字以上で、1つ以上の数字が必要です",
+    "The :attribute must be at least :length characters and contain at least one special character.": ":attribute は :length 文字以上で、1つ以上の記号が必要です",
+    "The :attribute must be at least :length characters and contain at least one uppercase character and one number.": ":attribute は :length 文字以上で、1つ以上の大文字と数字が必要です",
+    "The :attribute must be at least :length characters and contain at least one uppercase character and one special character.": ":attribute は :length 文字以上で、1つ以上の大文字と記号が必要です",
+    "The :attribute must be at least :length characters and contain at least one uppercase character, one number, and one special character.": ":attribute は :length 文字以上で、1つ以上の数字と記号が必要です",
+    "The :attribute must be at least :length characters and contain at least one uppercase character.": ":attribute は :length 文字以上で、1つ以上の大文字が必要です",
+    "The :attribute must be at least :length characters.": ":attribute は :length 文字以上でなければなりません"
 }
