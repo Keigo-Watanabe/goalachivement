@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <h1 class="register-title">二段階認証</h1>
         </x-slot>
 
         <div x-data="{ recovery: false }">

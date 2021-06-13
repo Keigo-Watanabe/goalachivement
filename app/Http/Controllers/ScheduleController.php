@@ -82,17 +82,6 @@ class ScheduleController extends Controller
         return view('schedule.common', compact('schedules', 'commonSchedules', 'day'));
     }
 
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -177,17 +166,6 @@ class ScheduleController extends Controller
         $commonSchedules = CommonSchedule::where('user_id', $user_id)->get();
 
         return view('schedule.show', compact('schedule', 'commonSchedules'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Schedule  $schedule
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Schedule $schedule)
-    {
-        //
     }
 
     /**

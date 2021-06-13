@@ -12,16 +12,6 @@ use Illuminate\Support\Facades\Auth;
 class GoalController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -122,29 +112,6 @@ class GoalController extends Controller
         $task_chart = $goal_view->taskChart();
 
         return view('goal.show', compact('goal', 'date', 'sum', 'goal_circle_percent', 'mul', 'goal_remaining_days', 'tasks', 'goal_chart', 'task_chart'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Goal  $goal
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Goal $goal)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Goal  $goal
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Goal $goal)
-    {
-        //
     }
 
     /**

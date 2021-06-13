@@ -67,6 +67,7 @@
     "Current Password": "現在のパスワード",
     "Use an authentication code": "認証コードを使用する",
     "Login": "ログイン",
+    "Log in": "ログイン",
     "Browser Sessions": "ブラウザのセッション",
     "Regenerate Recovery Codes": "リカバリーコードの再生",
     "Created.": "作成しました。",
@@ -89,5 +90,15 @@
     "The :attribute must be at least :length characters and contain at least one uppercase character and one special character.": ":attribute は :length 文字以上で、1つ以上の大文字と記号が必要です",
     "The :attribute must be at least :length characters and contain at least one uppercase character, one number, and one special character.": ":attribute は :length 文字以上で、1つ以上の数字と記号が必要です",
     "The :attribute must be at least :length characters and contain at least one uppercase character.": ":attribute は :length 文字以上で、1つ以上の大文字が必要です",
-    "The :attribute must be at least :length characters.": ":attribute は :length 文字以上でなければなりません"
+    "The :attribute must be at least :length characters.": ":attribute は :length 文字以上でなければなりません",
+    "Confirm": "確認",
+    "For your security, please confirm your password to continue.": "安全性を確保するため、続けるにはパスワードを入力し、確認してください。",
+    "Hello!": "こんにちは！",
+    "Whoops!": "おっと！",
+    "Regards,": "どうぞよろしくお願いします。",
+    "Reset Password Notification": "パスワード再設定のお知らせ",
+    "If you’re having trouble clicking the \":actionText\" button, copy and paste the URL below\ninto your web browser:": ":actionTextボタンをクリックできない場合は、次のURLをコピーしてブラウザに貼り付けてください。\n",
+    "You are receiving this email because we received a password reset request for your account.": "あなたのアカウントからパスワード再設定のリクエストがありました。",
+    "This password reset link will expire in :count minutes.": "このリンクの有効期限は、:count 分後までです。",
+    "If you did not request a password reset, no further action is required.": "もしこのメールにお心当たりがない場合は、このまま放置していただいて大丈夫です。"
 }
