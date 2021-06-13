@@ -247,6 +247,12 @@
   font-size: 1.25rem;
 }
 
+.no-goal {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
 
 /* フッター */
 .dashboard-footer {
@@ -867,6 +873,20 @@
   background-color: #3E9F6F;
 }
 
+.no-task {
+  width: 100%;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.no-task-matrix {
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
 
 /*
 タスク詳細
@@ -1174,6 +1194,18 @@
   display: none;
 }
 
+.matrix-priority-level {
+  margin-bottom: 0.625rem;
+}
+
+.priority-level,
+.severity-level {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 0.75rem;
+}
+
 
 /*
 カレンダー
@@ -1458,6 +1490,7 @@
 }
 
 .no-schedule {
+  width: 100%;
   text-align: center;
   font-size: 1.25rem;
   font-weight: bold;
@@ -1733,14 +1766,6 @@
     cursor: pointer;
   }
 
-  .matrix-box ul {
-    display: none;
-  }
-
-  .matrix-box-open ul {
-    display: block;
-  }
-
   .matrix-responsive {
     display: block;
     padding: 0 0.625rem 0.625rem 0.625rem;
@@ -1777,6 +1802,19 @@
 
   .matrix-4 span {
     background-color: #FFC400;
+  }
+
+  .matrix-description-content {
+    flex-direction: column;
+  }
+
+  .matrix-image {
+    width: 100%;
+    margin-bottom: 1.25rem;
+  }
+
+  .matrix-sentence {
+    width: 100%;
   }
 
   /* カレンダー */
@@ -1871,6 +1909,10 @@
   .my-page-main {
     margin-left: 0;
     padding-top: 5.714rem;
+  }
+
+  .profile-content {
+    margin-left: 0;
   }
 
   .form-submit-btn {

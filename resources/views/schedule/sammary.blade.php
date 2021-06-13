@@ -19,6 +19,11 @@
         </div>
 
         <div class="schedule-sammary-content">
+          @if ($schedule_date == null)
+            <div class="no-schedule">
+              予定はありません
+            </div>
+          @else
           @foreach ($schedule_date as $date)
             @if ($date >= $day)
             <div class="schedule-date-sammary">
@@ -57,6 +62,7 @@
             </div>
             @endif
           @endforeach
+          @endif
         </div>
       </div>
 

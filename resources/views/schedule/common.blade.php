@@ -15,6 +15,11 @@
         </div>
 
         <div class="schedule-sammary-content">
+          @if ($commonSchedules->count() == 0)
+            <div class="no-schedule">
+              予定はありません
+            </div>
+          @else
           @foreach ($commonSchedules as $commonSchedule)
             <div class="schedule-date-sammary common-schedule-sammary">
               <div class="common-schedule-title">
@@ -53,6 +58,7 @@
               </ul>
             </div>
           @endforeach
+          @endif
         </div>
       </div>
 

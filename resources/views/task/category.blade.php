@@ -29,6 +29,11 @@
             </div>
           @endif
           <div class="task-category-content">
+            @if ($task_categories->count() == 0)
+              <div class="no-task">
+                タスクはありません
+              </div>
+            @else
             @foreach ($task_categories as $task_category)
               <div class="task-category-box">
                 <div class="task-category-title">
@@ -73,6 +78,7 @@
                 </ul>
               </div>
             @endforeach
+            @endif
           </div>
         </div>
       </div>

@@ -27,11 +27,13 @@ class ScheduleController extends Controller
 
         $day = date('Y-m-d', strtotime($date));
 
-        $schedules = Schedule::where('start_time', 'like', $day.'%')->orderBy('start_time', 'asc')->get();
-        $commonSchedules = CommonSchedule::all();
+        $user_id = Auth::id();
 
-        $tasks = Task::all();
-        $task_categories = TaskCategory::all();
+        $schedules = Schedule::where('user_id', $user_id)->where('start_time', 'like', $day.'%')->orderBy('start_time', 'asc')->get();
+        $commonSchedules = CommonSchedule::where('user_id', $user_id)->get();
+
+        $tasks = Task::where('user_id', $user_id)->get();
+        $task_categories = TaskCategory::where('user_id', $user_id)->get();
 
         return view('schedule.index', compact('date', 'schedules', 'commonSchedules', 'tasks', 'task_categories', 'day'));
     }
@@ -42,10 +44,11 @@ class ScheduleController extends Controller
     */
     public function sammary()
     {
-        $schedules = Schedule::orderBy('start_time', 'asc')->get();
-        $commonSchedules = CommonSchedule::all();
+        $user_id = Auth::id();
+        $schedules = Schedule::where('user_id', $user_id)->orderBy('start_time', 'asc')->get();
+        $commonSchedules = CommonSchedule::where('user_id', $user_id)->get();
 
-        $schedules_date = Schedule::orderBy('start_time', 'asc')->get(['start_time']);
+        $schedules_date = Schedule::where('user_id', $user_id)->orderBy('start_time', 'asc')->get(['start_time']);
 
         $schedule_date = [];
 
@@ -69,8 +72,9 @@ class ScheduleController extends Controller
     */
     public function common()
     {
-        $schedules = Schedule::orderBy('start_time', 'asc')->get();
-        $commonSchedules = CommonSchedule::all();
+        $user_id = Auth::id();
+        $schedules = Schedule::where('user_id', $user_id)->orderBy('start_time', 'asc')->get();
+        $commonSchedules = CommonSchedule::where('user_id', $user_id)->get();
 
         $day = new Carbon();
         $day = $day->copy()->timezone('Asia/Tokyo')->format('Y-m-d');
@@ -169,7 +173,8 @@ class ScheduleController extends Controller
      */
     public function show(Schedule $schedule)
     {
-        $commonSchedules = CommonSchedule::all();
+        $user_id = Auth::id();
+        $commonSchedules = CommonSchedule::where('user_id', $user_id)->get();
 
         return view('schedule.show', compact('schedule', 'commonSchedules'));
     }

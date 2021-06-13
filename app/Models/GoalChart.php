@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Goal;
 use App\Models\Task;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class GoalChart
 {
@@ -87,8 +88,8 @@ class GoalChart
           $start_date->addDay(1);
         }
 
-
-        $tasks = Task::where('goal_id', $this->goal->goal_id)->get();
+        $user_id = Auth::id();
+        $tasks = Task::where('user_id', $user_id)->where('goal_id', $this->goal->goal_id)->get();
 
         foreach ($tasks as $task) {
           $html[] = '<div class="table-row">';

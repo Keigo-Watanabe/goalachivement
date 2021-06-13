@@ -9,6 +9,7 @@ use Yasumi\Holiday;
 use Carbon\Carbon;
 use App\Models\Schedule;
 use App\Models\CommonSchedule;
+use Illuminate\Support\Facades\Auth;
 
 class CalendarView extends Model
 {
@@ -172,14 +173,15 @@ class CalendarView extends Model
               $html[] = '<a href="/dashboard/?date='.$day->format('Y-m-d\TH:i').'">'.$day->format('j');
 
               // 予定があるかどうか
-              $schedules = Schedule::where('start_time', 'like', $day->format('Y-m-d').'%')->orderBy('start_time', 'asc')->get();
+              $user_id = Auth::id();
+              $schedules = Schedule::where('user_id', $user_id)->where('start_time', 'like', $day->format('Y-m-d').'%')->orderBy('start_time', 'asc')->get();
 
               // 予定の数をカウント
               $counter = 0;
 
               foreach ($schedules as $schedule) {
                 // 予定のグループを取得
-                $commonSchedules = CommonSchedule::all();
+                $commonSchedules = CommonSchedule::where('user_id', $user_id)->get();
 
                 if ($schedule->common_schedule_id == 0) {
                   // 予定のグループがない場合

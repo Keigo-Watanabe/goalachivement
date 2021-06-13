@@ -28,9 +28,13 @@
 
             <div class="high-priority-task">
               <div class="matrix-one matrix-box">
-                <div class="matrix-title">重要・緊急</div>
+                <div class="matrix-title">重要かつ緊急</div>
                 <!-- レスポンシブ -->
                 <div class="matrix-responsive">
+                  <div class="matrix-priority-level">
+                    <span class="priority-level">重要度：高</span>
+                    <span class="severity-level">緊急度：高</span>
+                  </div>
                   <div class="matrix-task-count">
                     タスク：{{ $matrix_a_count }}
                   </div>
@@ -39,6 +43,11 @@
                   </div>
                 </div>
                 <ul>
+                  @if ($matrix_a_count == 0)
+                    <div class="no-task-matrix">
+                      タスクはありません
+                    </div>
+                  @else
                   @foreach ($tasks as $task)
                     @if ($task->priority >= 3 && $task->severity >= 3)
                     <li class="task-sammary-item matrix-item">
@@ -74,13 +83,18 @@
                     </li>
                     @endif
                   @endforeach
+                  @endif
                 </ul>
               </div>
 
               <div class="matrix-two matrix-box">
-                <div class="matrix-title">重要・緊急でない</div>
+                <div class="matrix-title">重要だが緊急でない</div>
                 <!-- レスポンシブ -->
                 <div class="matrix-responsive">
+                  <div class="matrix-priority-level">
+                    <span class="priority-level">重要度：高</span>
+                    <span class="severity-level">緊急度：低</span>
+                  </div>
                   <div class="matrix-task-count">
                     タスク：{{ $matrix_b_count }}
                   </div>
@@ -89,6 +103,11 @@
                   </div>
                 </div>
                 <ul>
+                  @if ($matrix_b_count == 0)
+                    <div class="no-task-matrix">
+                      タスクはありません
+                    </div>
+                  @else
                   @foreach ($tasks as $task)
                     @if ($task->priority >= 3 && $task->severity < 3)
                     <li class="task-sammary-item matrix-item">
@@ -124,6 +143,7 @@
                     </li>
                     @endif
                   @endforeach
+                  @endif
                 </ul>
               </div>
             </div>
@@ -136,9 +156,13 @@
 
             <div class="low-priority-task">
               <div class="matrix-three matrix-box">
-                <div class="matrix-title">緊急・重要でない</div>
+                <div class="matrix-title">緊急だが重要でない</div>
                 <!-- レスポンシブ -->
                 <div class="matrix-responsive">
+                  <div class="matrix-priority-level">
+                    <span class="priority-level">重要度：低</span>
+                    <span class="severity-level">緊急度：高</span>
+                  </div>
                   <div class="matrix-task-count">
                     タスク：{{ $matrix_c_count }}
                   </div>
@@ -147,6 +171,11 @@
                   </div>
                 </div>
                 <ul>
+                  @if ($matrix_c_count == 0)
+                    <div class="no-task-matrix">
+                      タスクはありません
+                    </div>
+                  @else
                   @foreach ($tasks as $task)
                     @if ($task->priority < 3 && $task->severity >= 3)
                     <li class="task-sammary-item matrix-item">
@@ -182,13 +211,18 @@
                     </li>
                     @endif
                   @endforeach
+                  @endif
                 </ul>
               </div>
 
               <div class="matrix-four matrix-box">
-                <div class="matrix-title">重要でない・緊急でない</div>
+                <div class="matrix-title">重要でも緊急でもない</div>
                 <!-- レスポンシブ -->
                 <div class="matrix-responsive">
+                  <div class="matrix-priority-level">
+                    <span class="priority-level">重要度：低</span>
+                    <span class="severity-level">緊急度：低</span>
+                  </div>
                   <div class="matrix-task-count">
                     タスク：{{ $matrix_d_count }}
                   </div>
@@ -197,6 +231,11 @@
                   </div>
                 </div>
                 <ul>
+                  @if ($matrix_d_count == 0)
+                    <div class="no-task-matrix">
+                      タスクはありません
+                    </div>
+                  @else
                   @foreach ($tasks as $task)
                     @if ($task->priority < 3 && $task->severity < 3)
                     <li class="task-sammary-item matrix-item">
@@ -232,6 +271,7 @@
                     </li>
                     @endif
                   @endforeach
+                  @endif
                 </ul>
               </div>
             </div>

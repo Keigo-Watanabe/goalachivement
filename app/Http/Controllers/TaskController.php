@@ -17,24 +17,27 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $tasks = Task::orderBy('start_date', 'asc')->get();
-        $task_categories = TaskCategory::all();
+        $user_id = Auth::id();
+        $tasks = Task::where('user_id', $user_id)->orderBy('start_date', 'asc')->get();
+        $task_categories = TaskCategory::where('user_id', $user_id)->get();
 
         return view('task.index', compact('tasks', 'task_categories'));
     }
 
     public function category()
     {
-        $tasks = Task::orderBy('start_date', 'asc')->get();
-        $task_categories = TaskCategory::all();
+        $user_id = Auth::id();
+        $tasks = Task::where('user_id', $user_id)->orderBy('start_date', 'asc')->get();
+        $task_categories = TaskCategory::where('user_id', $user_id)->get();
 
         return view('task.category', compact('tasks', 'task_categories'));
     }
 
     public function priority()
     {
+        $user_id = Auth::id();
         // カラム「priority」のデータのみ取得
-        $tasks_priority_array = Task::orderBy('priority', 'desc')->orderBy('start_date', 'asc')->get(['priority']);
+        $tasks_priority_array = Task::where('user_id', $user_id)->orderBy('priority', 'desc')->orderBy('start_date', 'asc')->get(['priority']);
         $task_priority = [];
 
         foreach ($tasks_priority_array as $task) {
@@ -45,17 +48,18 @@ class TaskController extends Controller
         // 配列の重複チェック（同じ数字は1つにまとめる）
         $task_priority = array_unique($task_priority);
 
-        $tasks = Task::orderBy('start_date', 'asc')->get();
+        $tasks = Task::where('user_id', $user_id)->orderBy('start_date', 'asc')->get();
 
-        $task_categories = TaskCategory::all();
+        $task_categories = TaskCategory::where('user_id', $user_id)->get();
 
         return view('task.priority', compact('tasks', 'task_priority', 'task_categories'));
     }
 
     public function severity()
     {
+        $user_id = Auth::id();
         // カラム「severity」のデータのみ取得
-        $tasks_severity_array = Task::orderBy('severity', 'desc')->orderBy('start_date', 'asc')->get(['severity']);
+        $tasks_severity_array = Task::where('user_id', $user_id)->orderBy('severity', 'desc')->orderBy('start_date', 'asc')->get(['severity']);
         $task_severity = [];
 
         foreach ($tasks_severity_array as $task) {
@@ -66,17 +70,18 @@ class TaskController extends Controller
         // 配列の重複チェック（同じ数字は1つにまとめる）
         $task_severity = array_unique($task_severity);
 
-        $tasks = Task::orderBy('start_date', 'asc')->get();
+        $tasks = Task::where('user_id', $user_id)->orderBy('start_date', 'asc')->get();
 
-        $task_categories = TaskCategory::all();
+        $task_categories = TaskCategory::where('user_id', $user_id)->get();
 
         return view('task.severity', compact('tasks', 'task_severity', 'task_categories'));
     }
 
     public function totallpriority()
     {
-        $tasks = Task::orderBy('severity', 'desc')->orderBy('priority', 'desc')->where('complete', 0)->get();
-        $task_categories = TaskCategory::all();
+        $user_id = Auth::id();
+        $tasks = Task::where('user_id', $user_id)->orderBy('severity', 'desc')->orderBy('priority', 'desc')->where('complete', 0)->get();
+        $task_categories = TaskCategory::where('user_id', $user_id)->get();
 
         // 重要・緊急
         $matrix_a = [];
@@ -106,8 +111,9 @@ class TaskController extends Controller
 
     public function complete()
     {
-        $tasks = Task::orderBy('start_date', 'asc')->where('complete', 1)->get();
-        $task_categories = TaskCategory::all();
+        $user_id = Auth::id();
+        $tasks = Task::where('user_id', $user_id)->orderBy('start_date', 'asc')->where('complete', 1)->get();
+        $task_categories = TaskCategory::where('user_id', $user_id)->get();
 
         return view('task.complete', compact('tasks', 'task_categories'));
     }
@@ -120,9 +126,10 @@ class TaskController extends Controller
      */
     public function create()
     {
-        $goals = Goal::all();
-        $goals_latest = Goal::max('goal_id');
-        $taskCategories = TaskCategory::all();
+        $user_id = Auth::id();
+        $goals = Goal::where('user_id', $user_id)->get();
+        $goals_latest = Goal::where('user_id', $user_id)->max('goal_id');
+        $taskCategories = TaskCategory::where('user_id', $user_id)->get();
 
         return view('task.create', compact('goals', 'goals_latest', 'taskCategories'));
     }
@@ -170,7 +177,8 @@ class TaskController extends Controller
           $task_category->save();
 
           // タスクカテゴリーの最大値のidを取得
-          $task_categories = TaskCategory::max('task_category_id');
+          $user_id = Auth::id();
+          $task_categories = TaskCategory::where('user_id', $user_id)->max('task_category_id')->get();
 
           // もしタスクカテゴリーが存在したら最大値のidを設定
           if ($task_categories) {
@@ -212,8 +220,9 @@ class TaskController extends Controller
      */
     public function show(Task $task)
     {
-        $goals = Goal::all();
-        $taskCategories = TaskCategory::all();
+        $user_id = Auth::id();
+        $goals = Goal::where('user_id', $user_id)->get();
+        $taskCategories = TaskCategory::where('user_id', $user_id)->get();
 
         return view('task.show', compact('task', 'goals', 'taskCategories'));
     }
@@ -226,8 +235,9 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
-        $goals = Goal::all();
-        $taskCategories = TaskCategory::all();
+        $user_id = Auth::id();
+        $goals = Goal::where('user_id', $user_id)->get();
+        $taskCategories = TaskCategory::where('user_id', $user_id)->get();
 
         return view('task.edit', compact('task', 'goals', 'taskCategories'));
     }
@@ -295,7 +305,8 @@ class TaskController extends Controller
           $task_category->save();
 
           // タスクカテゴリーの最大値のidを取得
-          $task_categories = TaskCategory::max('task_category_id');
+          $user_id = Auth::id();
+          $task_categories = TaskCategory::where('user_id', $user_id)->max('task_category_id')->get();
 
           // もしタスクカテゴリーが存在したら最大値のidを設定
           if ($task_categories) {

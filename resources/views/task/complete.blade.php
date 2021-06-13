@@ -29,6 +29,11 @@
             </div>
           @endif
           <ul class="task-sammary-list">
+            @if ($tasks->count() == 0)
+              <div class="no-task">
+                完了済みのタスクはありません
+              </div>
+            @else
             @foreach ($tasks as $task)
               @if ($task->complete == 1)
               <li class="task-sammary-item">
@@ -64,6 +69,7 @@
               </li>
               @endif
             @endforeach
+            @endif
           </ul>
         </div>
       </div>

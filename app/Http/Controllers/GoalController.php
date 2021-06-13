@@ -7,6 +7,7 @@ use App\Models\GoalChart;
 use App\Models\Task;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class GoalController extends Controller
 {
@@ -50,6 +51,7 @@ class GoalController extends Controller
 
         $goal = new Goal();
 
+        $goal->user_id = Auth::id();
         $goal->title = $request->input('title');
         $goal->date = $request->input('date');
 
@@ -78,7 +80,8 @@ class GoalController extends Controller
         $goal_remaining_days = $goal_term - $goal_now;
 
         // タスクを取得
-        $tasks = Task::where('goal_id', $goal->goal_id)->get();
+        $user_id = Auth::id();
+        $tasks = Task::where('user_id', $user_id)->where('goal_id', $goal->goal_id)->get();
 
         // タスクの数を計算
         $tasks_number = count($tasks);
@@ -154,7 +157,8 @@ class GoalController extends Controller
     {
         $goal->title = $request->input('title');
 
-        $tasks = Task::all();
+        $user_id = Auth::id();
+        $tasks = Task::where('user_id', $user_id)->get();
 
         foreach ($tasks as $task) {
           // 目標に含まれるタスクも削除

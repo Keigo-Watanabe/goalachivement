@@ -901,6 +901,10 @@ select:focus {
   text-decoration: none;
 }
 
+.bg-gray-100 {
+  background-color: #fff;
+}
+
 
 
 

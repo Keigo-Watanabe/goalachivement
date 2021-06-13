@@ -11,6 +11,7 @@ use App\Models\Task;
 use App\Models\TaskCategory;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -44,13 +45,14 @@ class UserController extends Controller
       $prevMonth = $calendar->prevMonth();
       $nextMonth = $calendar->nextMonth();
 
-      $schedules = Schedule::where('start_time', 'like', date('Y-m-d', strtotime($date)).'%')->orderBy('start_time', 'asc')->get();
-      $commonSchedules = CommonSchedule::all();
+      $user_id = Auth::id();
+      $schedules = Schedule::where('user_id', $user_id)->where('start_time', 'like', date('Y-m-d', strtotime($date)).'%')->orderBy('start_time', 'asc')->get();
+      $commonSchedules = CommonSchedule::where('user_id', $user_id)->get();
 
       $day = date('Y-m-d', strtotime($date));
 
-      $tasks = Task::all();
-      $task_categories = TaskCategory::all();
+      $tasks = Task::where('user_id', $user_id)->get();
+      $task_categories = TaskCategory::where('user_id', $user_id)->get();
 
       return view('dashboard', compact('getGoal', 'date', 'getTitle', 'getCalendar', 'prevMonth', 'nextMonth', 'schedules', 'commonSchedules', 'day', 'tasks', 'task_categories'));
     }

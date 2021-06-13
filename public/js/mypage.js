@@ -107,22 +107,6 @@ if (matrixDescription) {
 
 
 /*
-マトリックス開閉ボタン
-*/
-let matrixBox = document.querySelectorAll('.matrix-box');
-
-if (matrixBox) {
-  for (let i = 0; i < matrixBox.length; i++) {
-    let each_matrixBox = matrixBox[i];
-
-    each_matrixBox.addEventListener('click', () => {
-      each_matrixBox.classList.toggle('matrix-box-open');
-    });
-  }
-}
-
-
-/*
 予定グループ別一覧
 */
 let commonScheduleSammary = document.querySelectorAll('.common-schedule-sammary');

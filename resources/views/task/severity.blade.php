@@ -29,6 +29,11 @@
             </div>
           @endif
           <div class="task-category-content">
+            @if ($task_severity == null)
+              <div class="no-task">
+                タスクはありません
+              </div>
+            @else
             @foreach ($task_severity as $severity)
               <div class="task-category-box">
                 <div class="task-category-title">
@@ -84,6 +89,7 @@
                 </ul>
               </div>
             @endforeach
+            @endif
           </div>
         </div>
       </div>
