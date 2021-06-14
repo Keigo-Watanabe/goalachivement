@@ -11,6 +11,18 @@
         </div>
       @endif
 
+      @if ($errors->any())
+        <div class="task-show-message">
+          <div class="alert alert-danger">
+            <ul>
+              @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+          </div>
+        </div>
+      @endif
+
       <div class="task-show">
         <div class="task-show-top">
           <div class="task-show-content">
@@ -101,15 +113,6 @@
         <div class="task-edit-title">
           <h2>『{{ $task->content }}』の編集</h2>
         </div>
-        @if ($errors->any())
-         <div class="alert alert-danger">
-           <ul>
-             @foreach ($errors->all() as $error)
-               <li>{{ $error }}</li>
-             @endforeach
-           </ul>
-         </div>
-        @endif
         <form class="create-form task-create-form" action="/task/{{ $task->task_id }}" method="post">
           {{ csrf_field() }}
           <input type="hidden" name="_method" value="PUT">

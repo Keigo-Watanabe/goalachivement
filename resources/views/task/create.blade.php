@@ -29,7 +29,7 @@
             <select class="create-input" name="goal_id">
               <option value="0">未選択</option>
               @foreach ($goals as $goal)
-                <option value="{{ $goal->goal_id }}">{{ $goal->title }}</option>
+                <option value="{{ $goal->goal_id }}" @if (old('goal_id') == $goal->goal_id) selected @endif>{{ $goal->title }}</option>
               @endforeach
             </select>
           </div>
@@ -37,7 +37,7 @@
           <label for=""><span class="create-step">Step2.</span>タスクを設定しよう</label>
           <div class="form-p">
             <i class="fas fa-tasks"></i>タスク
-            <input class="create-input" type="text" name="content">
+            <input class="create-input" type="text" name="content" value="{{ old('content') }}">
           </div>
 
           <label for=""><span class="create-step">Step3.</span>タスクをカテゴリーに分けよう</label>
@@ -46,14 +46,14 @@
             <select class="create-input" name="task_category_id">
               <option value="0">未選択</option>
               @foreach ($taskCategories as $taskCategory)
-                <option value="{{ $taskCategory->task_category_id }}">{{ $taskCategory->task_category }}</option>
+                <option value="{{ $taskCategory->task_category_id }}" @if (old('task_category_id') == $taskCategory->task_category_id) selected @endif>{{ $taskCategory->task_category }}</option>
               @endforeach
             </select>
             <div class="form-block new-category-btn">
               <span id="new-category" class="new-category">または新しいカテゴリー</span>
             </div>
             <div id="hide-new-category" class="hide-new-category">
-              <input class="create-input" type="text" name="task_category">
+              <input class="create-input" type="text" name="task_category" value="{{ old('task_category') }}">
               <span class="category-color">色</span>
               <input class="create-input" type="color" name="category_color" list="color-list" value="#f44335">
               <datalist id="color-list">
@@ -82,11 +82,11 @@
           <div class="form-p">
             <div class="form-block">
               <i class="fas fa-hourglass-start"></i>開始日
-              <input class="create-input" type="date" name="start_date">
+              <input class="create-input" type="date" name="start_date" value="{{ old('start_date') }}">
             </div>
             <div class="form-block">
               <i class="fas fa-hourglass-end"></i>完了日
-              <input class="create-input" type="date" name="end_date">
+              <input class="create-input" type="date" name="end_date" value="{{ old('end_date') }}">
             </div>
           </div>
 
@@ -134,7 +134,7 @@
           <label for=""><span class="create-step">Step6.</span>メモを書いておこう</label>
           <div class="form-p">
             <i class="fas fa-pen"></i>メモ
-            <input class="create-input" type="text" name="memo">
+            <input class="create-input" type="text" name="memo" value="{{ old('memo') }}">
           </div>
 
           <div class="form-p">

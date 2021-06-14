@@ -142,22 +142,26 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
+        $user_id = Auth::id();
         // タスクカテゴリーのバリデーション
         $request->validate([
-          'content' => 'required',
-          'task_category' => 'unique:task_categories',
+          'content' => 'required|max:100',
+          'task_category' => 'unique:task_categories,task_category,NULL,user_id,user_id,'.$user_id.',deleted_at,NULL',
           'start_date' => 'required',
           'end_date' => 'required',
           'priority' => 'required',
           'severity' => 'required',
+          'memo' => 'max:100',
         ],
         [
           'content.required' => 'タスクを記入してください',
+          'content.max' => 'タスクは100文字以内で入力してください',
           'task_category.unique' => '指定のカテゴリー『'.$request->input('task_category').'』はすでに存在しています',
           'start_date.required' => '開始日を設定してください',
           'end_date.required' => '完了日を設定してください',
           'priority.required' => 'タスクの重要度を設定してください',
           'severity.required' => 'タスクの緊急度を設定してください',
+          'memo.max' => 'メモは100文字以内で入力してください',
         ]);
 
 
@@ -172,20 +176,17 @@ class TaskController extends Controller
           // タスクカテゴリーを追加
           $task_category = new TaskCategory();
 
+          $task_category->user_id = Auth::id();
           $task_category->task_category = $request->input('task_category');
           $task_category->category_color = $request->input('category_color');
           $task_category->save();
 
           // タスクカテゴリーの最大値のidを取得
-          $user_id = Auth::id();
-          $task_categories = TaskCategory::where('user_id', $user_id)->max('task_category_id')->get();
+          $task_categories = TaskCategory::where('user_id', $user_id)->max('task_category_id');
 
           // もしタスクカテゴリーが存在したら最大値のidを設定
           if ($task_categories) {
             $task->task_category_id = $task_categories;
-          // タスクカテゴリーがなければidを1に設定
-          } else {
-            $task->task_category_id = 1;
           }
 
         } else {
@@ -273,22 +274,27 @@ class TaskController extends Controller
           ]);
         }
 
+        $user_id = Auth::id();
+
         // タスクカテゴリーのバリデーション
         $request->validate([
-          'content' => 'required',
-          'task_category' => 'unique:task_categories',
+          'content' => 'required|max:100',
+          'task_category' => 'unique:task_categories,task_category,NULL,user_id,user_id,'.$user_id.',deleted_at,NULL',
           'start_date' => 'required',
           'end_date' => 'required',
           'priority' => 'required',
           'severity' => 'required',
+          'memo' => 'max:100',
         ],
         [
           'content.required' => 'タスクを記入してください',
+          'content.max' => 'タスクは100文字以内で入力してください',
           'task_category.unique' => '指定のカテゴリー『'.$request->input('task_category').'』はすでに存在しています',
           'start_date.required' => '開始日を設定してください',
           'end_date.required' => '完了日を設定してください',
           'priority.required' => 'タスクの重要度を設定してください',
           'severity.required' => 'タスクの緊急度を設定してください',
+          'memo.max' => 'メモは100文字以内で入力してください',
         ]);
 
         $task->content = $request->input('content');
@@ -305,15 +311,11 @@ class TaskController extends Controller
           $task_category->save();
 
           // タスクカテゴリーの最大値のidを取得
-          $user_id = Auth::id();
-          $task_categories = TaskCategory::where('user_id', $user_id)->max('task_category_id')->get();
+          $task_categories = TaskCategory::where('user_id', $user_id)->max('task_category_id');
 
           // もしタスクカテゴリーが存在したら最大値のidを設定
           if ($task_categories) {
             $task->task_category_id = $task_categories;
-          // タスクカテゴリーがなければidを1に設定
-          } else {
-            $task->task_category_id = 1;
           }
 
         } else {
