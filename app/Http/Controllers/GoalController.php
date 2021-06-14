@@ -29,13 +29,16 @@ class GoalController extends Controller
      */
     public function store(Request $request)
     {
+        $user_id = Auth::id();
         // 目標のバリデーション
         $request->validate([
-          'title' => 'required',
+          'title' => ['required', 'max:100', 'unique:goals,title,NULL,user_id,user_id,'.$user_id.',deleted_at,NULL'],
           'date' => 'required',
         ],
         [
           'title.required' => '目標を設定してください',
+          'title.max' => '目標は100文字までで設定してください',
+          'title.unique' => '指定の目標はすでに登録されています',
           'date.required' => '達成日を設定してください',
         ]);
 
