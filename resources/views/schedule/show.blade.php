@@ -6,17 +6,17 @@
           {{ session('message') }}
         </div>
       @endif
-      @if ($errors->any())
-       <div class="alert alert-danger">
-         <ul>
-           @foreach ($errors->all() as $error)
-             <li>{{ $error }}</li>
-           @endforeach
-         </ul>
-       </div>
-      @endif
 
       <div class="schedule-create">
+        @if ($errors->any())
+         <div class="alert alert-danger">
+           <ul>
+             @foreach ($errors->all() as $error)
+               <li>{{ $error }}</li>
+             @endforeach
+           </ul>
+         </div>
+        @endif
         <div class="schedule-create-title">
           <h2>予定を編集する</h2>
         </div>

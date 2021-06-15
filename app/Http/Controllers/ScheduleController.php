@@ -90,16 +90,16 @@ class ScheduleController extends Controller
      */
     public function store(Request $request)
     {
+      $user_id = Auth::id();
       // 予定のバリデーション
       $request->validate([
-        'content' => 'required',
-        'title' => 'unique:common_schedules',
-        'start_time' => 'required',
+        'content' => 'required|max:100',
+        'title' => 'unique:common_schedules,title,NULL,user_id,user_id,'.$user_id.',deleted_at,NULL',
       ],
       [
         'content.required' => '予定を記入してください',
+        'content.max' => '予定は100文字以内で入力してください',
         'title.unique' => '指定のグループ『'.$request->input('title').'』はすでに存在しています',
-        'start_time.required' => '予定開始時間を設定してください',
       ]);
 
       $schedule = new Schedule();
@@ -112,19 +112,17 @@ class ScheduleController extends Controller
         // 予定グループを追加
         $common_schedule = new CommonSchedule();
 
+        $common_schedule->user_id = Auth::id();
         $common_schedule->title = $request->input('title');
         $common_schedule->common_color = $request->input('common_color');
         $common_schedule->save();
 
         // 予定グループの最大値のidを取得
-        $common_schedules = CommonSchedule::max('common_schedule_id');
+        $common_schedules = CommonSchedule::where('user_id', $user_id)->max('common_schedule_id');
 
         // もし予定グループが存在したら最大値のidを設定
         if ($common_schedules) {
           $schedule->common_schedule_id = $common_schedules;
-        // 予定グループがなければidを1に設定
-        } else {
-          $schedule->common_schedule_id = 1;
         }
 
       } else {
@@ -177,16 +175,17 @@ class ScheduleController extends Controller
      */
     public function update(Request $request, Schedule $schedule)
     {
+      $user_id = Auth::id();
+
       // 予定のバリデーション
       $request->validate([
-        'content' => 'required',
-        'title' => 'unique:common_schedules',
-        'start_time' => 'required',
+        'content' => 'required|max:100',
+        'title' => 'unique:common_schedules,title,NULL,user_id,user_id,'.$user_id.',deleted_at,NULL',
       ],
       [
         'content.required' => '予定を記入してください',
+        'content.max' => '予定は100文字以内で入力してください',
         'title.unique' => '指定のグループ『'.$request->input('title').'』はすでに存在しています',
-        'start_time.required' => '予定開始時間を設定してください',
       ]);
 
       $schedule->content = $request->input('content');
@@ -197,19 +196,17 @@ class ScheduleController extends Controller
         // 予定グループを追加
         $common_schedule = new CommonSchedule();
 
+        $common_schedule->user_id = Auth::id();
         $common_schedule->title = $request->input('title');
         $common_schedule->common_color = $request->input('common_color');
         $common_schedule->save();
 
         // 予定グループの最大値のidを取得
-        $common_schedules = CommonSchedule::max('common_schedule_id');
+        $common_schedules = CommonSchedule::where('user_id', $user_id)->max('common_schedule_id');
 
         // もし予定グループが存在したら最大値のidを設定
         if ($common_schedules) {
           $schedule->common_schedule_id = $common_schedules;
-        // 予定グループがなければidを1に設定
-        } else {
-          $schedule->common_schedule_id = 1;
         }
 
       } else {

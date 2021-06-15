@@ -71,11 +71,6 @@
                   <h3>タスク</h3>
                 </div>
                 <ul>
-                  @if ($tasks->count() == 0)
-                    <div class="no-schedule">
-                      タスクはありません
-                    </div>
-                  @else
                   @foreach ($tasks as $task)
                     @if ($task->complete == 0)
                       @if ($day > date('Y-m-d', strtotime($task->start_date)) && $day < date('Y-m-d', strtotime($task->end_date)))

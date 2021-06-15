@@ -6,18 +6,18 @@
           {{ session('message') }}
         </div>
       @endif
-      @if ($errors->any())
-       <div class="alert alert-danger">
-         <ul>
-           @foreach ($errors->all() as $error)
-             <li>{{ $error }}</li>
-           @endforeach
-         </ul>
-       </div>
-      @endif
 
       @if ($date)
         <div class="schedule-container">
+          @if ($errors->any())
+          <div class="alert alert-danger">
+            <ul>
+              @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+          </div>
+          @endif
           <div class="schedule-title">
             <h2>{{ date('n月j日', strtotime($date)) }}の予定</h2>
           </div>
@@ -122,7 +122,7 @@
           {{ csrf_field() }}
           <div class="form-p">
             <i class="fas fa-calendar-alt"></i>予定
-            <input class="create-input" type="text" name="content">
+            <input class="create-input" type="text" name="content" value="{{ old('content') }}">
           </div>
 
           <div class="form-p">
@@ -130,14 +130,14 @@
             <select class="create-input" name="common_schedule_id">
               <option value="0">未選択</option>
               @foreach ($commonSchedules as $commonSchedule)
-                <option value="{{ $commonSchedule->common_schedule_id }}">{{ $commonSchedule->title }}</option>
+                <option value="{{ $commonSchedule->common_schedule_id }}" @if (old('common_schedule_id') == $commonSchedule->common_schedule_id) selected @endif>{{ $commonSchedule->title }}</option>
               @endforeach
             </select>
             <div class="form-block new-category-btn">
               <span id="new-category" class="new-category">または新しいグループ</span>
             </div>
             <div id="hide-new-category" class="hide-new-category">
-              <input class="create-input" type="text" name="title">
+              <input class="create-input" type="text" name="title" value="{{ old('title') }}">
               <span class="category-color">色</span>
               <input class="create-input" type="color" name="common_color" list="color-list" value="#f44335">
               <datalist id="color-list">
@@ -175,7 +175,7 @@
 
           <div class="form-p">
             <i class="fas fa-pen"></i>メモ
-            <input class="create-input" type="text" name="memo">
+            <input class="create-input" type="text" name="memo" value="{{ old('memo') }}">
           </div>
 
           <div class="form-p">

@@ -306,6 +306,7 @@ class TaskController extends Controller
           // タスクカテゴリーを追加
           $task_category = new TaskCategory();
 
+          $task_category->user_id = Auth::id();
           $task_category->task_category = $request->input('task_category');
           $task_category->category_color = $request->input('category_color');
           $task_category->save();

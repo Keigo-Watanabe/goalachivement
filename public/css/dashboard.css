@@ -1301,7 +1301,7 @@
   font-size: 0.75rem;
   height: 1rem;
   vertical-align: middle;
-  font-weight: bold;
+  color: #fff;
   display: block;
   overflow: hidden;
   margin-bottom: 3px;
@@ -1541,8 +1541,7 @@
 
 .common-schedule span {
   font-size: 0.75rem;
-  font-weight: bold;
-  color: #333;
+  color: #fff;
   padding: 0.3125rem 0.625rem;
   border-radius: 0.625rem;
 }
