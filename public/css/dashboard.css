@@ -983,6 +983,20 @@
   background-color: #D93636;
 }
 
+.back-goal-btn {
+  display: block;
+  width: fit-content;
+  margin: 1.25rem 0;
+  font-size: 1rem;
+  color: #2176FF;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
+.back-goal-btn:hover {
+  text-decoration: none;
+}
+
 
 /*
 タスクカテゴリー別一覧

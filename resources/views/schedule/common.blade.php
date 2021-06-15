@@ -15,7 +15,7 @@
         </div>
 
         <div class="schedule-sammary-content">
-          @if ($commonSchedules->count() == 0)
+          @if ($schedules->count() == 0)
             <div class="no-schedule">
               予定はありません
             </div>

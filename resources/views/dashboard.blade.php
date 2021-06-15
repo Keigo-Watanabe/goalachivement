@@ -5,6 +5,8 @@
         <div class="success-message">
           @if (session('goal_title'))
             『{{ session('goal_title') }}』{{ session('message') }}
+          @elseif (session('task_content'))
+            『{{ session('task_content') }}』{{ session('message') }}
           @endif
         </div>
       </div>
@@ -62,7 +64,7 @@
                 </ul>
 
                 <div class="schedule-link">
-                  <a href="/schedule/?date={{ date('Y-m-d\TH:i', strtotime($day)) }}">予定の追加</a>
+                  <a href="/schedule/?date={{ date('Y-m-d\TH:i', strtotime($day)) }}">予定の詳細・追加</a>
                 </div>
               </div>
 
@@ -73,7 +75,7 @@
                 <ul>
                   @foreach ($tasks as $task)
                     @if ($task->complete == 0)
-                      @if ($day > date('Y-m-d', strtotime($task->start_date)) && $day < date('Y-m-d', strtotime($task->end_date)))
+                      @if ($day >= date('Y-m-d', strtotime($task->start_date)) && $day <= date('Y-m-d', strtotime($task->end_date)))
                       <li class="task-sammary-item schedule-sammary-item">
                         <div class="task-name">
                           <a href="/task/{{ $task->task_id }}"><span class="task-content-name">{{ $task->content }}</span></a>
@@ -97,7 +99,6 @@
                       @endif
                     @endif
                   @endforeach
-                  @endif
                 </ul>
               </div>
             </div>

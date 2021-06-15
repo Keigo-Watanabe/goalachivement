@@ -20,8 +20,6 @@ class CreateGoalsTable extends Migration
             $table->date('date');
             $table->softDeletes();
             $table->timestamps();
-
-            $table->unique('title');
         });
     }
 

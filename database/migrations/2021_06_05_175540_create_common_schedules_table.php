@@ -20,8 +20,6 @@ class CreateCommonSchedulesTable extends Migration
             $table->string('common_color');
             $table->softDeletes();
             $table->timestamps();
-
-            $table->unique('title');
         });
     }
 

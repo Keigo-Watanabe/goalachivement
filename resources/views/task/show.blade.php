@@ -100,6 +100,10 @@
           </form>
           @endif
 
+          @if ($task->goal_id != 0)
+            <a class="back-goal-btn" href="/goal/{{ $task->goal_id }}">目標詳細</a>
+          @endif
+
           <form class="task-show-delete" action="/task/{{ $task->task_id }}" method="post" onsubmit="if(confirm('削除します。よろしいですか？')) { return true } else { return false }">
             <input type="hidden" name="_method" value="DELETE">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">

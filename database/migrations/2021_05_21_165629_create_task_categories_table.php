@@ -20,8 +20,6 @@ class CreateTaskCategoriesTable extends Migration
             $table->string('category_color');
             $table->softDeletes();
             $table->timestamps();
-
-            $table->unique('task_category');
         });
     }
 
