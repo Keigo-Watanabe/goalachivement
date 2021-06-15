@@ -118,6 +118,29 @@ class GoalController extends Controller
     }
 
     /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Goal  $goal
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Goal $goal)
+    {
+      // 目標のバリデーション
+      $request->validate([
+        'date' => 'required',
+      ],
+      [
+        'date.required' => '達成日を設定してください',
+      ]);
+
+      $goal->date = $request->input('date');
+      $goal->save();
+
+      return redirect()->back()->with('message', '達成日を変更しました。');
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Goal  $goal

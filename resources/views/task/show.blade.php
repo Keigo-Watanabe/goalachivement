@@ -50,33 +50,33 @@
           </div>
           <div class="task-show-priority">
             <span class="task-show-item">重要度</span>
-            @if ($task->priority == 1)
-              <span class="task-show-star">★</span>
+            @if ($task->priority == 0)
+              <span class="task-show-star">☆☆☆☆☆</span>
+            @elseif ($task->priority == 1)
+              <span class="task-show-star">★☆☆☆☆</span>
             @elseif ($task->priority == 2)
-              <span class="task-show-star">★★</span>
+              <span class="task-show-star">★★☆☆☆</span>
             @elseif ($task->priority == 3)
-              <span class="task-show-star">★★★</span>
+              <span class="task-show-star">★★★☆☆</span>
             @elseif ($task->priority == 4)
-              <span class="task-show-star">★★★★</span>
+              <span class="task-show-star">★★★★☆</span>
             @elseif ($task->priority == 5)
               <span class="task-show-star">★★★★★</span>
-            @elseif ($task->priority == 6)
-              <span class="task-show-star">★★★★★★</span>
             @endif
           </div>
           <div class="task-show-priority">
             <span class="task-show-item">緊急度</span>
-            @if ($task->severity == 1)
-              <span class="task-show-star">★</span>
+            @if ($task->severity == 0)
+              <span class="task-show-star">☆☆☆☆☆</span>
+            @elseif ($task->severity == 1)
+              <span class="task-show-star">★☆☆☆☆</span>
             @elseif ($task->severity == 2)
-              <span class="task-show-star">★★</span>
+              <span class="task-show-star">★★☆☆☆</span>
             @elseif ($task->severity == 3)
-              <span class="task-show-star">★★★</span>
+              <span class="task-show-star">★★★☆☆</span>
             @elseif ($task->severity == 4)
-              <span class="task-show-star">★★★★</span>
+              <span class="task-show-star">★★★★☆</span>
             @elseif ($task->severity == 5)
-              <span class="task-show-star">★★★★★</span>
-            @elseif ($task->severity == 6)
               <span class="task-show-star">★★★★★★</span>
             @endif
           </div>
@@ -200,24 +200,24 @@
             <div class="form-block">
               <i class="fas fa-star priority"></i>重要度
               <select class="create-input select-stars" name="priority">
-                <option hidden>0 〜 ★★★★★</option>
-                <option value="0" @if ($task->priority == 0) selected @endif></option>
-                <option value="1" @if ($task->priority == 1) selected @endif>★</option>
-                <option value="2" @if ($task->priority == 2) selected @endif>★★</option>
-                <option value="3" @if ($task->priority == 3) selected @endif>★★★</option>
-                <option value="4" @if ($task->priority == 4) selected @endif>★★★★</option>
+                <option hidden>☆☆☆☆☆ 〜 ★★★★★</option>
+                <option value="0" @if ($task->priority == 0) selected @endif>☆☆☆☆☆</option>
+                <option value="1" @if ($task->priority == 1) selected @endif>★☆☆☆☆</option>
+                <option value="2" @if ($task->priority == 2) selected @endif>★★☆☆☆</option>
+                <option value="3" @if ($task->priority == 3) selected @endif>★★★☆☆</option>
+                <option value="4" @if ($task->priority == 4) selected @endif>★★★★☆</option>
                 <option value="5" @if ($task->priority == 5) selected @endif>★★★★★</option>
               </select>
             </div>
             <div class="form-block">
               <i class="fas fa-star severity"></i>緊急度
               <select class="create-input select-stars" name="severity">
-                <option hidden>0 〜 ★★★★★</option>
-                <option value="0" @if ($task->severity == 0) selected @endif></option>
-                <option value="1" @if ($task->severity == 1) selected @endif>★</option>
-                <option value="2" @if ($task->severity == 2) selected @endif>★★</option>
-                <option value="3" @if ($task->severity == 3) selected @endif>★★★</option>
-                <option value="4" @if ($task->severity == 4) selected @endif>★★★★</option>
+                <option hidden>☆☆☆☆☆ 〜 ★★★★★</option>
+                <option value="0" @if ($task->severity == 0) selected @endif>☆☆☆☆☆</option>
+                <option value="1" @if ($task->severity == 1) selected @endif>★☆☆☆☆</option>
+                <option value="2" @if ($task->severity == 2) selected @endif>★★☆☆☆</option>
+                <option value="3" @if ($task->severity == 3) selected @endif>★★★☆☆</option>
+                <option value="4" @if ($task->severity == 4) selected @endif>★★★★☆</option>
                 <option value="5" @if ($task->severity == 5) selected @endif>★★★★★</option>
               </select>
             </div>

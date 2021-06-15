@@ -7,6 +7,12 @@
           </p>
         </div>
 
+        @if (session('message'))
+          <div class="success-message">
+            {{ session('message') }}
+          </div>
+        @endif
+
         <div class="goal-content">
           <ul>
             <li>
@@ -74,6 +80,20 @@
               @else
               <p class="remaining-days">目標達成まであと<span>{{ $goal_remaining_days }}日</span></p>
               @endif
+
+              <div class="goal-edit">
+                <form class="goal-edit-form" action="/goal/{{ $goal->goal_id }}" method="post">
+                  {{ csrf_field() }}
+                  <input type="hidden" name="_method" value="PUT">
+                  <div class="form-p">
+                    <i class="fas fa-calendar-alt"></i>達成日の変更
+                    <input class="create-input" type="date" name="date" value="{{ $goal->date }}">
+                  </div>
+                  <div class="form-p">
+                    <input class="goal-edit-btn" type="submit" value="変更">
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>

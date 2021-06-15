@@ -108,24 +108,24 @@
             <div class="form-block">
               <i class="fas fa-star priority"></i>重要度
               <select class="create-input select-stars" name="priority">
-                <option value="">0 〜 ★★★★★</option>
-                <option value="0"></option>
-                <option value="1">★</option>
-                <option value="2">★★</option>
-                <option value="3">★★★</option>
-                <option value="4">★★★★</option>
+                <option value="">☆☆☆☆☆ 〜 ★★★★★</option>
+                <option value="0">☆☆☆☆☆</option>
+                <option value="1">★☆☆☆☆</option>
+                <option value="2">★★☆☆☆</option>
+                <option value="3">★★★☆☆</option>
+                <option value="4">★★★★☆</option>
                 <option value="5">★★★★★</option>
               </select>
             </div>
             <div class="form-block">
               <i class="fas fa-star severity"></i>緊急度
               <select class="create-input select-stars" name="severity">
-                <option value="">0 〜 ★★★★★</option>
-                <option value="0"></option>
-                <option value="1">★</option>
-                <option value="2">★★</option>
-                <option value="3">★★★</option>
-                <option value="4">★★★★</option>
+                <option value="">☆☆☆☆☆ 〜 ★★★★★</option>
+                <option value="0">☆☆☆☆☆</option>
+                <option value="1">★☆☆☆☆</option>
+                <option value="2">★★☆☆☆</option>
+                <option value="3">★★★☆☆</option>
+                <option value="4">★★★★☆</option>
                 <option value="5">★★★★★</option>
               </select>
             </div>
