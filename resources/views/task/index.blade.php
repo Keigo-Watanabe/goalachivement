@@ -25,6 +25,8 @@
             <div class="success-message">
               @if (session('task_content'))
                 『{{ session('task_content') }}』{{ session('message') }}
+              @else
+                {{ session('message') }}
               @endif
             </div>
           @endif

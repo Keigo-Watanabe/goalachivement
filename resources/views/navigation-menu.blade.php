@@ -129,6 +129,7 @@
                   <ul id="task-nav-menu" class="task-nav-menu">
                     <li><a href="/task">タスク一覧</a></li>
                     <li><a href="/task/create">タスク追加</a></li>
+                    <li><a href="/task_category">カテゴリー設定</a></li>
                   </ul>
                 </li>
                 <li>
@@ -232,6 +233,7 @@
             <ul id="task-nav-menu" class="task-nav-menu task-nav-menu-show">
               <li><a href="/task">タスク一覧</a></li>
               <li><a href="/task/create">タスク追加</a></li>
+              <li><a href="/task_category">カテゴリー設定</a></li>
             </ul>
           </li>
           <li>

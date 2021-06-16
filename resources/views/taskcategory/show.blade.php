@@ -8,25 +8,19 @@
 
         <div class="task-sammary-content">
           @if (session('message'))
-            <div class="task-show-message">
-              <div class="success-message">
-                @if (session('task_content'))
-                  『{{ session('task_content') }}』{{ session('message') }}
-                @endif
-              </div>
-            </div>
+          <div class="success-message">
+            {{ session('message') }}
+          </div>
           @endif
 
           @if ($errors->any())
-            <div class="task-show-message">
-              <div class="alert alert-danger">
-                <ul>
-                  @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                  @endforeach
-                </ul>
-              </div>
-            </div>
+          <div class="alert alert-danger">
+            <ul>
+              @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+          </div>
           @endif
 
           <form class="category-edit-form" action="/task_category/{{ $taskCategory->task_category_id }}" method="post">
@@ -67,7 +61,6 @@
           <form class="category-delete-form" action="/task_category/{{ $taskCategory->task_category_id }}" method="post" onsubmit="if(confirm('削除します。よろしいですか？')) { return true } else { return false }">
             <input type="hidden" name="_method" value="DELETE">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="hidden" name="task_category" value="{{ $taskCategory->task_category }}">
             <input type="submit" name="delete" value="カテゴリーを削除する">
           </form>
         </div>

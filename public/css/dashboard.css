@@ -1704,6 +1704,61 @@
 
 
 /*
+タスクカテゴリー設定
+*/
+.create-new-category {
+  margin-top: 5rem;
+}
+
+.create-category-title {
+  margin-bottom: 2.8rem;
+  border-bottom: solid 3px #1A3F5F;
+}
+
+.create-category-title h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1A3F5F;
+  margin-bottom: 0.625rem;
+}
+
+.category-sammary-title {
+  border-bottom: solid 3px #1A3F5F;
+  padding-bottom: 0.625rem;
+  margin-bottom: 1.25rem;
+}
+
+.category-sammary-title h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1A3F5F;
+}
+
+.category-sammary ul li {
+  padding: 0.625rem;
+  color: #333;
+  font-weight: bold;
+  background-color: #FFFEF2;
+  border-bottom: solid 1px #333;
+  margin-bottom: 0.625rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.category-sammary ul li a {
+  font-size: 0.85rem;
+  font-weight: normal;
+  padding: 0.3125rem 0.625rem;
+  background-color: #0090ff;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.category-sammary ul li a:hover {
+  opacity: 0.7;
+}
+
+/*
 タスクカテゴリー編集・削除
 */
 .category-edit-form {
