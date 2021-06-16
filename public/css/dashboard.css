@@ -2084,6 +2084,22 @@
     margin: 1.875rem 1.25rem;
   }
 
+  .task-sammary-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .schedule-sammary-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .schedule-create-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .task-edit-title h2 {
+    font-size: 1.5rem;
+  }
+
   /* カレンダー */
   .calendar-container {
     margin: 0 0 1.25rem 0;
@@ -2112,6 +2128,11 @@
   .calendar-schedule-content,
   .calendar-task-content {
     width: 100%;
+  }
+
+  .task-show,
+  .task-edit-content {
+    margin: 0;
   }
 
   /* 予定一覧 */

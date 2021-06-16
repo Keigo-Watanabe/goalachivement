@@ -13,6 +13,16 @@
           </div>
           @endif
 
+          @if ($errors->any())
+          <div class="alert alert-danger">
+            <ul>
+              @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+          </div>
+          @endif
+
           <div class="category-sammary">
             <ul>
               @foreach ($taskCategories as $taskCategory)
@@ -28,16 +38,6 @@
             <div class="create-category-title">
               <h2>新しいカテゴリーを追加する</h2>
             </div>
-
-            @if ($errors->any())
-            <div class="alert alert-danger">
-              <ul>
-                @foreach ($errors->all() as $error)
-                  <li>{{ $error }}</li>
-                @endforeach
-              </ul>
-            </div>
-            @endif
 
             <form class="category-edit-form" action="/task_category" method="post">
               {{ csrf_field() }}

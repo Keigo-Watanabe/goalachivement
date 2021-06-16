@@ -36,7 +36,7 @@ class TaskCategoryController extends Controller
         'task_category' => 'required|unique:task_categories,task_category,NULL,user_id,user_id,'.$user_id.',deleted_at,NULL',
       ],
       [
-        'task_category.required' => 'カテゴリーを入力してください',
+        'task_category.required' => 'カテゴリー名を入力してください',
         'task_category.unique' => '指定のカテゴリー『'.$request->input('task_category').'』はすでに存在しています',
       ]);
 
@@ -76,7 +76,7 @@ class TaskCategoryController extends Controller
           'task_category' => 'required',
         ],
         [
-          'task_category.required' => 'カテゴリーを入力してください',
+          'task_category.required' => 'カテゴリー名を入力してください',
         ]);
 
         if ($request->input('task_category') == $taskCategory->task_category) {
