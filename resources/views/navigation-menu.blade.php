@@ -137,6 +137,7 @@
                   <ul id="schedule-nav-menu" class="schedule-nav-menu">
                     <li><a href="/schedulesammary">予定一覧</a></li>
                     <li><a href="/schedule">予定追加</a></li>
+                    <li><a href="/common_schedule">グループ設定</a></li>
                   </ul>
                 </li>
               </ul>
@@ -241,6 +242,7 @@
             <ul id="schedule-nav-menu" class="schedule-nav-menu schedule-nav-menu-show">
               <li><a href="/schedulesammary">予定一覧</a></li>
               <li><a href="/schedule">予定追加</a></li>
+              <li><a href="/common_schedule">グループ設定</a></li>
             </ul>
           </li>
         </ul>

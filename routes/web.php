@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\TaskCategoryController;
 use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\CommonScheduleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,8 @@ Route::resource('task', TaskController::class)->middleware('auth');
 Route::resource('task_category', TaskCategoryController::class)->middleware('auth');
 
 Route::resource('schedule', ScheduleController::class)->middleware('auth');
+
+Route::resource('common_schedule', CommonScheduleController::class)->middleware('auth');
 
 Route::get('schedulesammary', [ScheduleController::class, 'sammary'])->middleware('auth');
 

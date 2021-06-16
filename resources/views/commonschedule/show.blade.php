@@ -3,7 +3,7 @@
 
       <div class="task-sammary">
         <div class="category-sammary-title">
-          <h2>カテゴリー『{{ $taskCategory->task_category }}』の編集</h2>
+          <h2>グループ『{{ $commonSchedule->title }}』の編集</h2>
         </div>
 
         <div class="task-sammary-content">
@@ -23,16 +23,16 @@
           </div>
           @endif
 
-          <form class="category-edit-form" action="/task_category/{{ $taskCategory->task_category_id }}" method="post">
+          <form class="category-edit-form" action="/common_schedule/{{ $commonSchedule->common_schedule_id }}" method="post">
             {{ csrf_field() }}
             <input type="hidden" name="_method" value="PUT">
             <div class="form-p">
-              <label>カテゴリー名</label>
-              <input class="create-input" type="text" name="task_category" value="{{ $taskCategory->task_category }}">
+              <label>グループ名</label>
+              <input class="create-input" type="text" name="title" value="{{ $commonSchedule->title }}">
             </div>
             <div class="form-p">
               <label>色</label>
-              <input class="create-input" type="color" name="category_color" list="color-list" value="{{ $taskCategory->category_color }}">
+              <input class="create-input" type="color" name="common_color" list="color-list" value="{{ $commonSchedule->common_color }}">
               <datalist id="color-list">
                 <option value="#f44335"></option>
                 <option value="#e91e63"></option>
@@ -58,7 +58,7 @@
             </div>
           </form>
 
-          <form class="category-delete-form" action="/task_category/{{ $taskCategory->task_category_id }}" method="post" onsubmit="if(confirm('削除します。よろしいですか？')) { return true } else { return false }">
+          <form class="category-delete-form" action="/common_schedule/{{ $commonSchedule->common_schedule_id }}" method="post" onsubmit="if(confirm('削除します。よろしいですか？')) { return true } else { return false }">
             <input type="hidden" name="_method" value="DELETE">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="submit" name="delete" value="カテゴリーを削除する">
