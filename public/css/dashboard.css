@@ -20,6 +20,7 @@
   max-width: 12.5rem;
   height: 100vh;
   z-index: 1000;
+  overflow: scroll;
 }
 
 .my-page-logo {
@@ -1699,6 +1700,31 @@
 
 .schedule-delete-form input[type="submit"]:hover {
   background-color: #D93636;
+}
+
+
+/*
+タスクカテゴリー編集・削除
+*/
+.category-edit-form {
+  margin-bottom: 6rem;
+}
+
+.category-edit-form .form-p {
+  margin-bottom: 2.8rem;
+}
+
+.category-delete-form input {
+  padding: 0.3125rem 0.625rem;
+  font-size: 0.75rem;
+  background-color: #FF5252;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-delete-form input:hover {
+  background-color: #dd3939;
 }
 
 

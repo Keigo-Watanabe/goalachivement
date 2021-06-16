@@ -26,7 +26,7 @@
           <label for=""><span class="create-step">Step2.</span>達成日を決めよう</label>
           <div class="form-p">
             <i class="fas fa-calendar-alt"></i>達成日
-            <input class="edit-input" type="date" name="date" value="{{ old('date') }}">
+            <input class="create-input" type="date" name="date" value="{{ old('date') }}">
           </div>
           <div class="form-p">
             <input class="form-submit-btn" type="submit" value="設定">
