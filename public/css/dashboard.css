@@ -1,0 +1,2364 @@
+.font-sans {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+/*
+マイページ
+*/
+
+
+/*
+ヘッダー
+*/
+.my-page-header {
+  padding: 1.875rem;
+  background-color: #1A3F5F;
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-width: 12.5rem;
+  height: 100vh;
+  z-index: 1000;
+  overflow: scroll;
+}
+
+.my-page-logo {
+  font-size: 1.125rem;
+  font-family: 'Alata', sans-serif;
+  color: #fff;
+}
+
+.my-page-header-logo {
+  margin-bottom: 2.5rem;
+}
+
+
+/*
+ヘッダー共通
+*/
+.user-btn,
+.user-btn i,
+.my-page-home a,
+.my-page-home a i,
+.my-page-nav ul li a,
+.my-page-nav ul li a i {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.user-btn i,
+.my-page-home a i,
+.my-page-nav ul li a i {
+  margin-right: 0.625rem;
+}
+
+.user-btn {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  word-break: break-all;
+}
+
+.my-page-user,
+.my-page-home,
+.my-page-nav {
+  padding: 2.5rem 0;
+}
+
+.my-page-user,
+.my-page-home {
+  border-bottom: solid 1px #fff;
+}
+
+.my-page-nav ul li {
+  margin-bottom: 1.56rem;
+}
+
+/*
+ヘッダードロップダウンメニュー
+*/
+.profile-link-btn,
+.hamburger-btn {
+  color: #fff;
+}
+
+.task-btn {
+  cursor: pointer;
+}
+
+.task-nav-menu {
+  margin-top: 1.56rem;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.task-nav-menu-show {
+  display: block;
+}
+
+.task-nav-menu li a {
+  font-weight: normal !important;
+}
+
+.schedule-btn {
+  cursor: pointer;
+}
+
+.schedule-nav-menu {
+  margin-top: 1.56rem;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.schedule-nav-menu-show {
+  display: block;
+}
+
+.schedule-nav-menu li a {
+  font-weight: normal !important;
+}
+
+
+/*
+レスポンシブ下部ナビゲーション
+*/
+.responsive-bottom-navigation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 0.3125rem 0.625rem;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 20%);
+  display: none;
+}
+
+.responsive-bottom-navigation-inner ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.responsive-bottom-navigation-inner ul li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #1a3f5f;
+  font-size: 0.8rem;
+}
+
+.responsive-bottom-navigation-inner ul li a i {
+  color: #1a3f5f;
+  font-size: 1.5rem;
+  margin-bottom: 0.3125rem;
+}
+
+
+/*
+使い方説明
+*/
+.way {
+  padding: 1.875rem;
+}
+
+.way-title {
+  border-bottom: solid 3px #1a3f5f;
+  margin-bottom: 2.8rem;
+}
+
+.way-title h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1a3f5f;
+}
+
+.way-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.way-list::after {
+  content: '';
+  display: block;
+  width: 100%;
+  max-width: 20rem;
+}
+
+.way-item {
+  width: 100%;
+  max-width: 20rem;
+  margin-bottom: 2.8rem;
+  border: solid 1px #eaeaea;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f7f7f7;
+}
+
+.way-item-title {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #1a3f5f;
+  text-align: center;
+  padding: 0.625rem;
+}
+
+.way-item-image {
+  height: 14rem;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-top: solid 1px #eaeaea;
+  border-bottom: solid 1px #eaeaea;
+}
+
+.way-item-image img {
+  width: 100%;
+}
+
+.way-item-description {
+  padding: 0.625rem;
+}
+
+.way-item-number {
+  padding: 0.625rem;
+}
+
+.way-number {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  background-color: #1a3f5f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+
+/*
+マイページ内容
+*/
+.my-page-main,
+.profile-header {
+  padding: 0;
+  margin-left: 12.5rem;
+}
+
+.profile-content {
+  margin-left: 12.5rem;
+}
+
+.goal-container {
+  background-color: #F4FFF8;
+  border: solid 1px #999999;
+  padding: 1.875rem;
+  margin: 1.875rem;
+}
+
+.goal-title {
+  margin-bottom: 3.75rem;
+}
+
+.goal-proccess {
+  color: #1A3F5F;
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+.goal-content li {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 6.25rem;
+}
+
+.goal-graph-content {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.goal-name {
+  width: 15.625rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.goal-name a {
+  transition: all 0.3s ease;
+}
+
+.goal-name a:hover {
+  text-decoration: underline;
+  opacity: 0.7;
+}
+
+.goal-start {
+  margin-right: 0.625rem;
+}
+
+.goal-start i {
+  font-size: 1.25rem;
+  color: #db5727;
+}
+
+.goal-start,
+.goal-finish {
+  text-align: center;
+}
+
+.goal-start-date,
+.goal-end-date {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.goal-graph {
+  width: 100%;
+}
+
+.goal-bar {
+  border: solid 1px #707070;
+  background-color: #fff;
+  padding: 0.125rem;
+}
+
+.goal-bar-inner {
+  display: block;
+  background-color: #FF4E4E;
+  height: 1.5rem;
+  position: relative;
+}
+
+.goal-icon {
+  position: absolute;
+  top: -1.625rem;
+  right: -0.7rem;
+}
+
+.goal-icon i {
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.goal-persent {
+  position: absolute;
+  bottom: -3.25rem;
+  right: -2.215rem;
+  color: #fff;
+  font-weight: bold;
+  background-color: #1A3F5F;
+  padding: 0.3125rem 0.9375rem;
+}
+
+.goal-persent-triangle {
+  border-bottom: solid 10px #1A3F5F;
+  border-left: solid 5px transparent;
+  border-right: solid 5px transparent;
+  position: absolute;
+  bottom: -20px;
+  right: -5px;
+}
+
+.goal-finish {
+  margin-left: 0.625rem;
+}
+
+.goal-finish i {
+  color: #02773D;
+  font-size: 1.25rem;
+}
+
+.no-goal {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+
+/* フッター */
+.dashboard-footer {
+  margin-left: 12.5rem;
+  padding: 1.875rem 0;
+}
+
+
+/*
+目標・タスク追加ページ
+*/
+.create-bg {
+  height: 15.625rem;
+  background-image: url(/image/firstview.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.create-bg-cover {
+  background-color: rgba(51, 51, 51, 50%);
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.create-bg-cover h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 5.3125rem;
+  transform: translateY(-50%);
+}
+
+.create-bg-cover h1 i {
+  color: #fff;
+  margin-left: 0.625rem;
+}
+
+.create-content {
+  padding: 3.125rem 5.3125rem;
+}
+
+.create-form label {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-bottom: 3.125rem;
+}
+
+.create-step {
+  color: #0089FF;
+  font-size: 1.75rem;
+  margin-right: 0.3125rem;
+}
+
+.create-form .form-p {
+  margin-bottom: 4.375rem;
+}
+
+.create-form .form-p,
+.form-block,
+.category-color {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.form-block {
+  margin-bottom: 1.5625rem;
+}
+
+.create-form i {
+  margin-right: 0.625rem;
+}
+
+.create-input {
+  margin-left: 1.25rem;
+  border-color: transparent;
+  border-width: 0;
+  border-bottom: solid 1px #333;
+}
+
+.form-submit-btn {
+  font-size: 1.125rem;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.625rem 2.5rem;
+  background: linear-gradient(-135deg, #6C00FF, #00B1FF);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.form-submit-btn:hover {
+  background: linear-gradient(-135deg, #ff3d16, #ffcf7c);
+}
+
+.alert {
+  background-color: #ffbfbf;
+  padding: 0.9375rem 0.625rem;
+  margin-bottom: 1.875rem;
+}
+
+.alert ul li {
+  color: #ff2b2b;
+}
+
+.success-message {
+  background-color: #bff2e4;
+  padding: 0.9375rem 0.625rem;
+  margin-bottom: 1.875rem;
+  color: #4baf8c;
+}
+
+.task-list-page-btn {
+  color: #2176FF;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
+.task-list-page-btn:hover {
+  text-decoration: none;
+}
+
+.matrix-description {
+  display: block;
+  width: fit-content;
+  cursor: pointer;
+  margin-bottom: 1.875rem;
+}
+
+.matrix-description:hover {
+  text-decoration: underline;
+}
+
+.matrix-description-content {
+  display: flex;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 16%);
+  padding: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.matrix-hide {
+  display: none;
+}
+
+.matrix-image {
+  width: 60%;
+}
+
+.matrix-image img {
+  width: 100%;
+}
+
+.matrix-sentence {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.matrix-sentence p {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.required-item {
+  color: #F55D63;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+
+/*
+目標
+*/
+.create-form .fa-flag {
+  color: #F55D63;
+}
+
+.create-form .fa-calendar-alt {
+  color: #08C76F;
+}
+
+.goal-show-detail {
+  display: flex;
+}
+
+.goal-circle-graph,
+.goal-show-description {
+  width: 50%;
+}
+
+.goal-circle {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 16%);
+  border-radius: 50%;
+  width: 15.625rem;
+  height: 15.625rem;
+  background-color: #fff;
+  position: relative;
+  margin: 0 auto;
+}
+
+.goal-circle-inner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #FF5353 50%, transparent 0);
+  border-radius: 50%;
+  position: relative;
+  z-index: 0
+}
+
+.goal-circle-inner-white,
+.goal-circle-inner-red {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+.goal-circle-inner-white {
+  background: linear-gradient(to right, #fff 50%, transparent 0);
+}
+
+.goal-circle-inner-red {
+  background: linear-gradient(to right, #FF5353 50%, transparent 0);
+}
+
+.goal-circle-percent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 9.375rem;
+  height: 9.375rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 16%);
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goal-circle-big-percent,
+.small-percent {
+  color: #FF5353;
+  font-weight: bold;
+}
+
+.goal-circle-big-percent {
+  font-size: 2.625rem;
+}
+
+.small-percent {
+  font-size: 1.5rem;
+}
+
+.goal-show-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.goal-show-description p {
+  font-size: 1.25rem;
+}
+
+.goal-achivement-percent {
+  color: #FF3333;
+  margin-bottom: 1.5rem;
+}
+
+.now-task {
+  margin-bottom: 1.875rem;
+}
+
+.remaining-days {
+  font-weight: bold;
+  margin-bottom: 1.875rem;
+}
+
+.remaining-days span {
+  font-size: 1.75rem;
+}
+
+.goal-edit-form i {
+  margin-right: 0.625rem;
+}
+
+.goal-edit-form .create-input {
+  background-color: transparent;
+}
+
+.goal-edit-btn {
+  background-color: #0090ff;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 0.3125rem 0.625rem;
+  margin-top: 0.625rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.goal-edit-btn:hover {
+  background-color: #3dabff;
+}
+
+
+
+
+/*
+タスク
+*/
+.create-form .fa-tasks {
+  color: #08C76F;
+}
+
+.create-form .fa-calendar-check {
+  color: #1394D8;
+}
+
+.priority {
+  color: #F7503B;
+}
+
+.severity {
+  color: #EF9350;
+}
+
+.select-stars {
+  color: #FFD421;
+}
+
+.create-form .fa-pen {
+  color: #8D8D8D;
+}
+
+.category-color {
+  margin-left: 0.9375rem;
+}
+
+.new-category-btn {
+  margin-top: 1.25rem;
+}
+
+.new-category {
+  font-weight: normal;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.new-category:hover {
+  color: #1394D8;
+  text-decoration: none;
+}
+
+.hide-new-category .create-input:first-child {
+  margin-left: 0;
+}
+
+.hide-new-category {
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.show-new-category {
+  display: block;
+}
+
+
+/*
+目標詳細・タスク一覧
+*/
+.task-chart-container {
+  margin: 1.875rem;
+  border: solid 1px #707070;
+  display: flex;
+}
+
+.task-list {
+  flex: 1;
+  width: 100%;
+  max-width: 18.75rem;
+}
+
+.task-list-title {
+  color: #fff;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #1A3F5F;
+  text-align: center;
+}
+
+.task-list ul {
+  border-right: solid 1px #707070;
+  padding: 0 0.9375rem;
+}
+
+.task-list ul li {
+  height: 3.5rem;
+  font-weight: bold;
+}
+
+.task-list ul li i {
+  margin-right: 0.3125rem;
+  color: #57d19e;
+}
+
+.task-list ul li a {
+  transition: all 0.3s ease;
+}
+
+.task-list ul li a:hover {
+  text-decoration: underline;
+  opacity: 0.7;
+}
+
+.task-chart {
+  flex: 1;
+  overflow: scroll;
+}
+
+.task-chart-inner,
+.table {
+  height: 100%;
+}
+
+.table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.tbody {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-row {
+  display: flex;
+  width: fit-content;
+}
+
+.th {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  font-size: 0.875rem;
+}
+
+.th-today {
+  background-color: #FF3E3E;
+  color: #fff;
+  font-weight: bold;
+}
+
+.th,
+.td {
+  font-weight: normal;
+  text-align: center;
+  width: 3rem;
+  border-right: dashed 1px #707070;
+}
+
+.td {
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.task-chart-bar {
+  display: block;
+  width: 100%;
+  height: 1.25rem;
+  margin: auto 0;
+  background-color: #FFAE72;
+}
+
+.goal-delete {
+  margin: 1.875rem;
+}
+
+.goal-delete input[type="submit"] {
+  color: #fff;
+  background-color: #FF5252;
+  font-size: 0.75rem;
+  padding: 0.3125rem 0.625rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.goal-delete input[type="submit"]:hover {
+  background-color: #D93636;
+}
+
+
+/*
+タスク一覧
+*/
+.task-sammary {
+  margin: 4.6875rem 4.375rem;
+}
+
+.task-sammary-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: solid 3px #1A3F5F;
+  padding-bottom: 0.625rem;
+  margin-bottom: 2.625rem;
+}
+
+.task-sammary-title h2 {
+  font-size: 2rem;
+  color: #1A3F5F;
+  font-weight: bold;
+}
+
+.task-sammary-title ul {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 17.8125rem;
+}
+
+.task-sammary-title ul li {
+  font-weight: bold;
+  margin-left: 1.5625rem;
+}
+
+.priority-list {
+  position: relative;
+  cursor: pointer;
+}
+
+.priority-list-box {
+  position: absolute;
+  top: calc(100% + 1.25rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  width: 12rem;
+  padding: 0.625rem;
+  box-shadow: 0 3px 10px rgba(51, 51, 51, 16%);
+  display: none;
+  z-index: 100;
+}
+
+.priority-list-box-show {
+  display: block;
+}
+
+.priority-list-box ul {
+  flex-direction: column;
+}
+
+.priority-list-box li {
+  line-height: 2;
+  margin-left: 0 !important;
+}
+
+.task-sammary-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.task-sammary-list::after {
+  display: block;
+  content: '';
+  width: 32%;
+}
+
+.task-sammary-item {
+  width: 32%;
+  border: solid 1px #707070;
+  padding: 0.875rem;
+  margin-bottom: 0.9375rem;
+}
+
+.task-name {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.task-content-name {
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.task-content-name:hover {
+  text-decoration: underline;
+  opacity: 0.7;
+}
+
+.memo span {
+  color: #606060;
+}
+
+.task-name,
+.memo {
+  margin-bottom: 0.3125rem;
+}
+
+.task-category {
+  margin-bottom: 0.75rem;
+}
+
+.task-category span {
+  font-size: 0.75rem;
+  padding: 0.3125rem 0.5rem;
+  border-radius: 0.625rem;
+  color: #fff;
+}
+
+.task-term-complete {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-term i {
+  font-size: 1rem;
+  color: #1A3F5F;
+  margin-right: 0.3125rem;
+}
+
+.task-date {
+  font-size: 0.875rem;
+}
+
+.complete-form input {
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  background-color: #85E6B6;
+  padding: 0.3125rem 0.625rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.complete-form input:hover {
+  background-color: #3E9F6F;
+}
+
+.no-task {
+  width: 100%;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.no-task-matrix {
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+
+/*
+タスク詳細
+*/
+.task-show-message {
+  margin: 1.875rem;
+}
+
+.task-show {
+  margin: 1.875rem;
+  padding: 1.875rem;
+  background-color: #FFFEF2;
+  border: solid 1px #707070;
+}
+
+.task-show-top {
+  border-bottom: solid 1px #707070;
+}
+
+.task-show-bottom {
+  margin-top: 1.75rem;
+}
+
+.task-show-content {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 1.5625rem;
+}
+
+.task-show-item {
+  font-weight: bold;
+  margin-right: 1.875rem;
+}
+
+.task-show-category span {
+  border-radius: 0.625rem;
+  font-size: 0.75rem;
+  padding: 0.3125rem 0.5rem;
+  color: #fff;
+}
+
+.task-show-star {
+  color: #FFE41A;
+}
+
+.task-show-goal,
+.task-show-category {
+  margin-bottom: 0.875rem;
+}
+
+.task-show-term,
+.task-show-priority,
+.task-show-memo {
+  margin-bottom: 1.5625rem;
+}
+
+.task-edit-content {
+  margin: 1.875rem;
+  padding: 1.875rem;
+}
+
+.task-edit-title {
+  margin-bottom: 2.5rem;
+  border-bottom: solid 3px #1A3F5F;
+}
+
+
+.task-edit-title h2 {
+  color: #1A3F5F;
+  font-size: 1.75rem;
+  font-weight: bold;
+  line-height: 2;
+}
+
+.task-show-delete {
+  margin-top: 0.625rem;
+}
+
+.task-show-delete input[type="submit"] {
+  font-size: 0.75rem;
+  padding: 0.3125rem 0.625rem;
+  background-color: #FF5252;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.task-show-delete input[type="submit"]:hover {
+  background-color: #D93636;
+}
+
+.back-goal-btn {
+  display: block;
+  width: fit-content;
+  margin: 1.25rem 0;
+  font-size: 1rem;
+  color: #2176FF;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
+.back-goal-btn:hover {
+  text-decoration: none;
+}
+
+
+/*
+タスクカテゴリー別一覧
+*/
+.task-category-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.task-category-content::after {
+  display: block;
+  content: '';
+  width: 32%;
+}
+
+.task-category-box {
+  width: 32%;
+  background-color: #FFFEF2;
+  border: solid 1px #707070;
+  margin-bottom: 3.125rem;
+}
+
+.task-category-title {
+  background-color: #fff;
+  border-bottom: solid 1px #707070;
+}
+
+.task-category-title-color {
+  width: 100%;
+  height: 0.625rem;
+}
+
+.task-category-title span {
+  display: block;
+  width: fit-content;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.3125rem auto;
+}
+
+.task-category-list {
+  padding: 1.25rem 0.625rem 0 0.625rem;
+}
+
+.task-category-item {
+  width: 100%;
+  background-color: #fff;
+  margin: 0 0 0.9375rem 0;
+}
+
+
+/*
+タスク総合順
+*/
+.table-matrix-top,
+.table-matrix-bottom,
+.high-priority-task,
+.low-priority-task {
+  display: flex;
+}
+
+.high-priority-task,
+.low-priority-task {
+  flex-direction: row-reverse;
+  width: 100%;
+}
+
+.matrix-item {
+  width: 100%;
+  background-color: #fff;
+}
+
+.matrix-priority-high,
+.matrix-priority-low {
+  width: 4.375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E6F7FF;
+}
+
+.matrix-th {
+  font-weight: bold;
+}
+
+.matrix-th-vertical {
+  writing-mode: vertical-rl;
+  letter-spacing: 0.1rem;
+  display: flex;
+  align-items: center;
+}
+
+.matrix-th-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.priority-side {
+  margin-top: 0.625rem;
+}
+
+.severity-side {
+  margin-left: 0.625rem;
+}
+
+.matrix-high,
+.matrix-low {
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+}
+
+.matrix-high {
+  background-color: #FF5A5A;
+}
+
+.matrix-low {
+  background-color: #69C5FF;
+}
+
+.matrix-box {
+  flex: 1;
+}
+
+.matrix-box ul {
+  padding: 1.25rem;
+}
+
+.matrix-one {
+  background-color: #FFACAC;
+}
+
+.matrix-two {
+  background-color: #FFAD90;
+  position: relative;
+}
+
+.matrix-two::after {
+  content: '';
+  display: block;
+  width: 1rem;
+  height: 2rem;
+  border-bottom: solid 1rem #707070;
+  border-top: solid 1rem transparent;
+  border-left: solid 0.5rem transparent;
+  border-right: solid 0.5rem #707070;
+  position: absolute;
+  top: 0;
+  left: -1.1875rem;
+}
+
+.matrix-three {
+  background-color: #FFC993;
+  position: relative;
+}
+
+.matrix-three::after {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 1rem;
+  border-top: solid 0.5rem #707070;
+  border-bottom: solid 0.5rem transparent;
+  border-left: solid 1rem #707070;
+  border-right: solid 1rem transparent;
+  position: absolute;
+  right: 0;
+  bottom: -1.1875rem;
+}
+
+.matrix-four {
+  background-color: #FFF7BE;
+}
+
+.matrix-two,
+.matrix-four {
+  border-left: solid 3px #707070;
+}
+
+.matrix-three,
+.matrix-four {
+  border-bottom: solid 3px #707070;
+}
+
+.matrix-title {
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-top: 1.25rem;
+}
+
+.matrix-severity-high,
+.matrix-severity-low {
+  background-color: #E6F7FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4.375rem;
+  flex: 1;
+}
+
+.matrix-space {
+  display: block;
+  opacity: 0;
+}
+
+.matrix-responsive {
+  display: none;
+}
+
+.matrix-priority-level {
+  margin-bottom: 0.625rem;
+}
+
+.priority-level,
+.severity-level {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 0.75rem;
+}
+
+
+/*
+カレンダー
+*/
+.calendar-container {
+  margin: 1.875rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar {
+  width: 100%;
+  max-width: 43.75rem;
+}
+
+.calendar-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.625rem 1.875rem;
+  border: solid 1px #333;
+}
+
+.this-month {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1A3F5F;
+}
+
+.calendar-title a {
+  color: #1A3F5F;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.calendar-title a:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+.calendar-table {
+  width: 100%;
+}
+
+.calendar-table th {
+  background-color: #1A3F5F;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border: solid 1px #1A3F5F;
+}
+
+.calendar-table td {
+  border: solid 1px #333;
+  width: 14.28%;
+  height: 5.625rem;
+  padding: 0.3125rem;
+  vertical-align: top;
+}
+
+.calendar-table td a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.prev-next-month {
+  color: #333;
+  opacity: 0.5;
+}
+
+.today {
+  background-color: #E6F7FF;
+  font-weight: bold;
+}
+
+.sunday,
+.holiday {
+  color: #FF0000;
+}
+
+.saturday {
+  color: #0045FF;
+}
+
+.schedule-icon {
+  font-size: 0.75rem;
+  height: 1rem;
+  vertical-align: middle;
+  color: #fff;
+  display: block;
+  overflow: hidden;
+  margin-bottom: 3px;
+  padding: 0 0.3125rem;
+}
+
+.schedule-dot {
+  font-size: 0.625rem;
+  display: block;
+  margin-top: 0;
+}
+
+.calendar-schedule {
+  border: solid 1px #707070;
+  background-color: #FFFEEB;
+  padding: 0.9375rem;
+  flex: 1;
+  overflow: hidden;
+  margin-left: 0.625rem;
+}
+
+.calendar-schedule-title {
+  color: #1A3F5F;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: solid 3px #1A3F5F;
+  margin-bottom: 1.25rem;
+}
+
+.calendar-schedule-task {
+  height: 90%;
+  position: relative;
+  overflow: scroll;
+}
+
+.calendar-schedule-task-inner {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.calendar-schedule-content {
+  margin-bottom: 1.875rem;
+}
+
+.calendar-schedule-content li {
+  margin-bottom: 0.625rem;
+  border-bottom: solid 1px #333;
+  line-height: 2;
+  display: flex;
+  align-items: center;
+}
+
+.calendar-schedule-time {
+  margin-right: 0.3125rem;
+  font-size: 0.75rem;
+}
+
+.calendar-schedule-name {
+  font-weight: bold;
+}
+
+.calendar-task-title {
+  border-bottom: solid 3px #1A3F5F;
+  margin-bottom: 1.25rem;
+}
+
+.calendar-task-title h3 {
+  color: #1A3F5F;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.schedule-link {
+  margin-top: 1.25rem;
+}
+
+.schedule-link a {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.3125rem 0.625rem;
+  background-color: #4c7cff;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.schedule-link a:hover {
+  background-color: #6b95ff;
+}
+
+
+
+/*
+予定詳細・追加
+*/
+.schedule-container,
+.schedule-create,
+.schedule-success {
+  margin: 4.6875rem 4.375rem;
+}
+
+.schedule-title,
+.schedule-create-title {
+  border-bottom: solid 3px #1A3F5F;
+}
+
+.schedule-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.schedule-item {
+  width: 49%;
+}
+
+.schedule-create-title {
+  margin-bottom: 4.375rem;
+}
+
+.schedule-title {
+  margin-bottom: 1.875rem;
+}
+
+.schedule-title h2 {
+  color: #1A3F5F;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.schedule-create-title h2 {
+  color: #1A3F5F;
+  font-weight: bold;
+  font-size: 1.75rem;
+}
+
+.form-p .fa-calendar-alt {
+  color: #62AFF2;
+}
+
+.form-p .fa-share-alt {
+  color: #4C7EDB;
+}
+
+.schedule-item {
+  background-color: #FFFEF2;
+  padding: 1.25rem;
+  border: solid 1px #707070;
+}
+
+.schedule-item-title {
+  border-bottom: solid 3px #1A3F5F;
+  margin-bottom: 0.9375rem;
+}
+
+.schedule-item-title h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1A3F5F;
+  line-height: 1.5;
+}
+
+.schedule-item-title .fa-calendar-alt {
+  color: #62AFF2;
+  margin-left: 0.625rem;
+}
+
+.schedule-item-title .fa-tasks {
+  color: #F2AA62;
+  margin-left: 0.625rem;
+}
+
+.schedule-sammary-item {
+  width: 100%;
+  background-color: #fff;
+}
+
+.task-category-complete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.task-category-complete span {
+  border-radius: 1rem;
+}
+
+.no-schedule {
+  width: 100%;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.schedule-list ul li {
+  border: solid 1px #707070;
+  background-color: #fff;
+  padding: 0.9375rem;
+  margin-bottom: 0.9375rem;
+}
+
+.schedule-time,
+.schedule-time i {
+  color: #777;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.schedule-name {
+  font-size: 1rem;
+  color: #333;
+  font-weight: bold;
+  margin: 0.625rem 0;
+}
+
+.schedule-name a {
+  transition: all 0.3s ease;
+}
+
+.schedule-name a:hover {
+  text-decoration: underline;
+  opacity: 0.7;
+}
+
+.schedule-memo {
+  font-size: 0.875rem;
+}
+
+.common-schedule {
+  margin-top: 0.625rem;
+}
+
+.common-schedule span {
+  font-size: 0.75rem;
+  color: #fff;
+  padding: 0.3125rem 0.625rem;
+  border-radius: 0.625rem;
+}
+
+
+/*
+予定一覧
+*/
+.schedule-sammary-container {
+  margin: 4.6875rem 3.75rem;
+}
+
+.schedule-sammary-title {
+  border-bottom: solid 3px #1A3F5F;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 0.625rem;
+  margin-bottom: 2.5rem;
+}
+
+.schedule-sammary-title h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1A3F5F;
+}
+
+.schedule-sammary-title a {
+  color: #1A3F5F;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.schedule-sammary-title a:hover {
+  text-decoration: underline;
+}
+
+.schedule-sammary-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.schedule-date-sammary {
+  width: 33%;
+  border: solid 1px #707070;
+  background-color: #FFFEF2;
+  margin-bottom: 2.5rem;
+}
+
+.schedule-sammary-content::after {
+  content: '';
+  display: block;
+  width: 33%;
+}
+
+.schedule-date {
+  color: #fff;
+  text-align: center;
+  background-color: #1A3F5F;
+  font-weight: bold;
+  font-size: 1.25rem;
+  padding: 0.625rem;
+}
+
+.schedule-date-sammary ul {
+  padding: 1.25rem 0.625rem;
+}
+
+.schedule-date-sammary ul li {
+  background-color: #fff;
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  border: solid 1px #707070;
+}
+
+.common-schedule-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.3125rem 0.625rem;
+  background-color: #fff;
+  border-bottom: solid 1px #707070;
+}
+
+.common-schedule-color {
+  height: 0.625rem;
+}
+
+
+/*
+予定編集
+*/
+.back-schedule-sammary {
+  color: #2176FF;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
+.back-schedule-sammary:hover {
+  text-decoration: none;
+}
+
+.schedule-delete-form {
+  margin-bottom: 0.625rem;
+}
+
+.schedule-delete-form input[type="submit"] {
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.3125rem 0.625rem;
+  background-color: #FF5252;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.schedule-delete-form input[type="submit"]:hover {
+  background-color: #D93636;
+}
+
+
+/*
+タスクカテゴリー設定
+*/
+.create-new-category {
+  margin-top: 5rem;
+}
+
+.create-category-title {
+  margin-bottom: 2.8rem;
+  border-bottom: solid 3px #1A3F5F;
+}
+
+.create-category-title h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1A3F5F;
+  margin-bottom: 0.625rem;
+}
+
+.category-sammary-title {
+  border-bottom: solid 3px #1A3F5F;
+  padding-bottom: 0.625rem;
+  margin-bottom: 1.25rem;
+}
+
+.category-sammary-title h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1A3F5F;
+}
+
+.category-sammary ul li {
+  padding: 0.625rem;
+  color: #333;
+  font-weight: bold;
+  background-color: #FFFEF2;
+  border-bottom: solid 1px #333;
+  margin-bottom: 0.625rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.category-sammary ul li a {
+  font-size: 0.85rem;
+  font-weight: normal;
+  padding: 0.3125rem 0.625rem;
+  background-color: #0090ff;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.category-sammary ul li a:hover {
+  opacity: 0.7;
+}
+
+/*
+タスクカテゴリー編集・削除
+*/
+.category-edit-form {
+  margin-bottom: 6rem;
+}
+
+.category-edit-form .form-p {
+  margin-bottom: 2.8rem;
+}
+
+.category-delete-form input {
+  padding: 0.3125rem 0.625rem;
+  font-size: 0.75rem;
+  background-color: #FF5252;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-delete-form input:hover {
+  background-color: #dd3939;
+}
+
+.show-new-category .color-p {
+  margin-top: 2rem;
+}
+
+.color-p {
+  display: flex;
+}
+
+.color-p label {
+  line-height: 2rem;
+}
+
+.color-selector {
+  position: relative;
+}
+
+.color-list-angle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  background-color: #1a3f5f;
+  width: 2rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-list-angle i {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-right: 0;
+}
+
+.angle-up {
+  display: none;
+}
+
+.color-list {
+  color: rgba(0, 0, 0, 0%);
+  width: 8rem;
+  height: 2rem;
+  margin-left: 0.625rem;
+}
+
+.color-pallet {
+  display: none;
+  margin-left: 0.625rem;
+}
+
+.color-pallet ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: 8rem;
+}
+
+.color-pallet ul li {
+  width: 2rem;
+  height: 2rem;
+  color: rgba(0, 0, 0, 0%);
+  cursor: pointer;
+}
+
+
+/*
+レスポンシブ
+*/
+
+
+/*
+〜1200px
+*/
+@media screen and (max-width: 1200px) {
+  /* カレンダー */
+  .calendar {
+    max-width: 100%;
+    height: auto;
+    flex: 2;
+  }
+}
+
+
+/*
+〜1024px
+*/
+@media screen and (max-width: 1024px) {
+  .task-sammary-title {
+    flex-direction: column;
+  }
+
+  .task-sammary-title h2 {
+    align-self: flex-start;
+    margin-bottom: 1.875rem;
+  }
+
+  /* 目標 */
+  .goal-content li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .goal-name {
+    margin-bottom: 2rem;
+    width: 100%;
+    border-bottom: solid 1px #333;
+  }
+
+  .goal-show-detail {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .goal-circle-graph {
+    margin-bottom: 1.875rem;
+  }
+
+  .goal-show-description {
+    width: 100%;
+  }
+
+  /* タスク一覧 */
+  .task-sammary {
+    margin: 1.875rem 1.25rem;
+  }
+
+  .task-sammary-item,
+  .task-category-box {
+    width: 49%;
+  }
+
+  .task-category-item,
+  .matrix-item {
+    width: 100%;
+  }
+
+  .schedule-sammary-item {
+    width: 100%;
+  }
+
+  /* 予定一覧 */
+  .schedule-sammary-container {
+    margin: 1.875rem 1.25rem;
+  }
+
+  .schedule-date-sammary {
+    width: 49%;
+  }
+
+  /* カレンダー */
+  .calendar-container {
+    flex-direction: column;
+  }
+
+  .calendar-schedule {
+    margin-top: 1.25rem;
+    margin-left: 0;
+  }
+
+  .calendar-schedule-task,
+  .calendar-schedule-task-inner {
+    position: static;
+  }
+
+  .calendar-schedule-task-inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .calendar-schedule-content,
+  .calendar-task-content {
+    width: 48%;
+  }
+
+  .schedule-container,
+  .schedule-create,
+  .schedule-success {
+    margin: 1.42rem;
+  }
+}
+
+
+/*
+〜768px
+*/
+@media screen and (max-width: 768px) {
+  /* タスク一覧 */
+  .task-sammary-item,
+  .task-category-box {
+    width: 100%;
+  }
+
+  .high-priority-task,
+  .low-priority-task {
+    flex-direction: column;
+  }
+
+  .matrix-priority-high,
+  .matrix-severity-bottom,
+  .matrix-two::after,
+  .matrix-three::after {
+    display: none;
+  }
+
+  .matrix-two,
+  .matrix-four {
+    border-left: none;
+  }
+
+  .matrix-three,
+  .matrix-four {
+    border-bottom: none;
+  }
+
+  .matrix-title {
+    padding: 0.625rem;
+    margin-top: 0;
+  }
+
+  .matrix-box {
+    cursor: pointer;
+  }
+
+  .matrix-responsive {
+    display: block;
+    padding: 0 0.625rem 0.625rem 0.625rem;
+  }
+
+  .matrix-task-count {
+    text-align: center;
+    margin-bottom: 0.625rem;
+  }
+
+  .matrix-number span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.875rem;
+    height: 1.875rem;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: bold;
+    margin: 0 auto;
+  }
+
+  .matrix-1 span {
+    background-color: #FF4D4D;
+  }
+
+  .matrix-2 span {
+    background-color: #FF5519;
+  }
+
+  .matrix-3 span {
+    background-color: #FF860D;
+  }
+
+  .matrix-4 span {
+    background-color: #FFC400;
+  }
+
+  .matrix-description-content {
+    flex-direction: column;
+  }
+
+  .matrix-image {
+    width: 100%;
+    margin-bottom: 1.25rem;
+  }
+
+  .matrix-sentence {
+    width: 100%;
+  }
+
+  /* カレンダー */
+  .calendar-table td {
+    height: 5rem;
+  }
+
+  /* 予定 */
+  .schedule-content {
+    flex-direction: column;
+  }
+
+  .schedule-item {
+    width: 100%;
+  }
+
+  .schedule-item:first-child {
+    margin-bottom: 1.25rem;
+  }
+
+  /* 予定一覧 */
+  .schedule-date-sammary {
+    width: 100%;
+  }
+}
+
+
+/*
+〜640px
+*/
+@media screen and (max-width: 640px) {
+  .my-page-header {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 1rem 1.2rem;
+  }
+
+  .my-page-header-block {
+    bottom: 0;
+    right: 0;
+    overflow-y: auto;
+  }
+
+  .my-page-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .my-page-header-logo {
+    margin-bottom: 0;
+  }
+
+  .my-page-pc {
+    display: none;
+  }
+
+  .responsive-nav-menu {
+    padding-top: 2.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .my-page-main {
+    margin-left: 0;
+    padding-top: 4rem;
+  }
+
+  .profile-content {
+    margin-left: 0;
+  }
+
+  .form-submit-btn {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .dashboard-footer {
+    margin-left: 0;
+    margin-bottom: 5.3rem;
+  }
+
+  .create-content {
+    padding: 3.125rem 1.4285rem;
+  }
+
+  .responsive-bottom-navigation {
+    display: block;
+  }
+
+  .profile-header {
+    margin-left: 0;
+    margin-top: 4rem;
+  }
+
+
+  /* 目標 */
+  .goal-container,
+  .task-chart-container {
+    margin: 0 0 1.25rem 0;
+  }
+
+  .task-list ul li {
+    font-size: 0.75rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .td {
+    height: 2.5rem;
+  }
+
+  /* タスク一覧 */
+  .task-sammary-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .schedule-sammary-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .schedule-create-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .task-edit-title h2 {
+    font-size: 1.5rem;
+  }
+
+  /* カレンダー */
+  .calendar-container {
+    margin: 0 0 1.25rem 0;
+  }
+
+  .this-month {
+    font-size: 1.28rem;
+  }
+
+  .calendar-table th {
+    font-size: 1rem;
+  }
+
+  .calendar-table td {
+    padding: 0.3125rem 0;
+  }
+
+  .calendar-table td a {
+    font-size: 0.85rem;
+  }
+
+  .calendar-schedule-task-inner {
+    flex-direction: column;
+  }
+
+  .calendar-schedule-content,
+  .calendar-task-content {
+    width: 100%;
+  }
+
+  .task-show,
+  .task-edit-content {
+    margin: 0;
+  }
+
+  /* 予定編集 */
+  .schedule-delete-form input[type="submit"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .back-schedule-sammary {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+  }
+}

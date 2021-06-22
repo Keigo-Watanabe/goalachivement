@@ -1,0 +1,1130 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+body, * {
+  padding: 0;
+  margin: 0;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/*
+共通
+*/
+img {
+  vertical-align: bottom;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  transition: all 0.3s ease;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+textarea {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+
+/*
+LPヘッダー
+*/
+.lp-header {
+  padding: 1.5625rem 3.125rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goalachivement {
+  font-family: 'Alata', sans-serif;
+  font-size: 1.3125rem;
+  color: #333;
+}
+
+.logo-achivement {
+  color: #00E6F0;
+}
+
+.header-nav ul {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav ul li {
+  margin-left: 1.875rem;
+  color: #333;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.header-nav ul li:last-child {
+  margin-left: 1rem;
+}
+
+.nav-li a {
+  transition: all 0.3s ease;
+}
+
+.nav-li a:hover {
+  color: #707070;
+}
+
+.header-register a {
+  display: block;
+  padding: 0.3125rem 1.25rem;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 20%);
+  border-radius: 0.9375rem;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.header-register a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 0.9375rem;
+  background-color: #333;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.header-register a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.9375rem;
+  background-color: #fff;
+  z-index: -2;
+}
+
+.header-register a:hover {
+  color: #fff;
+}
+
+.header-register a:hover::before {
+  width: 100%;
+}
+
+.header-login a {
+  display: block;
+  padding: 0.3125rem 1.25rem;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 20%);
+  border-radius: 0.9375rem;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.header-login a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 0.9375rem;
+  background-color: #333;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.header-login a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.9375rem;
+  background-color: #E3EBFF;
+  z-index: -2;
+}
+
+.header-login a:hover {
+  color: #fff;
+}
+
+.header-login a:hover::before {
+  width: 100%;
+}
+
+.header-nav-btn {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 20%);
+  background-color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.bar {
+  display: block;
+  background-color: #333;
+  height: 2px;
+  width: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.bar1 {
+  width: 0.625rem;
+}
+
+.bar2 {
+  width: 0.9375rem;
+  margin: 2px 0;
+}
+
+.bar3 {
+  width: 1.25rem;
+}
+
+.header-nav-btn:hover .bar {
+  width: 1.25rem;
+}
+
+
+/*
+ロード
+*/
+.loadview {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  transition: all 0.5s ease;
+}
+
+.loadview-out {
+  transform: translateY(-100%);
+  transition-delay: 1.5s;
+}
+
+.loadview-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.loadview-title-show {
+  opacity: 1;
+}
+
+
+/*
+ファーストビュー
+*/
+.firstview {
+  background-color: #F7FCFF;
+  height: 55vw;
+  padding-top: 5rem;
+  position: relative;
+}
+
+.firstview-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 60rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 1.25rem;
+}
+
+.firstview-image {
+  flex: 1;
+  transform: translateX(-50%);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.firstview-image img {
+  width: 100%;
+  height: auto;
+}
+
+.firstview-title {
+  flex: 1;
+  transform: translateX(50%);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.firstview-show {
+  transform: translateX(0);
+  opacity: 1;
+  transition-delay: 1.8s;
+}
+
+.firstview-title h1 {
+  margin-bottom: 3.125rem;
+}
+
+.goalachivement-jp {
+  font-size: 4.25rem;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.goalachivement-en {
+  font-size: 1.75rem;
+  font-family: 'Alata', sans-serif;
+  display: block;
+  text-align: center;
+}
+
+.start-btn {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.5rem 2.375rem;
+  border-radius: 1.25rem;
+  color: #fff;
+  background-color: transparent;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 20%);
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.start-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 1.25rem;
+  background-color: #333;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.start-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.25rem;
+  background: linear-gradient(90deg, #8BE3FF, #9CBEFD);
+  z-index: -2;
+}
+
+.start-btn:hover::before {
+  width: 100%;
+}
+
+
+/*
+アプリの説明
+*/
+.app-description {
+  padding: 0 1.25rem;
+}
+
+.app-description-inner {
+  width: 100%;
+  max-width: 60rem;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 25%);
+  padding: 2.5rem 1.25rem;
+  transform: translateY(-4rem);
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.app-description-title,
+.app-description-p {
+  width: 100%;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.app-description-title h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.app-description-p p {
+  margin-top: 1.75rem;
+}
+
+
+/*
+アプリの使い方
+*/
+.app-management {
+  background-color: #FFF9F5;
+  padding: 0 1.25rem 6.875rem 1.25rem;
+}
+
+.app-management-inner {
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.app-management-title {
+  padding: 3.125rem 0;
+}
+
+.app-management-title h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.app-management-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8rem;
+  opacity: 0;
+  transform: translateY(50%);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.app-management-content:last-child{
+  margin-bottom: 0;
+}
+
+.app-management-image,
+.app-management-description {
+  flex: 1;
+}
+
+.app-management-image {
+  height: 16.875rem;
+}
+
+.app-management-image img {
+  width: auto;
+  height: 100%;
+}
+
+.app-management-odd .app-management-image {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.app-management-odd .app-management-description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.steps-title,
+.app-management-description-p {
+  width: 100%;
+  max-width: 24rem;
+}
+
+.app-step {
+  font-size: 2rem;
+  color: #4771D0;
+  font-family: 'Alata', sans-serif;
+  display: block;
+}
+
+.step-title-name {
+  font-size: 1.5rem;
+  display: block;
+  margin: 1.75rem 0;
+}
+
+.odd-arrow {
+  position: absolute;
+  bottom: -8rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+  height: 8rem;
+  border-right: dotted 0.3125rem #FF7600;
+  z-index: 0;
+}
+
+.odd-arrow::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1rem;
+  right: -0.8rem;
+  width: 1.25rem;
+  background-color: #FFF9F5;
+  transition: all 0.7s ease;
+  z-index: 1;
+}
+
+.odd-arrow::after {
+  content: '';
+  border-top: solid 1rem #FF7600;
+  border-left: solid 0.625rem transparent;
+  border-right: solid 0.625rem transparent;
+  position: absolute;
+  bottom: -0.5rem;
+  right: -1.375rem;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.odd-arrow-show::before {
+  top: 9rem;
+}
+
+.even-arrow {
+  position: absolute;
+  bottom: -8rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  height: 8rem;
+  border-right: dotted 0.3125rem #FF7600;
+  z-index: 0;
+}
+
+.even-arrow::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1rem;
+  right: -0.8rem;
+  width: 1.25rem;
+  background-color: #FFF9F5;
+  transition: all 0.7s ease;
+  z-index: 1;
+}
+
+.even-arrow::after {
+  content: '';
+  border-top: solid 1rem #FF7600;
+  border-left: solid 0.625rem transparent;
+  border-right: solid 0.625rem transparent;
+  position: absolute;
+  bottom: -0.5rem;
+  right: -1.375rem;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.even-arrow-show::before {
+  top: 9rem;
+}
+
+
+/*
+機能
+*/
+.app-feature {
+  background-image: url(/image/background.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.app-feature-bg {
+  background-color: rgba(0, 38, 123, 50%);
+  padding: 4rem 1.25rem 6.25rem 1.25rem;
+}
+
+.app-feature-inner {
+  width: 100%;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.app-feature-title {
+  margin-bottom: 4rem;
+}
+
+.app-feature-title h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 1.75rem;
+}
+
+.app-feature-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-feature-content {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(50%);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.second-app-feature-content {
+  transition-delay: 0.3s;
+}
+
+.third-app-feature-content {
+  transition-delay: 0.6s;
+}
+
+.scroll-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.app-feature-image {
+  width: 8vw;
+  height: 8vw;
+  min-width: 6.875rem;
+  min-height: 6.875rem;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  z-index: 1;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 16%);
+}
+
+.app-feature-image img {
+  width: 50%;
+  height: auto;
+}
+
+.app-feature-description {
+  background-color: #F7FCFF;
+  border-radius: 0.625rem;
+  padding: 4.6875rem 1.25rem 1.25rem 1.25rem;
+  flex-grow: 1;
+  margin-top: -3.4375rem;
+  z-index: 0;
+}
+
+.app-feature-description h3 {
+  text-align: center;
+  margin-bottom: 0.625rem;
+}
+
+
+/*
+目標を達成しましょう
+*/
+.start-app {
+  background-color: #F7FCFF;
+  padding: 4rem 1.25rem;
+}
+
+.start-app h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 4rem;
+}
+
+
+/*
+フッター
+*/
+.lp-footer {
+  background-color: #fff;
+  padding: 1.25rem;
+}
+
+.footer-logo {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.copyright {
+  text-align: center;
+}
+
+.copyright span {
+  font-size: 0.625rem;
+}
+
+
+/*
+会員登録・ログイン
+*/
+.register-bg {
+  background-color: #F7FCFF;
+  padding: 9.6rem 0;
+}
+
+.register-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.register-form {
+  background-color: transparent;
+  box-shadow: 0 0 0 transparent;
+}
+
+.form-register-btn {
+  margin-top: 3.5rem;
+}
+
+.already-registered {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 2rem auto;
+  color: #106CFF;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
+.already-registered:hover {
+  text-decoration: none;
+}
+
+.form-register {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+  border-radius: 1.25rem;
+  font-size: 1rem;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.form-register::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 1.25rem;
+  background-color: #333;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.form-register::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.25rem;
+  background: linear-gradient(90deg, #8BE3FF, #9CBEFD);
+  z-index: -2;
+}
+
+.form-register:hover::before {
+  width: 100%;
+}
+
+[type='text']:focus,
+[type='email']:focus,
+[type='url']:focus,
+[type='password']:focus,
+[type='number']:focus,
+[type='date']:focus,
+[type='datetime-local']:focus,
+[type='month']:focus,
+[type='search']:focus,
+[type='tel']:focus,
+[type='time']:focus,
+[type='week']:focus,
+[multiple]:focus,
+textarea:focus,
+select:focus {
+  border-color: transparent;
+}
+
+.register-yet {
+  display: block;
+  width: fit-content;
+  margin: 2rem auto;
+  color: #106CFF;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
+.register-yet:hover {
+  text-decoration: none;
+}
+
+
+/*
+お問い合わせ
+*/
+.contact-container {
+  background-color: #F7FCFF;
+  min-height: 100vh;
+  padding: 9rem 1.25rem;
+}
+
+.contact-inner {
+  width: 100%;
+  max-width: 25rem;
+  margin: 0 auto;
+}
+
+.contact-title {
+  margin-bottom: 2.8rem;
+}
+
+.contact-title h2 {
+  text-align: center;
+  margin-bottom: 2.8rem;
+}
+
+.contact-title-sentence p {
+  font-size: 0.85rem;
+  margin-bottom: 0.625rem;
+}
+
+.contact-form p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.contact-input,
+.contact-textarea {
+  border: solid 1px #333;
+  border-radius: 0.3125rem;
+  color: #333;
+  padding: 0.3125rem;
+  width: 100%;
+  max-width: 15.625rem;
+}
+
+.contact-textarea {
+  height: 7.6rem;
+}
+
+.contact-submit-btn {
+  display: block;
+  width: fit-content;
+  padding: 0.5rem 3.5rem;
+  background: transparent;
+  border-radius: 1.25rem;
+  color: #fff;
+  margin: 0 auto;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.contact-submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 1.25rem;
+  background: #333;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.contact-submit-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.25rem;
+  background: linear-gradient(90deg, #8BE3FF, #9CBEFD);
+  z-index: -2;
+}
+
+.contact-submit-btn:hover::before {
+  width: 100%;
+}
+
+.contact-thanks-sentence p {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.contact-thanks-sentence a {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  color: #106CFF;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
+.contact-thanks-sentence a:hover {
+  text-decoration: none;
+}
+
+.bg-gray-100 {
+  background-color: #fff;
+}
+
+
+
+
+/*
+レスポンシブ
+*/
+
+/*
+1600px〜
+*/
+@media screen and (min-width: 1600px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+
+/*
+〜1024px
+*/
+@media screen and (max-width: 1024px) {
+  /* ヘッダー */
+  .header-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transform: translateX(100%);
+    transition: all 0.5s ease;
+    z-index: 100;
+  }
+
+  .header-nav-show {
+    transform: translateX(0);
+  }
+
+  .header-nav ul {
+    display: flex;
+    flex-direction: column;
+    max-width: 30rem;
+    margin: 5rem auto 0 auto;
+  }
+
+  .header-nav ul li {
+    margin-bottom: 1.25rem;
+  }
+
+  .header-nav ul li,
+  .header-nav ul li:last-child {
+    margin-left: 0;
+  }
+
+  .header-nav ul li a {
+    display: block;
+    width: fit-content;
+    font-size: 1.5rem;
+  }
+
+  .header-register a,
+  .header-login a {
+    border-radius: 1.5rem;
+  }
+
+  .header-nav-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 101;
+  }
+
+  /* ファーストビュー */
+  .firstview {
+    height: 65vw;
+  }
+
+  /* 機能 */
+  .app-feature {
+    background-attachment: local;
+  }
+}
+
+
+/*
+〜768px
+*/
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  /* ヘッダー */
+  .lp-header {
+    padding: 1rem 1.5rem;
+  }
+
+  /* ファーストビュー */
+  .firstview {
+    height: 44rem;
+  }
+
+  .firstview-inner {
+    flex-direction: column;
+    max-width: 24rem;
+  }
+
+  .firstview-image img {
+    width: 75%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .goalachivement-jp {
+    font-size: 3rem;
+  }
+
+  .goalachivement-en {
+    font-size: 1.5rem;
+  }
+
+  /* アプリの説明 */
+  .app-description-title h2 {
+    font-size: 1.7rem;
+  }
+
+  /* アプリの使い方 */
+  .app-management-content {
+    padding: 1.25rem 0;
+  }
+
+  .app-management-title h2 {
+    font-size: 1.7rem;
+  }
+
+  .app-management-odd {
+    flex-direction: column;
+  }
+
+  .app-management-even {
+    flex-direction: column-reverse;
+  }
+
+  .app-management-image {
+    margin-bottom: 1.25rem;
+    height: auto;
+  }
+
+  .app-management-image img {
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .app-step {
+    font-size: 1.7rem;
+  }
+
+  .step-title-name {
+    font-size: 1.3rem;
+  }
+
+  .odd-arrow,
+  .even-arrow {
+    transform: translateX(-50%) rotate(0);
+  }
+
+  /* 機能 */
+  .app-feature-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .second-app-feature-content {
+    transition-delay: 0;
+  }
+
+  .third-app-feature-content {
+    transition-delay: 0;
+  }
+
+  /* 目標を達成しましょう */
+  .start-app h2 {
+    font-size: 1.7rem;
+  }
+}
+
+
+/*
+〜600px
+*/
+@media screen and (max-width: 600px) {
+  /* 機能 */
+  .app-feature-container {
+    flex-direction: column;
+  }
+
+  .app-feature-content {
+    width: 100%;
+    max-width: 13rem;
+    margin: 0 auto 1.25rem auto;
+  }
+
+  /* お問い合わせ */
+  .contact-form p {
+    flex-direction: column;
+  }
+
+  .contact-input,
+  .contact-textarea {
+    max-width: 100%;
+  }
+}
