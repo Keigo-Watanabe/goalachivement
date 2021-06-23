@@ -60,6 +60,11 @@ class TaskCategoryController extends Controller
      */
     public function show(TaskCategory $taskCategory)
     {
+        // アクセスユーザーidと目標のidが一致しなかった場合は404へ遷移
+        if (Auth::id() != $taskCategory->user_id) {
+          return abort('404');
+        }
+
         return view('taskcategory.show', compact('taskCategory'));
     }
 

@@ -61,6 +61,11 @@ class GoalController extends Controller
      */
     public function show(Goal $goal)
     {
+        // アクセスユーザーidと目標のidが一致しなかった場合は404へ遷移
+        if (Auth::id() != $goal->user_id) {
+          return abort('404');
+        }
+
         $date = new Carbon();
         $date = $date->copy()->timezone('Asia/Tokyo');
 

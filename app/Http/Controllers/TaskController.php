@@ -228,6 +228,11 @@ class TaskController extends Controller
      */
     public function show(Task $task)
     {
+        // アクセスユーザーidと目標のidが一致しなかった場合は404へ遷移
+        if (Auth::id() != $task->user_id) {
+          return abort('404');
+        }
+
         $user_id = Auth::id();
         $goals = Goal::where('user_id', $user_id)->get();
         $taskCategories = TaskCategory::where('user_id', $user_id)->get();

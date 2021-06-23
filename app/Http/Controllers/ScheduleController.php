@@ -167,6 +167,11 @@ class ScheduleController extends Controller
      */
     public function show(Schedule $schedule)
     {
+        // アクセスユーザーidと目標のidが一致しなかった場合は404へ遷移
+        if (Auth::id() != $schedule->user_id) {
+          return abort('404');
+        }
+
         $user_id = Auth::id();
         $commonSchedules = CommonSchedule::where('user_id', $user_id)->get();
 

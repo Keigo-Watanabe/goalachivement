@@ -60,6 +60,11 @@ class CommonScheduleController extends Controller
      */
     public function show(CommonSchedule $commonSchedule)
     {
+        // アクセスユーザーidと目標のidが一致しなかった場合は404へ遷移
+        if (Auth::id() != $commonSchedule->user_id) {
+          return abort('404');
+        }
+
         return view('commonschedule.show', compact('commonSchedule'));
     }
 
